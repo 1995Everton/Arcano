@@ -1,4 +1,4 @@
-# Arcanos
+# Arcano
 Projeto de conclusão de Curso 
 
 ** Comandos **
