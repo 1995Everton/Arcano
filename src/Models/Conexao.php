@@ -11,15 +11,11 @@ namespace Arcanos\Enigmas\Models;
 
 class Conexao
 {
-   public $conexao;
+   protected $conexao;
 
     public function __construct()
     {
         $this->conexao = mysqli_connect("localhost","root","root","arcano") or die("Falha na Conexão");
     }
 
-    public function aumentarPenis()
-    {
-
-    }
 }
