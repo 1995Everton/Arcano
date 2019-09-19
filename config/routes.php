@@ -2,6 +2,7 @@
 use Arcanos\Enigmas\Controllers\Login;
 use Arcanos\Enigmas\Controllers\Cadastro;
 use Arcanos\Enigmas\Controllers\Home;
+use Arcanos\Enigmas\Controllers\PersistenciaUsuario;
 
 
 class Routes
@@ -11,7 +12,8 @@ class Routes
         return [
             'login' => Login::class,
             'cadastro' => Cadastro::class,
-            'home' => Home::class
+            'home' => Home::class,
+            'persistenciausuario' => PersistenciaUsuario::class
 
         ];
     }
