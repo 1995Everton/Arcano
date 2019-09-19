@@ -1,38 +1,16 @@
 <?php include __DIR__ . "/../header.php";?>
-    <div class="row">
-        <div class="col-lg-3 col-md-2"></div>
-        <div class="col-lg-6 col-md-8 login-box">
-            <div class="col-lg-12 login-key">
-                <i class="fa fa-key" aria-hidden="true"></i>
-            </div>
-            <div class="col-lg-12 login-title">
-                LOGIN
-            </div>
-
-            <div class="col-lg-12 login-form">
-                <div class="col-lg-12 login-form">
-                    <form>
-                        <div class="form-group">
-                            <label class="form-control-label">USERNAME</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-control-label">PASSWORD</label>
-                            <input type="password" class="form-control" i>
-                        </div>
-
-                        <div class="col-lg-12 loginbttm">
-                            <div class="col-lg-6 login-btm login-text">
-                                <!-- Error Message -->
-                            </div>
-                            <div class="col-lg-6 login-btm login-button">
-                                <button type="submit" class="btn btn-outline-primary">LOGIN</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-2"></div>
+    <form action="" method="GET">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control" name="usuario" placeholder="Usuario">
         </div>
-    </div>
+        <div class="form-group col-md-6">
+            <input type="password" class="form-control" name="senha" placeholder="Senha">
+        </div>
+        <div class="w-100"></div>
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </div>
+      </div>
+    </form>
 <?php include __DIR__ . "/../footer.php";?>
