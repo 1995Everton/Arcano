@@ -20,9 +20,9 @@ trait segurityCrypt
         return $hash;
     }
 
-    public function compararHash($value,$hash)
+    public function compararHash($senha,$senhaCriptografar)
     {
-        if (crypt($value, $hash) === $hash){
+        if (crypt($senha,$senhaCriptografar) === $senhaCriptografar){
             return true;
         }else{
             return false;

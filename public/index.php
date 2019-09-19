@@ -1,6 +1,5 @@
 <?php
 
-use Arcanos\Enigmas\Controllers\RequestHandlerInterface;
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
