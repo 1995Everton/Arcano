@@ -26,4 +26,5 @@ class Banco
         $this->usuarios = new Usuario();
         $this->enigmas = new Enigma();
     }
+
 }
