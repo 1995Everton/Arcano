@@ -17,7 +17,7 @@ PDO
 `$this->banco->select( sql , where , all ) : Array;`
 
 | Opção | Type | Padrão | Descrição|
-| ------------- | ------------------------------ |
+| ------------- | -------| -------| -------|
 | `sql`             |  String  |  null | Query para consulta |
 | `where`   |  Array  | [ ] | Array Associativo ( campo => valor) que representa os critérios de busca |
 | `all`    |   Boolean | true | Retorna todos os dados ( ignora opção where )  |
@@ -36,7 +36,7 @@ PDO
 `$this->banco->insert( table , value ) : Array;`
 
 | Opção | Type | Padrão | Descrição|
-| ------------- | ------------------------------ |
+| ------------- | -------| -------| -------|
 | ` table`             |  String  |  null | Nome da tabela no banco |
 | `value`   |  Array  | [ ] | Array Associativo ( campo => valor) que representa os os valores que serão inseridos no banco
 
@@ -56,7 +56,7 @@ PDO
 `$this->banco->update( table , value , where ) : Array ;`
 
 | Opção | Type | Padrão | Descrição|
-| ------------- | ------------------------------ |
+| ------------- | -------| -------| -------|
 | `table`             |  String  |  null | Query para consulta |
 | `value`   |  Array  | [ ] | Array Associativo ( campo => valor) que representa os os valores que serão inseridos no banco
 | `where`   |  Array  | [ ] | Array Associativo ( campo => valor) que representa os critérios de busca |
@@ -77,8 +77,8 @@ PDO
 `$this->banco->delete(table , where  );`
 
 | Opção | Type | Padrão | Descrição|
-| ------------- | ------------------------------ |
-| `table`             |  String  |  null | Query para consulta |
+| ------------- | -------| -------| -------|
+| `table`      |  String | nul  | Query para consulta |
 | `where`   |  Array  | [   ] | Array Associativo ( campo => valor) que representa os critérios de busca |
 
     <?php
