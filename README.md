@@ -2,16 +2,13 @@
 
 ![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
 
-
 **Documentação**
 
-[TOC]
-
-#Banco De Dados
+# Banco De Dados ###
 `MYSQL`
-##Padrão de Uso
-PDO
-###SELECT
+## Padrão de Uso ###
+A extensão *PHP Data Objects* ( PDO ) define uma interface leve e consistente para acessar bancos de dados em PHP.
+### SELECT ###
 ***Opções***
 
 `$this->banco->select( sql , where , all ) : Array;`
@@ -30,7 +27,7 @@ PDO
 		);
     ?>
 
-###INSERT
+### INSERT ###
 ***Opções***
 
 `$this->banco->insert( table , value ) : Array;`
@@ -50,7 +47,7 @@ PDO
         	]
 		);
     ?>
-###UPDATE
+### UPDATE ###
 ***Opções***
 
 `$this->banco->update( table , value , where ) : Array ;`
@@ -71,7 +68,7 @@ PDO
             ]
         );
     ?>
-###DELETE
+### DELETE ###
 ***Opções***
 
 `$this->banco->delete(table , where  );`
