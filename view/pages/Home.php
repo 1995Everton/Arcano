@@ -1,8 +1,19 @@
-<?php include __DIR__ . "/../header.php";?>
+<link rel="stylesheet" type="text/css" href="css/home.css">
+<link rel="stylesheet" type="text/css" href="css/testeBG.css">
 <style>
 .container{
     margin: 0px;
     padding: 0px;
+}
+body {
+    background: #060e1b;
+    overflow: hidden;
+}
+
+#canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 </style>
     <div>
@@ -15,4 +26,3 @@
             <img src="img/Logo.png">
         </div>
     </div>
-<?php include __DIR__ . "/../footer.php";?>
