@@ -92,4 +92,20 @@
 .simplebar-scrollbar:before{
     background: chartreuse;
 }
+.picker{
+    width: 40px;
+    height: 40px;
+    border-radius: 30px 30px;
+    position: absolute;
+    z-index: 2000;
+    border: 3px solid #fff;
+}
+.picker:nth-of-type(2){
+    left: 82%;
+    top: 15%;
+}
+.picker:nth-of-type(3){
+    left: 86%;
+    top: 15%;
+}
 
