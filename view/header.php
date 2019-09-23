@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
     <link rel="stylesheet" href="./css/lib/colorPick.css">
      <!-- Css Projeto-->
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/dropdown.css">
     <!-- Plugins JavaScript-->
@@ -19,6 +20,8 @@
     <script src='js/lib/colorPick.js'></script>
 </head>
 <body>
-    <?php include __DIR__."./navbar.php"?>
+    <?php if(isset($_SESSION['logado'])):
+            include __DIR__."./navbar.php";
+    endif; ?>
     <div class="container">
 

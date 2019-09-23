@@ -3,6 +3,7 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
+session_start();
 $caminho = isset($_GET['pagina']) ? $_GET['pagina'] : 'home';
 $routes = Routes::getRoutes();
 
