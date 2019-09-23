@@ -12,18 +12,17 @@ namespace Arcanos\Enigmas\Controllers;
 
 
 use Arcanos\Enigmas\Helpers\renderHTML;
-use Arcanos\Enigmas\Models\Enigma;
-use Arcanos\Enigmas\Models\Usuario;
+use Arcanos\Enigmas\Helpers\segurityCrypt;
+use Arcanos\Enigmas\Models\Crud;
 
 class Banco
 {
-    use renderHTML;
-    protected $usuarios;
-    protected $enigmas;
+    use renderHTML,segurityCrypt;
+    protected $banco;
 
     public function __construct()
     {
-        $this->usuarios = new Usuario();
-        $this->enigmas = new Enigma();
+        $this->banco = new Crud();
     }
+
 }

@@ -1,5 +1,3 @@
-<?php include __DIR__ . "/../header.php";?>
-
 <form action="index.php?pagina=persistenciausuario" method="POST">
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -22,6 +20,4 @@
     </div>
   </div>
 </form>
-
-<?php include __DIR__ . "/../footer.php";?>
 
