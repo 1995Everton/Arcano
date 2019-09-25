@@ -14,7 +14,7 @@
                 <label>E-Mail</label>
             </div>
             <div class="question">
-                <input type="text" required name="senha"/>
+                <input type="password" required name="senha"/>
                 <label >Senha</label>
             </div>
             <div>
