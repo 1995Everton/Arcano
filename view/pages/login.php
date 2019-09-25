@@ -1,19 +1,65 @@
-<?php include __DIR__ . "/../header.php";?>
-<form>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+<div class="sky">
+    <div class="sky-level">
     </div>
-    
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <div class="sky-level"></div>
+    <div class="sky-level"></div>
+    <div class="sky-level"></div>
+    <div class="sky-level"></div>
+    <div class="sky-level"></div>
+    <div id="stars" class="sky-stars">
+        <img style="position: fixed;width: 100%; height: 100%" src="img/star.gif">
+        <div class="center">
+            <div id="login">
+
+                <div class="eye">
+                    <div class="shut"></div>
+                    <div class="ball">
+                        <div class="shine"></div>
+                    </div>
+                </div>
+                <div class="mouth"></div>
+                <form action="index.php?pagina=fazer-login" method="post">
+                    <div>
+                        <span class="icon"><i class="fa fa-user"></i></span>
+                        <input type="text" placeholder="E-Mail" name="email" />
+                    </div>
+                    <br />
+                    <div>
+                        <span class="icon lock"><i class="fa fa-lock"></i></span>
+                        <input type="password" placeholder="Senha" name="senha"/>
+                    </div>
+                    <div class="btns">
+                        <button type="submit" class="button btn btn-block btn-info">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-<?php include __DIR__ . "/../footer.php";?>
+</div>
+
+
+<script>
+    $('input[type="password"]').focus(function() {
+        $('.eye').addClass('up');
+    });
+
+    $('input[type="password"]').blur(function() {
+        $('.eye').removeClass('up');
+    });
+
+
+    $('input[type="text"]').focus(function() {
+        $('.eye').addClass('down');
+    });
+
+    $('input[type="text"]').blur(function() {
+        $('.eye').removeClass('down');
+    });
+
+    $('input').blur(function() {
+        $('.eye').addClass('blink');
+        setTimeout(function() {
+            $('.eye').removeClass('blink');
+        },600);
+    });
+</script>

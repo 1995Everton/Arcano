@@ -1,25 +1,19 @@
-<?php include __DIR__ . "/../header.php";?>
-    
-    <input type="checkbox" id="click">
-    <label for="click" id="icone"><img src="img/icone.gif"></label>
+<div class="sky">
+    <div class="sky-level">
+    </div>
+    <div class="sky-level"></div>
+    <div class="sky-level"></div>
+    <div class="sky-level"></div>
+    <div class="sky-level"></div>
+    <div class="sky-level"></div>
+    <div id="stars" class="sky-stars">
+        <img style="position: fixed;width: 100%; height: 100%" src="img/star.gif">
+        <div class="logoCirculo">
+            <img src="img/Circulologo.png">
+        </div>
+        <div class="logoPrincipal">
+            <img src="img/Logo.png">
+        </div>
+    </div>
+</div>
 
-    <div class="barra">
-        <nav>
-            <a href="">
-                <div class="link"><img src="img/BPlayPassed.png"></div>
-            </a>
-            <a href="">
-                <div class="link"><img src="img/BLoginPassed.png"></div>
-            </a>
-            <a href="">
-                <div class="link"><img src="img/BCadastroPassed.png"></div>
-            </a>
-        </nav>
-    </div>
-    <div class="logoCirculo">
-        <img src="img/Circulologo.png">
-    </div>
-    <div class="logoPrincipal">
-        <img style="margin-left: 50px;" src="img/Logo.png">
-    </div>
-<?php include __DIR__ . "/../footer.php";?>
