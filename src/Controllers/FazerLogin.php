@@ -11,13 +11,17 @@ namespace Arcanos\Enigmas\Controllers;
 
 class FazerLogin extends Banco implements RequestHandlerInterface
 {
-
     public function handle()
     {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
-        $usuario = $this->banco->select('usuarios',"SELECT * FROM usuarios WHERE email = ?",[$email],false);
-        var_dump($usuario);
-        exit();
+        $usuario = $this->banco->select("SELECT * FROM usuarios WHERE email = ?",[$email],false);
+        if($usuario && $this->compararHash($senha,$usuario['senha'])){
+            $_SESSION['usuario'] = $usuario['nome_usuario'];
+            $_SESSION['usuario'] = $usuario['id_usuarios'];
+            header('Location: index.php?pagina=enigma-home');
+        }else{
+            header('Location: index.php?pagina=login');
+        }
     }
 }

@@ -1,6 +1,6 @@
-<div class="center">
-    <div id="login">
-
+<link rel="stylesheet" href="css/login.css">
+<div class="row justify-content-center">
+    <div id="login" class="d-flex flex-column">
         <div class="eye">
             <div class="shut"></div>
             <div class="ball">
@@ -8,18 +8,17 @@
             </div>
         </div>
         <div class="mouth"></div>
-        <form action="index.php?pagina=fazer-login" method="post">
-            <div>
-                <span class="icon"><i class="fa fa-user"></i></span>
-                <input type="text" placeholder="E-Mail" name="email" />
+        <form action="index.php?pagina=fazer-login" method="post" class="mx-5">
+            <div class="question">
+                <input type="text" required name="email" />
+                <label>E-Mail</label>
             </div>
-            <br />
-            <div>
-                <span class="icon lock"><i class="fa fa-lock"></i></span>
-                <input type="password" placeholder="Senha" name="senha"/>
+            <div class="question">
+                <input type="text" required name="senha"/>
+                <label >Senha</label>
             </div>
-            <div class="btns">
-                <button type="submit" class="button btn btn-block btn-info">Login</button>
+            <div>
+                <button type="submit"></button>
             </div>
         </form>
     </div>

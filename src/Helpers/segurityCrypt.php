@@ -16,7 +16,7 @@ trait segurityCrypt
 
     public function criptografar($value)
     {
-        $hash = crypt($value, '$2a$' . $this->_saltCost . '$' . $this->_salt . '$');
+        $hash = crypt($value, $this->_saltCost . '$' . $this->_salt );
         return $hash;
     }
 

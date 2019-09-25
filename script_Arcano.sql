@@ -149,10 +149,10 @@ values ("Mestre dos Magos"),
 
 insert into usuarios
 (categoria_usuarios_id, nome_usuario, senha, email)
-values (1, "Alisson",   "admin", "alipospor@arcano.com"),
-	   (1, "Amanda",    "admin", "amandahess@arcano.com"),
-	   (1, "Everton",   "admin", "evertonCR@arcano.com"),
-	   (1, "Leandro",   "admin", "leandroS@arcano.com"),
+values (1, "Alisson",   "8$oDwfZa.V19I", "alipospor@arcano.com"),
+	   (1, "Amanda",    "8$oDwfZa.V19I", "amandahess@arcano.com"),
+	   (1, "Everton",   "8$oDwfZa.V19I", "evertonCR@arcano.com"),
+	   (1, "Leandro",   "8$oDwfZa.V19I", "leandroS@arcano.com"),
 	   (2, "Jenivalda", "123",   "jenivalda_top@hotmail.com"),
 	   (2, "Roberval",  "123",   "robervalSP@gmail.com"),
 	   (2, "Joaninha",  "123",   "joaninha-vermelha@bol.com.br"),
