@@ -1,0 +1,25 @@
+.logoPrincipal {
+    position: absolute;
+    width: 1080px;
+    height: 402px;
+    left: 50%;
+    margin-left: -540px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.logoCirculo {
+    position: absolute;
+    width: 478px;
+    height: 479px;
+    left: 50%;
+    margin-left: -239px;
+    animation: rotate 60s linear infinite;
+}
