@@ -19,6 +19,8 @@
                 </div>
                 <div class="btn btn-profile"><span></span></div>
             </div>
+            <div class="btn btn-profile"><span></span></div>
+        </div>
         <div class="box">
             <i class="fad fa-user-circle"></i>
             <i class="fad fa-cog"></i>
