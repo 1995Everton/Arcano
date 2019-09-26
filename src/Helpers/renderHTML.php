@@ -11,9 +11,11 @@ namespace Arcanos\Enigmas\Helpers;
 
 trait renderHTML
 {
-    public function view($caminho,$dados)
+    public function view($caminho,$dados = [])
     {
         extract($dados);
+        include __DIR__."/../../view/header.php";
         include __DIR__."/../../view/pages/".$caminho;
+        include __DIR__."/../../view/footer.php";
     }
 }
