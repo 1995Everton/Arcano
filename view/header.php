@@ -17,5 +17,5 @@
     <?php if(isset($_SESSION['id_usuarios'])):
             include __DIR__."./navbar.php";
     endif; ?>
-    <div class="">
+<?php include __DIR__."/background.php"?>
 

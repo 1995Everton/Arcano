@@ -22,17 +22,6 @@
 <!--</table>-->
 
 <link rel="stylesheet" href="css/table.css">
-
-<div class="sky">
-    <div class="sky-level">
-    </div>
-    <div class="sky-level"></div>
-    <div class="sky-level"></div>
-    <div class="sky-level"></div>
-    <div class="sky-level"></div>
-    <div class="sky-level"></div>
-    <div id="stars" class="sky-stars">
-        <img style="position: absolute;width: 100%; height: 100%" src="img/star.gif">
         <div style="color: white" class="container">
             <table>
                 <thead>
@@ -57,9 +46,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
-</div>
-
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.30.1/js/jquery.tablesorter.min.js'></script>
 <script>

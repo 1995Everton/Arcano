@@ -1,38 +1,27 @@
 <link rel="stylesheet" href="css/login.css">
-<div class="sky">
-    <div class="sky-level">
-    </div>
-    <div class="sky-level"></div>
-    <div class="sky-level"></div>
-    <div class="sky-level"></div>
-    <div class="sky-level"></div>
-    <div class="sky-level"></div>
-    <div id="stars" class="sky-stars">
-        <img style="position: absolute;width: 100%; height: 100%" src="img/star.gif">
-        <div class="row justify-content-center">
-            <div id="login" class="d-flex flex-column">
-                <div class="eye">
-                    <div class="shut"></div>
-                    <div class="ball">
-                        <div class="shine"></div>
-                    </div>
-                </div>
-                <div class="mouth"></div>
-                <form action="index.php?pagina=autenticar" method="post" class="mx-5">
-                    <div class="question">
-                        <input type="text" required name="email" />
-                        <label>E-Mail</label>
-                    </div>
-                    <div class="question">
-                        <input type="password" required name="senha"/>
-                        <label >Senha</label>
-                    </div>
-                    <div>
-                        <button type="submit"></button>
-                    </div>
-                </form>
+
+<div class="row justify-content-center">
+    <div id="login" class="d-flex flex-column">
+        <div class="eye">
+            <div class="shut"></div>
+            <div class="ball">
+                <div class="shine"></div>
             </div>
         </div>
+        <div class="mouth"></div>
+        <form action="index.php?pagina=autenticar" method="post" class="mx-5">
+            <div class="question">
+                <input type="text" required name="email" />
+                <label>E-Mail</label>
+            </div>
+            <div class="question">
+                <input type="password" required name="senha"/>
+                <label >Senha</label>
+            </div>
+            <div>
+                <button type="submit"></button>
+            </div>
+        </form>
     </div>
 </div>
 
