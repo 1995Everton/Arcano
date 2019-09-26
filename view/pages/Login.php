@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="mouth"></div>
-        <form action="index.php?pagina=fazer-login" method="post" class="mx-5">
+        <form action="index.php?pagina=autenticar" method="post" class="mx-5">
             <div class="question">
                 <input type="text" required name="email" />
                 <label>E-Mail</label>

@@ -19,7 +19,11 @@
                 </div>
                 <div class="btn btn-profile"><span></span></div>
             </div>
-        <div class="box"><i class="fa fa-codepen"></i><i class="fa fa-facebook"></i><i class="fa fa-github"></i><i class="fa fa-tumblr"></i><i class="fa fa-twitter"></i></div>
+        <div class="box">
+            <i class="fad fa-user-circle"></i>
+            <i class="fad fa-cog"></i>
+            <i class="fad fa-sign-out"></i>
+        </div>
     </div>
 </nav>
 <script>
@@ -29,4 +33,7 @@
             return $('.box').toggleClass('open');
         });
     }).call(this);
+    $('.fa-sign-out').click(function () {
+        window.location.href = 'index.php?pagina=autenticar&acao=logout';
+    })
 </script>

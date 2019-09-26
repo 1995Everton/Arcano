@@ -16,7 +16,7 @@ A extensão *PHP Data Objects* ( PDO ) define uma interface leve e consistente p
 | Opção | Type | Padrão | Descrição|
 | ------------- | -------| -------| -------|
 | `sql`             |  String  |  null | Query para consulta |
-| `where`   |  Array  | [ ] | Array Associativo ( campo => valor) que representa os critérios de busca |
+| `where`   |  Array  | [ ] | Array que representa os critérios de busca |
 | `all`    |   Boolean | true | Retorna todos os dados ( ignora opção where )  |
 
     <?php
