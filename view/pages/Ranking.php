@@ -1,26 +1,3 @@
-<!--<table class="table">-->
-<!--    <thead>-->
-<!--        <tr>-->
-<!--            <th scope="col">#</th>-->
-<!--            <th scope="col">Nome</th>-->
-<!--            <th scope="col">Pontuação</th>-->
-<!--            <th scope="col">Progresso</th>-->
-<!--            <th scope="col">Data</th>-->
-<!--        </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--        --><?php //foreach ($ranking as $key =>$usuario):?>
-<!--            <tr>-->
-<!--                <th scope="row">--><?//= $key;?><!--</th>-->
-<!--                <td>--><?//= $usuario['nome_usuario'];?><!--</td>-->
-<!--                <td>--><?//= $usuario['pontos'];?><!--</td>-->
-<!--                <td>--><?//= $usuario['progresso']."%";?><!--</td>-->
-<!--                <td>--><?//= date("d/m/Y", strtotime($usuario['data']));?><!--</td>-->
-<!--            </tr>-->
-<!--        --><?php //endforeach;?>
-<!--    </tbody>-->
-<!--</table>-->
-
 <link rel="stylesheet" href="css/table.css">
 
 <div class="sky">
@@ -47,10 +24,18 @@
                 <tbody>
                 <?php foreach ($ranking as $key =>$usuario):?>
                     <tr>
-                        <td data-label="Nº"><?= $key;?></td>
+                        <td data-label="Nº"><?= ($key+1)."º";?></td>
                         <td data-label="Nome"><?= $usuario['nome_usuario'];?></td>
-                        <td data-label="Pontuação"><?= $usuario['pontos'];?></td>
-                        <td data-label="Progresso"><?= $usuario['progresso']."%";?></td>
+                        <td data-label="Pontuação">
+                            <a href="#" class="nes-badge">
+                                <span class="is-primary"><?= $usuario['pontos'];?></span>
+                            </a>
+                        </td>
+                        <td data-label="Progresso">
+                            <a href="#" class="nes-badge">
+                                <span class="is-success"><?= $usuario['progresso']."%";?></span>
+                            </a>
+                        </td>
                         <td data-label="Data"><?= date("d/m/Y", strtotime($usuario['data']));?></td>
                     </tr>
                 <?php endforeach;?>

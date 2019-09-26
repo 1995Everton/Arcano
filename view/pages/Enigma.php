@@ -1,7 +1,4 @@
 <link rel="stylesheet" href="css/enigma_engine.css">
-<link href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-<link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
 <div class="sky">
     <div class="sky-level">
     </div>
