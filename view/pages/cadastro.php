@@ -4,7 +4,7 @@ var senha = document.getElementById("senha");
 
 senha.addEventListener("input", function (event) {
   if (senha.validity.typeMismatch) {
-    senha.setCustomValidity("A senha deve conter pelo menos uma letra e um numero");
+    senha.setCustomValidity("A senha deve conter pelo menos uma letra e um numero!");
   } else {
     senha.setCustomValidity("");
   }
@@ -21,10 +21,11 @@ senha.addEventListener("input", function (event) {
     </div>
     <div class="w-100"></div>
     <div class="form-group col-md-6">
-        <input type="password" class="form-control" id="senha" name="senha" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9]{8,}$" placeholder="Senha"  >
+        
+        <input type="password" class="form-control" id="senha" name="senha" ^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9]{6,16}$ placeholder="Senha"  >
     </div>
     <div class="form-group col-md-6">
-        <input type="password" class="form-control" name="confsenha" placeholder="Confirmar Senha" required> 
+        <input type="password" class="form-control" name="confsenha"  placeholder="Confirmar Senha" required> 
     </div>
     <div class="w-100"></div>
     <div class="form-group col-md-6">
@@ -35,7 +36,7 @@ senha.addEventListener("input", function (event) {
   </div>
 </form>
 <?php
-$teste = $_GET['msg'];
+$teste = isset($_GET['msg']); 
 
 
 switch ($teste) {
@@ -59,7 +60,7 @@ switch ($teste) {
         echo "<script>alert('Senha curta demais')</script>";
         break;
     default:
-        echo "<script>alert('slaaa')</script>";
+
         break;
 }
 
