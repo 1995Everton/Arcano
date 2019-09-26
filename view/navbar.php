@@ -8,13 +8,14 @@
             <li class="nav-item"><a class="nav-link" href="index.php?pagina=home">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php?pagina=enigma-home">Enigmas</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php?pagina=login">Ranking</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.php?pagina=perfil">Perfil</a> </li>
         </ul>
     </div>
     <div class="profile">
         <div class="photo"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/764024/profile/profile-512.jpg"/></div>
             <div class="content">
                 <div class="text">
-                <h5>Usuário</h5>
+                <h5><?php echo $_SESSION['nome_usuario']?></h5>
                 </div>
                 <div class="btn btn-profile"><span></span></div>
             </div>

@@ -23,5 +23,6 @@ class FazerLogin extends Banco implements RequestHandlerInterface
         }else{
             header('Location: index.php?pagina=login');
         }
+
     }
 }
