@@ -7,7 +7,7 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="nav-link" href="index.php?pagina=home">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php?pagina=enigma-home">Enigmas</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.php?pagina=login">Ranking</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.php?pagina=ranking">Ranking</a></li>
             <li class="nav-item"><a class="nav-link" href="index.php?pagina=perfil">Perfil</a> </li>
         </ul>
     </div>
