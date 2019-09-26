@@ -9,7 +9,7 @@
             <section class="message -right">
 
                 <div class="nes-balloon from-right">
-                    <p>Voçê e capaz de resolver esse Misterio?</p>
+                    <p>Você é capaz de resolver esse mistério?</p>
                 </div>
                 <img width="100" height="150" src="img/run.gif">
             </section>

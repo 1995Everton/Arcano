@@ -9,7 +9,9 @@
             "email": "everton_cardoso@live.com"
         }
     ],
-    "require": {},
+    "require": {
+      "ext-mysqli": "*"
+    },
     "autoload": {
         "psr-4": {
             "Arcanos\\Enigmas\\" : "src/"

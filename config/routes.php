@@ -5,6 +5,7 @@ use Arcanos\Enigmas\Controllers\Enigmas\EnigmaHome;
 use Arcanos\Enigmas\Controllers\Login;
 use Arcanos\Enigmas\Controllers\Cadastro;
 use Arcanos\Enigmas\Controllers\Home;
+use Arcanos\Enigmas\Controllers\Perfil;
 use Arcanos\Enigmas\Controllers\PersistenciaUsuario;
 
 
@@ -19,7 +20,8 @@ class Routes
             'enigma-home' => EnigmaHome::class,
             'autenticar' => Autenticar::class,
             'persistenciausuario' => PersistenciaUsuario::class,
-            'enigma-home' => EnigmaHome::class
+            'enigma-home' => EnigmaHome::class,
+            'perfil' => Perfil::class
         ];
     }
 }
