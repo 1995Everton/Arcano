@@ -1,10 +1,3 @@
-<?php
-if(empty($_SESSION['usuario_logado']) && empty($_SESSION['pontuacao_usuario'])){
-    header("Refresh: 0");
-}
-?>
-
-
 <div class="sky">
     <div class="sky-level">
     </div>
