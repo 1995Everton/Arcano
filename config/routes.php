@@ -7,6 +7,7 @@ use Arcanos\Enigmas\Controllers\Cadastro;
 use Arcanos\Enigmas\Controllers\Home;
 use Arcanos\Enigmas\Controllers\Perfil;
 use Arcanos\Enigmas\Controllers\PersistenciaUsuario;
+use Arcanos\Enigmas\Controllers\Ranking;
 
 
 class Routes
@@ -21,7 +22,8 @@ class Routes
             'autenticar' => Autenticar::class,
             'persistenciausuario' => PersistenciaUsuario::class,
             'enigma-home' => EnigmaHome::class,
-            'perfil' => Perfil::class
+            'perfil' => Perfil::class,
+            'ranking' => Ranking::class
         ];
     }
 }
