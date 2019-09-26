@@ -9,7 +9,7 @@
 namespace Arcanos\Enigmas\Controllers;
 
 
-class FazerLogin extends Banco implements RequestHandlerInterface
+class Autenticar extends Banco implements RequestHandlerInterface
 {
     public function handle()
     {
@@ -24,4 +24,5 @@ class FazerLogin extends Banco implements RequestHandlerInterface
             header('Location: index.php?pagina=login');
         }
     }
+
 }

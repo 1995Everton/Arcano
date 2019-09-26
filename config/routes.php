@@ -1,7 +1,7 @@
 <?php
 
+use Arcanos\Enigmas\Controllers\Autenticar;
 use Arcanos\Enigmas\Controllers\Enigmas\EnigmaHome;
-use Arcanos\Enigmas\Controllers\FazerLogin;
 use Arcanos\Enigmas\Controllers\Login;
 use Arcanos\Enigmas\Controllers\Cadastro;
 use Arcanos\Enigmas\Controllers\Home;
@@ -17,7 +17,7 @@ class Routes
             'cadastro' => Cadastro::class,
             'home' => Home::class,
             'enigma-home' => EnigmaHome::class,
-            'fazer-login' => FazerLogin::class,
+            'autenticar' => Autenticar::class,
             'persistenciausuario' => PersistenciaUsuario::class,
             'enigma-home' => EnigmaHome::class
         ];
