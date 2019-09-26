@@ -12,12 +12,12 @@
         </ul>
     </div>
     <div class="profile">
-        <div class="photo"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/764024/profile/profile-512.jpg"/></div>
-            <div class="content">
-                <div class="text">
+        <div class="photo">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/764024/profile/profile-512.jpg"/>
+        </div>
+        <div class="content">
+            <div class="text">
                 <h5><?php echo $_SESSION['nome_usuario']?></h5>
-                </div>
-                <div class="btn btn-profile"><span></span></div>
             </div>
             <div class="btn btn-profile"><span></span></div>
         </div>
