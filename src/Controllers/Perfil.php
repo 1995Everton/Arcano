@@ -9,7 +9,7 @@ class Perfil extends Banco implements RequestHandlerInterface
 
     public function handle()
     {
-        $this->view('Perfil.php',[]);
+
 
         $id_usuarios = $_SESSION['id_usuarios'];
         $busca = $this->banco->select("SELECT usuarios.id_usuarios, usuarios_titulo.titulo_id, titulo.ds_titulo, pontuacao.progresso 
@@ -24,5 +24,6 @@ class Perfil extends Banco implements RequestHandlerInterface
 
         $_SESSION['pontuacao_usuario'] = $busca['progresso'];
         $_SESSION['titulo_usuario'] = $busca['ds_titulo'];
+        $this->view('Perfil.php',[]);
     }
 }
