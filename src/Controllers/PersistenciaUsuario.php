@@ -14,9 +14,9 @@ class PersistenciaUsuario extends Banco implements RequestHandlerInterface
             $senha = $_POST['senha'];
             $confsenha = $_POST['confsenha'];
 
-            $sla = array($this->banco->select("SELECT * FROM usuarios",[2],true));
-
-            $validar = array($sla);
+            $dados = $this->banco->select("SELECT * FROM usuarios WHERE nome_usuario = ? OR email = ?",[$usuario, $email],true);
+var_dump($dados);
+            print_r($dados);
             //$arrValidar = mysqli_fetch_all($validar, MYSQLI_ASSOC);
 
             if(filter_var($email, FILTER_VALIDATE_EMAIL))
@@ -28,13 +28,13 @@ class PersistenciaUsuario extends Banco implements RequestHandlerInterface
                 header("Location: index.php?pagina=cadastro&msg=1");
             }
 
-            foreach ($validar as $key => $value) {
-                if ($value['nome_usuario'] == $validar ) {
+            foreach ($dados as $key => $value) {
+                if ($value->nome_usuario == $usuario ) {
                     
                     header("Location: index.php?pagina=cadastro&msg=2");
                     
                 }
-                elseif ($value['email'] == $email) {
+                elseif ($value->email == $email) {
                     header("Location: index.php?pagina=cadastro&msg=3");
                 }
             }
