@@ -4,8 +4,10 @@ use Arcanos\Enigmas\Controllers\Autenticar;
 use Arcanos\Enigmas\Controllers\Enigmas\EnigmaHome;
 use Arcanos\Enigmas\Controllers\Login;
 use Arcanos\Enigmas\Controllers\Cadastro;
+use Arcanos\Enigmas\Controllers\CadastroEnigma;
 use Arcanos\Enigmas\Controllers\Home;
 use Arcanos\Enigmas\Controllers\Perfil;
+use Arcanos\Enigmas\Controllers\PersistenciaEnigma;
 use Arcanos\Enigmas\Controllers\PersistenciaUsuario;
 use Arcanos\Enigmas\Controllers\Ranking;
 
@@ -23,7 +25,10 @@ class Routes
             'persistenciausuario' => PersistenciaUsuario::class,
             'enigma-home' => EnigmaHome::class,
             'perfil' => Perfil::class,
-            'ranking' => Ranking::class
+            'ranking' => Ranking::class,
+            /* made by alisson */
+            'enigma-cadastro' => CadastroEnigma::class,
+            'persistencia-enigma' => PersistenciaEnigma::class
         ];
     }
 }
