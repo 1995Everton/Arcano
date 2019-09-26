@@ -32,4 +32,7 @@
             return $('.box').toggleClass('open');
         });
     }).call(this);
+    $('.fa-sign-out').click(function () {
+        window.location.href = 'index.php?pagina=autenticar&acao=logout';
+    })
 </script>
