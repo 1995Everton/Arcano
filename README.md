@@ -2,9 +2,10 @@
 
 ![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
 
-**Documentação**
+# Documentação
 
-#Padrão de Desenvolvimento MVC
+## Padrão de Desenvolvimento MVC
+
 MVC significa **Model** – **View** – **Controller** (Modelo – Visão – Controlador)  e é um modelo da arquitetura de software que tem a função de separar front-end (que o usuário vê) do back-end (que é o motor da aplicação).
 
 A estrutura MVC funciona da seguinte maneira:
@@ -30,7 +31,7 @@ Na imagem acima temos uma apresentação de como a informação vai passar pelo 
 7. A ***View*** (Visão) devolve a pagina ao  ***Controller*** (Controlador) que comunica ao servidor ***Web Server*** (Servidor) que já terminou o processamento das informações.
 8. E por fim o ***Web Server*** (Servidor) finaliza a requisição mandando a pagina ao  ***Browser*** (Navegador) que exibe ela para o usuario final.
 
-###Estrutura de pastas
+### Estrutura de pastas
 
 Nossas pastas ficarão da seguinte maneira:
 
@@ -38,32 +39,32 @@ Nossas pastas ficarão da seguinte maneira:
     ├── config
             ├──Routes.php
     ├── public
-		    ├──css
-		           ├──styles.css
-	        ├──js
-				   ├──script.js
+	    ├──css
+	       ├──styles.css
+	    ├──js
+	       ├──script.js
             ├──img
-				   ├──imagem.png
-			├──index.php
+	       ├──imagem.png
+	    ├──index.php
     ├── src
-		    ├──Controllers
-		           ├──Controller.php
-	        ├──Helpers
-				   ├──helpers.php
+            ├──Controllers
+	       ├──Controller.php
+	    ├──Helpers
+	       ├──helpers.php
             ├──Models
-				   ├──Crud.php
-	├── vendor
+	       ├──Crud.php
+    ├── vendor
             ├──autoloader.php
     ├── view
             ├──pages
-					├──Pagina.php
-			├──BasePagina.php
+	       ├──Pagina.php
+	    ├──BasePagina.php
     ├── LICENSE
     └── README.md
 
-# Banco De Dados ###
+## Banco De Dados ###
 `MYSQL`
-## Padrão de Uso ###
+### Padrão de Uso ###
 A extensão *PHP Data Objects* ( PDO ) define uma interface leve e consistente para acessar bancos de dados em PHP.
 ### SELECT ###
 ***Opções***
@@ -144,6 +145,6 @@ A extensão *PHP Data Objects* ( PDO ) define uma interface leve e consistente p
     ?>
     
     
-### Bibliotecas ###
+### Bibliotecas
 ***Componentes em 8-bits***
 https://nostalgic-css.github.io/NES.css/
