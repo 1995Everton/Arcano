@@ -22,14 +22,14 @@ Veja uma imagem representando como o modelo **MVC** funciona:
 
 Na imagem acima temos uma apresentação de como a informação vai passar pelo nosso sistema. Veja uma descrição:
 
-1. O ***Browser*** (Navegador) realiza a solicitação para o ***Web Server*** (Servidor) aonde se encontra toda a logica de negocio da aplicação .
-2. O ***Web Server*** (Servidor) verifica qual ***Routes*** (Rotas ou URL) o ***Browser*** (Navegador) quer acessar .
-3. A ***Routes*** (Rotas ou URL) ***Dispatcher*** (envia) a solicitação para uma ***Controller*** (Controlador) .
-4. O ***Controller*** (Controlador) começa a executar a logica de negocio da aplicação.
-5. Primeiro ele pede ao  ***Model*** (Modelo) para consultar, adicionar, atualizar ou deletar os dados no ***MYSQL*** (Banco de Dados) e retornar a informação novamente para o ***Controller*** (Controlador) .
-6. Assim que a ***Controller*** (Controlador) recebe esses dados, ele monta as informações necessaria e chama a ***View*** (Visão) em seguinda, que cria toda a pagina que o ***Browser*** (Navegador) vai exibir .
-7. A ***View*** (Visão) devolve a pagina ao  ***Controller*** (Controlador) que comunica ao servidor ***Web Server*** (Servidor) que já terminou o processamento das informações.
-8. E por fim o ***Web Server*** (Servidor) finaliza a requisição mandando a pagina ao  ***Browser*** (Navegador) que exibe ela para o usuario final.
+1. O ***Browser*** (Navegador) realiza a solicitação para o ***Web Server*** (Servidor) aonde se encontra toda a lógica de negócio da aplicação.
+2. O ***Web Server*** (Servidor) verifica qual ***Routes*** (Rotas ou URL) o ***Browser*** (Navegador) quer acessar.
+3. A ***Routes*** (Rotas ou URL) ***Dispatcher*** (envia) a solicitação para uma ***Controller*** (Controlador).
+4. O ***Controller*** (Controlador) começa a executar a lógica de negócio da aplicação.
+5. Primeiro ele pede ao  ***Model*** (Modelo) para consultar, adicionar, atualizar ou deletar os dados no ***MYSQL*** (Banco de Dados) e retornar a informação novamente para o ***Controller*** (Controlador).
+6. Assim que a ***Controller*** (Controlador) recebe esses dados, ele monta as informações necessaria e chama a ***View*** (Visão) em seguinda, que cria toda a pagina que o ***Browser*** (Navegador) vai exibir.
+7. A ***View*** (Visão) devolve a página ao  ***Controller*** (Controlador) que comunica ao servidor ***Web Server*** (Servidor) que já terminou o processamento das informações.
+8. E por fim o ***Web Server*** (Servidor) finaliza a requisição mandando a página ao  ***Browser*** (Navegador) que exibe ela para o usuário final.
 
 ### Estrutura de pastas
 
@@ -93,7 +93,7 @@ A extensão *PHP Data Objects* ( PDO ) define uma interface leve e consistente p
 | Opção | Type | Padrão | Descrição|
 | ------------- | -------| -------| -------|
 | ` table`             |  String  |  null | Nome da tabela no banco |
-| `value`   |  Array  | [ ] | Array Associativo ( campo => valor) que representa os os valores que serão inseridos no banco
+| `value`   |  Array  | [ ] | Array Associativo ( campo => valor) que representa os valores que serão inseridos no banco
 
     <?php
         $this->banco->insert('usuarios',
@@ -113,7 +113,7 @@ A extensão *PHP Data Objects* ( PDO ) define uma interface leve e consistente p
 | Opção | Type | Padrão | Descrição|
 | ------------- | -------| -------| -------|
 | `table`             |  String  |  null | Query para consulta |
-| `value`   |  Array  | [ ] | Array Associativo ( campo => valor) que representa os os valores que serão inseridos no banco
+| `value`   |  Array  | [ ] | Array Associativo ( campo => valor) que representa os valores que serão inseridos no banco
 | `where`   |  Array  | [ ] | Array Associativo ( campo => valor) que representa os critérios de busca |
 
     <?php
