@@ -1,7 +1,4 @@
-
-    </div>
-</div>
-
-        <script  src="js/scriptBG.js"></script>
+            </div>
+        </div>
     </body>
 </html>

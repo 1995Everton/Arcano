@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="css/login.css">
-
 <div class="row justify-content-center">
     <div id="login" class="d-flex flex-column">
         <div class="eye">
@@ -10,39 +8,33 @@
         </div>
         <div class="mouth"></div>
         <form action="index.php?pagina=autenticar" method="post" class="mx-5">
-            <div class="question">
-                <input type="text" required name="email" />
-                <label>E-Mail</label>
+            <div class="nes-field">
+                <label class="text-white">E-Mail</label>
+                <input type="text" class="nes-input is-dark" name="email">
             </div>
-            <div class="question">
-                <input type="password" required name="senha"/>
-                <label >Senha</label>
+            <div class="nes-field">
+                <label class="text-white">Senha</label>
+                <input type="password" class="nes-input is-dark" name="senha">
             </div>
-            <div>
-                <button type="submit"></button>
+            <div class="mt-3">
+                <button type="submit" class="nes-btn is-primary">Logar</button>
             </div>
         </form>
     </div>
 </div>
-
 <script>
     $('input[type="password"]').focus(function() {
         $('.eye').addClass('up');
     });
-
     $('input[type="password"]').blur(function() {
         $('.eye').removeClass('up');
     });
-
-
     $('input[type="text"]').focus(function() {
         $('.eye').addClass('down');
     });
-
     $('input[type="text"]').blur(function() {
         $('.eye').removeClass('down');
     });
-
     $('input').blur(function() {
         $('.eye').addClass('blink');
         setTimeout(function() {

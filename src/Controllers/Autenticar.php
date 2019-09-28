@@ -24,12 +24,13 @@ class Autenticar extends Banco implements RequestHandlerInterface
             if($usuario && $this->compararHash($senha,$usuario['senha'])){
                 $_SESSION['nome_usuario'] = $usuario['nome_usuario'];
                 $_SESSION['id_usuarios'] = $usuario['id_usuarios'];
-                header('Location: index.php?pagina=enigma-home');
+                $this->toast('Logado com Sucesso!','Bem Vindo!','success');
+                header('Location: index.php?pagina=home');
             }else{
+                $this->toast('Login ou Senha Inválidos!','Falha!','danger');
                 header('Location: index.php?pagina=login');
             }
         }
-
     }
 
 }

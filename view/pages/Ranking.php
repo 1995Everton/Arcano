@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="css/table.css">
-        <div style="color: white" class="container">
+    <div style="color: white" class="container">
             <table>
                 <thead>
                 <tr>
@@ -31,8 +30,6 @@
                 </tbody>
             </table>
         </div>
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.30.1/js/jquery.tablesorter.min.js'></script>
 <script>
     $(function(){
         $('table').tablesorter();

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
         <img src="https://getbootstrap.com.br/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-        Bootstrap
+        Arcano
     </a>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
@@ -17,7 +17,7 @@
         </div>
         <div class="content">
             <div class="text">
-                <h5><?php echo $_SESSION['nome_usuario']?></h5>
+                <span><?php echo $_SESSION['nome_usuario']?></span>
             </div>
             <div class="btn btn-profile"><span></span></div>
         </div>

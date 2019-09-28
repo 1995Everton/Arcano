@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="css/enigma_engine.css">
 <div class="row justify-content-center">
     <div class="col-9">
         <section class="message-list">

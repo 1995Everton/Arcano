@@ -1,10 +1,7 @@
-@import 'https://fonts.googleapis.com/css?family=Raleway';
-
 .profile {
-  width: 226px;
+  width: 21%;
   height: 48px;
-  transform: translate(0%, 0%);
-  /* transform: translate(-103%, 334%); */
+  transform: translate(-4%, 0%);
   border-radius: 5px;
   background-color: #fafafa;
   box-shadow: 0 0 3px #babbbc;
@@ -50,8 +47,8 @@
 .profile .content::before {
   content: "";
   position: absolute;
-  width: 158px;
-    height: 81px;
+  width: 72%;
+  height: 81px;
   background-color: #e9f3e6;
   left: 0;
   top: -20px;
