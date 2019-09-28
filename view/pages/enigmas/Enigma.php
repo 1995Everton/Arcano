@@ -3,17 +3,16 @@
         <section class="message-list">
             <section class="message -right">
                 <div class="nes-balloon from-right">
-                    <p>Você é capaz de resolver esse mistério?</p>
+                    <p>Arcanos</p>
                 </div>
                 <img width="100" height="150" src="img/run.gif">
             </section>
         </section>
         <div class="nes-container is-rounded">
-            <p>Quais são os 2 números cujo produto é 48 e, quando o número maior é dividido pelo menor, obtem-se quociente 3?</p>
+            <p>PRAPARADO PARA O DESAFIO JOVEM MESTRE?</p>
         </div>
         <div class="m-4">
-            <label for="textarea_field">Resposta</label>
-            <textarea id="textarea_field" class="nes-textarea"></textarea>
+            <a href="index.php?pagina=enigma-fase" class="nes-btn is-error">PRESS START BUTTON</a>
         </div>
     </div>
 </div>

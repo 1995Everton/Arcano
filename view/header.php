@@ -10,7 +10,7 @@
          <!-- Css Projeto-->
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/dropdown.css">
-        <link rel="stylesheet" href="css/enigma.css">
+        <link rel="stylesheet" href="css/enigma-3.css">
         <link rel="stylesheet" href="css/login.css">
         <link rel="stylesheet" href="css/background.css">
         <link rel="stylesheet" href="css/home.css">
@@ -19,6 +19,9 @@
         <script src='js/lib/jquery-3.4.1.js'></script>
         <script src='js/lib/jquery.tablesorter.js'></script>
         <script src='js/lib/bootstrap.js'></script>
+        <script src='js/lib/TweenLite.min.js'></script>
+        <script src='js/lib/Physics2DPlugin.min.js'></script>
+        <script src='js/lib/lodash.min.js'></script>
         <!--JavaScript Projeto-->
         <script src="js/background.js"></script>
     </head>

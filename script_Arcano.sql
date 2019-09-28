@@ -187,10 +187,14 @@ value ("Texto"),
 insert into enigmas
 (dificuldade_enigma_id, enigmas_tipos_id, enigma, data, resposta)
 values (1,1, "Alimente-me e eu vivo, ainda me dê uma bebida e eu morro.",  "2019-06-01", "O fogo"),
-	   (1,1, "Por que o marido da viúva não pode se casar com a cunhada?", "2019-06-02", "Porque ele está morto"),
+	   (1,2, "Por que o marido da viúva não pode se casar com a cunhada?", "2019-06-02", "Porque ele está morto"),
+	   (2,1, "O que se molha quando se seca?",    "2019-06-03", "Toalha"),
 	   (2,2, "O que é o que é, se compra para comer, mas não se come?",    "2019-06-03", "O prato"),
+	   (3,1, "Está duas vezes em um minuto, três vezes em um momento e e só uma vez em cem anos?","2019-06-04", "A letra M"),
 	   (3,2, "O que tem um olho, mas não pode ver?", 					   "2019-06-04", "Uma agulha"),
-	   (4,4, "O que sempre vem, mas nunca chega?", 						   "2019-06-04", "O amanhã");
+	   (4,1, "Não é um ser vivo mas tem cinco dedos?", 						   "2019-06-04", "Luvas"),
+	   (4,2, "O que sempre vem, mas nunca chega?", 						   "2019-06-04", "O amanhã");
+
 
 insert into pontuacao
 (usuarios_pontuacao_id, enigmas_pontuacao_id, pontos, data, progresso)
