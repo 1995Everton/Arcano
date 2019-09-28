@@ -61,6 +61,29 @@ Nossas pastas ficarão da seguinte maneira:
 	    ├──BasePagina.php
     ├── LICENSE
     └── README.md
+    
+### Padrão das Controllers
+
+**Exemplo**
+
+	<?php
+	namespace Arcanos\Enigmas\Controllers;
+	
+	class <nome-controller> extends Banco implements RequestHandlerInterface{
+	
+		public function handle()
+		{
+			#Toda a logica da controller vai aqui!
+		}
+	}
+
+**Regras para uso das Controllers***
+- [ ] Toda controller deve ter o mesmo nome do arquivo .
+- [ ] Toda controller deve ser uma classe .
+- [ ] Toda controller deve ter um `namespace` .
+- [ ] Toda controller deve `extends` da classe `Banco` .
+- [ ] Toda controller deve `implements` da interface `RequestHandlerInterface`
+- [ ] Toda controller deve ter o metodo `handle()`.
 
 ## Banco De Dados ###
 `MYSQL`
