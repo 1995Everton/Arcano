@@ -61,6 +61,53 @@ Nossas pastas ficarão da seguinte maneira:
 	    ├──BasePagina.php
     ├── LICENSE
     └── README.md
+    
+### Padrão das Controllers
+
+**Exemplo**
+
+	<?php
+	namespace Arcanos\Enigmas\Controllers;
+	
+	class <nome-controller> extends Banco implements RequestHandlerInterface{
+	
+		public function handle()
+		{
+			#Toda a logica da controller vai aqui!
+		}
+	}
+
+**Regras para uso das Controllers**
+- [ ] Toda controller deve ter o mesmo nome do arquivo .
+- [ ] Toda controller deve ser uma classe .
+- [ ] Toda controller deve ter um `namespace` .
+- [ ] Toda controller deve `extends` da classe `Banco` .
+- [ ] Toda controller deve `implements` da interface `RequestHandlerInterface`
+- [ ] Toda controller deve ter o metodo `handle()`.
+
+### Padrão das Rotas
+
+A rota é um array associativo que informa quais as **Controllers** o sistema deve usar. **SEMPRE** que criar uma Controller você irá ter que criar uma rota para essa Controller.
+
+**Exemplo**
+
+	<?php
+	use Arcanos\Enigmas\Controllers\Login;
+	use Arcanos\Enigmas\Controllers\<nome-controlle>;
+
+	class Routes{
+    		public static function getRoutes()
+    		{
+        		return [
+            			'login' => Login::class,
+				'<nome-rota>' => <nome-controlle>::class
+        		];
+    		}
+	}
+
+**Regras para uso das Routes**
+- [ ] Toda rota deve ser um array associativo `chave => valor`  .
+- [ ] Toda rota deve ter um `use`  que endicar aonde esta o arquivo .
 
 ## Banco De Dados ###
 `MYSQL`
