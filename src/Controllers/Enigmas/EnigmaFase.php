@@ -24,16 +24,42 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
         $_SESSION['fase'] = 1;
         $_SESSION['tentativas'] = 0;
         $_SESSION['concluidos'] =[0] ;
+        $_SESSION['dicas_concluidas'] =[0] ;
+        $_SESSION['pontuacao'] = 0 ;
+    }
+
+    public function save()
+    {
+        date_default_timezone_set('America/Sao_Paulo');
+        $data = date('Y-m-d H:i:s');
+        $progresso = (int) round(($_SESSION['fase'] - 1 )/8 * 100);
+        $pontos = (int) $_SESSION['pontuacao'];
+        $id_enigmas = (int) $_POST['id'];
+        $id_usuarios =(int) $_SESSION['id_usuarios'];
+        $sucesso = $this->banco->insert('pontuacao',[
+            'usuarios_pontuacao_id' => $id_usuarios,
+            'enigmas_pontuacao_id' => $id_enigmas,
+            'pontos' => $pontos,
+            'data' => $data,
+            'progresso' => $progresso
+        ]);
+        if($sucesso){
+            $this->toast('Pontuação salva com sucesso!','Parabêns','success');
+        }else{
+            $this->toast('Erro ao salvar Pontuação!','Sinto Muito','danger');
+        }
     }
 
     public function gameOver()
     {
+        $this->save();
         $this->resetarGame();
         $this->view('enigmas/GameOver.php');
     }
 
     public function winner()
     {
+        $this->save();
         $this->resetarGame();
         $this->view('enigmas/Winner.php');
     }
@@ -42,26 +68,18 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
     {
         switch ($_SESSION['fase']) {
             case 1:
-                $this->setTentativas(1);
-                break;
             case 2:
                 $this->setTentativas(1);
                 break;
             case 3:
-                $this->setTentativas(2);
-                break;
             case 4:
                 $this->setTentativas(2);
                 break;
             case 5:
-                $this->setTentativas(3);
-                break;
             case 6:
                 $this->setTentativas(3);
                 break;
             case 7:
-                $this->setTentativas(4);
-                break;
             case 8:
                 $this->setTentativas(4);
                 break;
@@ -74,6 +92,7 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
     public function setTentativas($dificuldade)
     {
         $ACERTOU = false;
+        $dica = '';
         switch ($_SESSION['tentativas']) {
             case 0:
                 $not = array_map(function($value) { return '?';},$_SESSION['concluidos']);
@@ -84,51 +103,30 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
                 $this->incrementTentativas();
                 break;
             case 1:
-                $ACERTOU = $this->verificaRespota();
-                if(!$ACERTOU){
-                    //Buscar Dica
-                }
-                $this->incrementTentativas();
-                break;
             case 2:
+            case 4:
+            case 6:
                 $ACERTOU = $this->verificaRespota();
-                if(!$ACERTOU){
-                    //Buscar Dica
-                }
                 $this->incrementTentativas();
                 break;
             case 3:
                 $ACERTOU = $this->verificaRespota();
                 if(!$ACERTOU){
-                    //Buscar Dica
-                }
-                $this->incrementTentativas();
-                break;
-            case 4:
-                $ACERTOU = $this->verificaRespota();
-                if(!$ACERTOU){
-                    //Buscar Dica
+                    $dica = $this->buscarDica($_POST['id'],1);
                 }
                 $this->incrementTentativas();
                 break;
             case 5:
                 $ACERTOU = $this->verificaRespota();
                 if(!$ACERTOU){
-                    //Buscar Dica
-                }
-                $this->incrementTentativas();
-                break;
-            case 6:
-                $ACERTOU = $this->verificaRespota();
-                if(!$ACERTOU){
-                    //Buscar Dica
+                    $dica = $this->buscarDica($_POST['id'],2);
                 }
                 $this->incrementTentativas();
                 break;
             case 7:
                 $ACERTOU = $this->verificaRespota();
                 if(!$ACERTOU){
-                    //Buscar Dica
+                    $dica = $this->buscarDica($_POST['id'],3);
                 }
                 $this->incrementTentativas();
                 break;
@@ -141,15 +139,16 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
                 break;
         }
         if($ACERTOU){
+            $this->totalizador();
             $this->incrementTentativas(true);
             $this->incrementFase();
             $this->incrementConcluidos();
             return $this->setFases();
         }
-
+        if(!$dica) $dica = $this->fraseAleatoria();
         $this->view('enigmas/Fase.php',[
             'enigma' => $this->enigma,
-            'dica' => 'Vamos ver se você e bom mesmo!',
+            'dica' => $dica,
             'fase' => $_SESSION['fase'],
             'tentativas' => $_SESSION['tentativas']
         ]);
@@ -167,6 +166,38 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
         }
     }
 
+    public function buscarDica($id_enigmas,$categoria)
+    {
+        $not = array_map(function($value) { return '?';},$_SESSION['dicas_concluidas']);
+        $not = join(",",$not);
+        $sql = "SELECT * FROM dicas WHERE id_dicas NOT IN($not) AND dicas_enigmas_id = ? AND categoria_dicas_id = ? ORDER BY RAND() LIMIT 1";
+        $where = array_merge($_SESSION['dicas_concluidas'],[$id_enigmas,$categoria]);
+        $dica = $this->banco->select($sql,$where,false);
+        if($dica){
+            $this->incrementDicas($dica);
+            return $dica['dica'];
+        }else{
+            return false;
+        }
+    }
+
+    public function fraseAleatoria()
+    {
+        $frase = [
+            'Vamos ver se você e bom, jovem mestre!',
+            'Melhor rezar, pois não vou lhe ajudar!',
+            'Está sentido o cheiro de queimado!? : )',
+            'Vai demorar muito, tenho um encontro hoje!',
+            'Por que não desiste de uma vez, bricadeira : )',
+            'Sei que logo você vai acertar!'
+        ];
+        return $frase[array_rand($frase,1)];
+    }
+
+    public function totalizador()
+    {
+        $_SESSION['pontuacao'] += 100/$_SESSION['tentativas'];
+    }
     public function incrementTentativas($zerar = false)
     {
         if($zerar){
@@ -174,7 +205,6 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
         }else{
             $_SESSION['tentativas'] +=1;
         }
-
     }
     public function incrementFase()
     {
@@ -183,5 +213,9 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
     public function incrementConcluidos()
     {
         $_SESSION['concluidos'][] = $this->enigma['id_enigmas'];
+    }
+    public function incrementDicas($dica)
+    {
+        $_SESSION['dicas_concluidas'][] = $dica['id_dicas'];
     }
 }
