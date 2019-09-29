@@ -1,37 +1,42 @@
-<div class="row justify-content-center">
-    <div class="col-9">
-        <a href="#" class="nes-badge is-splited">
-            <span class="is-dark">Fase</span>
-            <span class="is-primary"><?= $fase; ?></span>
-        </a>
-        <a href="#" class="nes-badge is-splited">
-            <span class="is-dark">Tentativa</span>
-            <span class="is-primary"><?= $tentativas; ?></span>
-        </a>
-        <section class="message-list">
-            <section class="message -right">
-                <div class="nes-balloon from-right">
-                    <p><?= $dica; ?></p>
-                </div>
-                <img width="100" height="150" src="img/run.gif">
-            </section>
-        </section>
-        <div class="nes-container is-rounded">
-            <p><?= $enigma['enigma']; ?></p>
+<div class="container-enigmas fases mx-auto">
+    <div class="d-flex justify-content-between mb-2">
+        <div class="d-flex align-items-center">
+            <span class="nes-text text-white mr-2">Fases</span>
+            <a href="#" class="nes-badge">
+                <span class="is-success"><?= $fase; ?>/8</span>
+            </a>
         </div>
-        <div class="m-4">
-            <form action="index.php?pagina=enigma-fase" method="post">
-                <div class="row justify-content-between align-items-center">
-                    <div class="nes-field col-9">
-                        <label>Sua Resposta</label>
-                        <input name="resposta"vtype="text" class="nes-input">
-                        <input name="id" value="<?=$enigma['id_enigmas'];?>" style="display: none">
-                    </div>
-                    <div class="col-3">
-                        <button type="submit" class="nes-btn is-success">Enviar</button>
-                    </div>
-                </div>
-            </form>
+        <div class="d-flex align-items-center">
+            <span class="nes-text text-white mr-2">Tentativas</span>
+            <a href="#" class="nes-badge">
+                <span class="is-error"><?= $tentativas; ?>/8</span>
+            </a>
         </div>
     </div>
+    <div>
+        <section class="message -right justify-content-end row">
+            <div class="col-7 nes-balloon from-right d-flex align-items-center justify-content-center">
+                <p class="text-justify"><?= $dica; ?></p>
+            </div>
+            <img class="col-2 dark-mage" src="img/run.gif">
+        </section>
+    </div>
+    <div class="nes-container is-rounded background d-flex justify-content-center align-items-center">
+        <p class="text-white text-justify"><?= $enigma['enigma']; ?></p>
+    </div>
+    <div class="mx-4 my-5">
+        <form action="index.php?pagina=enigma-fase" method="post">
+            <div class="row justify-content-between align-items-center">
+                <div class="nes-field col-9">
+                    <input name="resposta"vtype="text" class="nes-input" placeholder="Responta-me...">
+                    <input name="id" value="<?=$enigma['id_enigmas'];?>" style="display: none">
+                </div>
+                <div class="col-3">
+                    <button type="submit" class="nes-btn is-success">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
+
+

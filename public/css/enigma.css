@@ -1,4 +1,10 @@
 /*GAME OVER*/
+.tentar-novamento{
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    z-index: 10000000;
+}
 #game-over{
     display: flex;
     justify-content: flex-start;
@@ -952,4 +958,31 @@
 }
 .copy p {
     margin: 0;
+}
+/*Enigmas*/
+.container-enigmas{
+    width: 60%;
+    padding: 0 2em;
+    margin-top: 5em;
+}
+.fases{
+    margin-top: 1em !important;
+}
+.fases .nes-badge{
+    width: 70px;
+}
+.fases .nes-balloon{
+    height: 89px;
+}
+.container-enigmas .dark-mage{
+    width:  100px;
+    height: 150px;
+}
+.container-enigmas .start{
+    width: 216px;
+    height: 71px;
+}
+.container-enigmas .background{
+    background: #00000073;
+    height: 126px;
 }
