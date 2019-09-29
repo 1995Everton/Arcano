@@ -935,11 +935,11 @@
     }
 }
 /*Winner*/
-#canvas-winner {
-    background: linear-gradient(#9ff78173, #29d3e485);
-    width: 80% !important;
-    height: 100vh !important;
-    position: absolute;
+#confetti{
+    background: #0000008c;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
 }
 .copy {
     position: absolute;
@@ -955,6 +955,10 @@
     letter-spacing: 1px;
     font-size: 7vmin;
     font-weight: 700;
+    animation-name: flash;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
 }
 .copy p {
     margin: 0;
@@ -985,4 +989,10 @@
 .container-enigmas .background{
     background: #00000073;
     height: 126px;
+}
+.arcano-text{
+    animation-name: zoomInUp;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
 }

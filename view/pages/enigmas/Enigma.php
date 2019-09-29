@@ -1,6 +1,6 @@
 <div class="container-enigmas mx-auto">
     <div class="row justify-content-center align-items-center">
-        <h1 class="text-white display-2">ARCANO</h1>
+        <h1 class="text-white display-2 arcano-text">ARCANO</h1>
         <img class="dark-mage" src="img/run.gif">
     </div>
     <div class="nes-container is-rounded background d-flex justify-content-center align-items-center">

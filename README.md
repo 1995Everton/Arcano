@@ -192,6 +192,21 @@ A extensão *PHP Data Objects* ( PDO ) define uma interface leve e consistente p
     ?>
     
     
-### Bibliotecas
+## Bibliotecas usadas no projeto
+
+### JavaScript
+
+***JQuery***
+https://api.jquery.com/
+
+### CSS
+
+***Bootstrap***
+https://getbootstrap.com/docs/4.3/getting-started/introduction/
+
 ***Componentes em 8-bits***
 https://nostalgic-css.github.io/NES.css/
+
+***Fazer Animações em textos***
+https://daneden.github.io/animate.css/
+
