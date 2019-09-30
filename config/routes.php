@@ -9,6 +9,8 @@ use Arcanos\Enigmas\Controllers\Home;
 use Arcanos\Enigmas\Controllers\Perfil;
 use Arcanos\Enigmas\Controllers\PersistenciaUsuario;
 use Arcanos\Enigmas\Controllers\Ranking;
+use Arcanos\Enigmas\Controllers\CadastroEnigma;
+use Arcanos\Enigmas\Controllers\PersistenciaEnigma;
 
 
 class Routes
@@ -25,7 +27,9 @@ class Routes
             'enigma-home' => EnigmaHome::class,
             'enigma-fase' => EnigmaFase::class,
             'perfil' => Perfil::class,
-            'ranking' => Ranking::class
+            'ranking' => Ranking::class,
+            'enigma-cadastro' => CadastroEnigma::class,
+            'enigma-persistencia' => PersistenciaEnigma::class
         ];
     }
 }
