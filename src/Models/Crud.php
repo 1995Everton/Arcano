@@ -10,7 +10,7 @@ class Crud{
 
      public function __construct()
      {
-         $this->pdo = new PDO("mysql:host=localhost;dbname=arcano", "root", "");
+         $this->pdo = new PDO("mysql:host=localhost;dbname=arcano", "root", "root");
      }
      private function buildInsert($tabela,$arrayDados)
      {

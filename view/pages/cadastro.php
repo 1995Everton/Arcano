@@ -1,16 +1,3 @@
-<script>
-
-var senha = document.getElementById("senha");
-
-senha.addEventListener("input", function (event) {
-  if (senha.validity.typeMismatch) {
-    senha.setCustomValidity("A senha deve conter pelo menos uma letra e um numero!");
-  } else {
-    senha.setCustomValidity("");
-  }
-});
-//terminar de configurar a mensagem
-</script>
 <form action="index.php?pagina=persistenciausuario" method="POST">
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -22,7 +9,7 @@ senha.addEventListener("input", function (event) {
     <div class="w-100"></div>
     <div class="form-group col-md-6">
         
-        <input type="password" class="form-control" id="senha" name="senha" ^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9]{6,16}$ placeholder="Senha"  >
+        <input type="password" class="form-control" id="senha" name="senha" pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$" placeholder="Senha"  > <!---->
     </div>
     <div class="form-group col-md-6">
         <input type="password" class="form-control" name="confsenha"  placeholder="Confirmar Senha" required> 
@@ -35,9 +22,24 @@ senha.addEventListener("input", function (event) {
     </div>
   </div>
 </form>
-<?php
-$teste = isset($_GET['msg']); 
+<script>
 
+var senha = document.getElementById("senha");
+
+senha.addEventListener("input", function (event) {
+    
+  if (!senha.validity.customError) {
+    senha.setCustomValidity("");
+  } else {
+    senha.setCustomValidity("A senha deve conter pelo menos uma letra e um numero!");
+  }
+});
+//terminar de configurar a mensagem
+</script>
+<?php
+$teste = isset($_GET['msg']) ? $_GET['msg'] : ""; 
+
+echo $teste;
 
 switch ($teste) {
     case 1:
