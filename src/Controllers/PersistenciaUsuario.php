@@ -8,24 +8,27 @@ class PersistenciaUsuario extends Banco implements RequestHandlerInterface
 {
     public function handle()
     {
-             
-            $usuario = $_POST['usuario'];
-            $email = $_POST['email'];
-            $senha = $_POST['senha'];
-            $confsenha = $_POST['confsenha'];
+        
+        $usuario = $_POST['usuario'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $confsenha = $_POST['confsenha'];
 
-            $dados = $this->banco->select("SELECT * FROM usuarios WHERE nome_usuario = ? OR email = ?",[$usuario, $email],true);
+        $dados = $this->banco->select("SELECT * FROM usuarios WHERE nome_usuario = ? OR email = ?",[$usuario, $email],true);
     
             
-            
+        if ($dados) {    
             foreach ($dados as $key => $value) {
-                if ($value->nome_usuario == $usuario ) {
-                    
-                    header("Location: index.php?pagina=cadastro&msg=2");
+                if ($value['nome_usuario'] == $usuario ) {
+                    $this->toast('Usuario já cadastrado','ERRO','danger');
+                    header("Location: index.php?pagina=cadastro");
                     
                 }
-                elseif ($value->email == $email) {
-                    header("Location: index.php?pagina=cadastro&msg=3");
+                elseif ($value['email'] == $email) {
+
+                    $this->toast('Email já cadastrado','ERRO','danger');
+                    header("Location: index.php?pagina=cadastro");
+                
                 }
             }
 
@@ -35,18 +38,23 @@ class PersistenciaUsuario extends Banco implements RequestHandlerInterface
             }
             else
             {
-                header("Location: index.php?pagina=cadastro&msg=1");
+                $this->toast('Email invalido','ERRO','danger');
+                header("Location: index.php?pagina=cadastro");
             }
 
             
 
             if ($senha != $confsenha) {
 
-
-                header("Location: index.php?pagina=cadastro&msg=4");
+                $this->toast('Senhas não batem','ERRO','danger');
+                header("Location: index.php?pagina=cadastro");
                
-            }
-            
+            }            
+            //criar função para validar senha, na barra de favoritos tem sites para ajudar
+            //$retorno = $this->usuarios->cadastrarUsuario($nome_usuario,2,$email,$senha)
+        
+            //echo $usuario, $email, $senha, $confsenha;
+        }else {
             $this->banco->insert('usuarios',
                 [
                     'categoria_usuarios_id' => 2,
@@ -55,12 +63,10 @@ class PersistenciaUsuario extends Banco implements RequestHandlerInterface
                     'email' => $email
                 ]
             );
+            $this->toast('Cadastro realizado com susseso','','success');
             header("Location: index.php?pagina=login");
-
-            //criar função para validar senha, na barra de favoritos tem sites para ajudar
-            //$retorno = $this->usuarios->cadastrarUsuario($nome_usuario,2,$email,$senha)
-        
-            //echo $usuario, $email, $senha, $confsenha;
+        }     
+            
             
         
     }
