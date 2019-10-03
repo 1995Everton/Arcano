@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 
 namespace Arcanos\Enigmas\Controllers\Enigmas;
@@ -157,9 +157,9 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
     public function verificaRespota()
     {
         $id = $_POST['id'];
-        $resposta = $_POST['resposta'];
+        $resposta = strtoupper(trim($_POST['resposta']));
         $this->enigma = $this->banco->select("SELECT * FROM enigmas WHERE id_enigmas = ?",[$id],false);
-        if($resposta == $this->enigma['resposta']){
+        if($resposta == $this->strtoupper(trim(enigma['resposta']))){
             return true;
         }else{
             return false;
