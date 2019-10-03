@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('../fonts/press-start-2p.woff2') format('woff2'),
+    url('../fonts/press-start-2p.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.toast{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+html{
+    overflow-x: hidden;
+}

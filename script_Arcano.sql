@@ -149,10 +149,10 @@ values ("Mestre dos Magos"),
 
 insert into usuarios
 (categoria_usuarios_id, nome_usuario, senha, email)
-values (1, "Alisson",   "admin", "alipospor@arcano.com"),
-	   (1, "Amanda",    "admin", "amandahess@arcano.com"),
-	   (1, "Everton",   "admin", "evertonCR@arcano.com"),
-	   (1, "Leandro",   "admin", "leandroS@arcano.com"),
+values (1, "Alisson",   "8$oDwfZa.V19I", "alipospor@arcano.com"),
+	   (1, "Amanda",    "8$oDwfZa.V19I", "amandahess@arcano.com"),
+	   (1, "Everton",   "8$oDwfZa.V19I", "evertonCR@arcano.com"),
+	   (1, "Leandro",   "8$oDwfZa.V19I", "leandroS@arcano.com"),
 	   (2, "Jenivalda", "123",   "jenivalda_top@hotmail.com"),
 	   (2, "Roberval",  "123",   "robervalSP@gmail.com"),
 	   (2, "Joaninha",  "123",   "joaninha-vermelha@bol.com.br"),
@@ -187,10 +187,14 @@ value ("Texto"),
 insert into enigmas
 (dificuldade_enigma_id, enigmas_tipos_id, enigma, data, resposta)
 values (1,1, "Alimente-me e eu vivo, ainda me dê uma bebida e eu morro.",  "2019-06-01", "O fogo"),
-	   (1,1, "Por que o marido da viúva não pode se casar com a cunhada?", "2019-06-02", "Porque ele está morto"),
+	   (1,2, "Por que o marido da viúva não pode se casar com a cunhada?", "2019-06-02", "Porque ele está morto"),
+	   (2,1, "O que se molha quando se seca?",    "2019-06-03", "Toalha"),
 	   (2,2, "O que é o que é, se compra para comer, mas não se come?",    "2019-06-03", "O prato"),
+	   (3,1, "Está duas vezes em um minuto, três vezes em um momento e e só uma vez em cem anos?","2019-06-04", "A letra M"),
 	   (3,2, "O que tem um olho, mas não pode ver?", 					   "2019-06-04", "Uma agulha"),
-	   (4,4, "O que sempre vem, mas nunca chega?", 						   "2019-06-04", "O amanhã");
+	   (4,1, "Não é um ser vivo mas tem cinco dedos?", 						   "2019-06-04", "Luvas"),
+	   (4,2, "O que sempre vem, mas nunca chega?", 						   "2019-06-04", "O amanhã");
+
 
 insert into pontuacao
 (usuarios_pontuacao_id, enigmas_pontuacao_id, pontos, data, progresso)
@@ -209,8 +213,27 @@ values ("Fácil"),
 
 insert into dicas
 (categoria_dicas_id, dicas_enigmas_id, dicas_tipos_id, dica)
-values (1,1,1, "Quente"),
-	   (1,2,1, "Velório"),
-	   (2,3,2, "https://i.imgur.com/K7WuyU3.jpg"),
-	   (3,4,3, "https://i.imgur.com/TzGQseC.png"),
-	   (4,5,4, "https://www.youtube.com/watch?v=mkfFvreNpMs");
+values (1,1,1, "Dica Ruim 1"),
+	   (2,1,1, "Dica Media 1"),
+	   (3,1,1, "Dica Otima 1"),
+	   (1,2,1, "Dica Ruim 2"),
+	   (2,2,1, "Dica Media 2"),
+	   (3,2,1, "Dica Otima 2"),
+	   (1,3,1, "Dica Ruim 3"),
+	   (2,3,1, "Dica Media 3"),
+	   (3,3,1, "Dica Otima 3"),
+	   (1,4,1, "Dica Ruim 4"),
+	   (2,4,1, "Dica Media 4"),
+	   (3,4,1, "Dica Otima 4"),
+	   (1,5,1, "Dica Ruim 5"),
+	   (2,5,1, "Dica Media 5"),
+	   (3,5,1, "Dica Otima 5"),
+	   (1,6,1, "Dica Ruim 6"),
+	   (2,6,1, "Dica Media 6"),
+	   (3,6,1, "Dica Otima 6"),
+	   (1,7,1, "Dica Ruim 7"),
+	   (2,7,1, "Dica Media 7"),
+	   (3,7,1, "Dica Otima 7"),
+	   (1,8,1, "Dica Ruim 8"),
+	   (2,8,1, "Dica Media 8"),
+	   (3,8,1, "Dica Otima 8");

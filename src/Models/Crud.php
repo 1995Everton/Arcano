@@ -10,7 +10,7 @@ class Crud{
 
      public function __construct()
      {
-         $this->pdo = new PDO("mysql:host=localhost;dbname=arcano", "root", "root");
+         $this->pdo = new PDO("mysql:host=localhost;dbname=arcano", "root", "");
      }
      private function buildInsert($tabela,$arrayDados)
      {
@@ -118,9 +118,9 @@ class Crud{
             }
             $stm->execute();
             if($fetchAll){
-                $dados = $stm->fetchAll(PDO::FETCH_OBJ);
+                $dados = $stm->fetchAll(PDO::FETCH_ASSOC);
             }else{
-                $dados = $stm->fetch(PDO::FETCH_OBJ);
+                $dados = $stm->fetch(PDO::FETCH_ASSOC);
             }
             return $dados;
          } catch (PDOException $e) {

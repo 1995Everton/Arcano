@@ -12,6 +12,6 @@ class EnigmaHome extends Banco implements RequestHandlerInterface
 
     public function handle()
     {
-        $this->view('Enigma.php');
+        $this->view('enigmas/Enigma.php');
     }
 }
