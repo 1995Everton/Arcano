@@ -1,4 +1,4 @@
- <?php
+<?php
 
 
 namespace Arcanos\Enigmas\Controllers\Enigmas;
