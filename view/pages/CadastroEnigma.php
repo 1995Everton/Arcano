@@ -3,6 +3,7 @@
 	$ds_categoria = $this->banco->select("SELECT * FROM categorias");
 	/* Pesquisa do tipo do enigma para cadastro */
 	$ds_tipos = $this->banco->select("SELECT * FROM tipos");
+	/* miscelania */
 	$data = date('Y-m-d');
 	echo "<h2 class='text-white'>". $data ."</h2>";
 ?>
@@ -15,14 +16,14 @@
             foreach($ds_categoria as $key => $valor){
             ?>
 			<option value="<?= $ds_categoria[$key]['id_categoria_dica'];?>">
-				<?= $ds_categoria[$key]['ds_categoria'];?>
+				<?= utf8_encode($ds_categoria[$key]['ds_categoria']);?>
 			</option>
 			<?php
             }
             ?>
 		</select>
 	</div>
-	<!-- Campo -> Tipo do enigma -->
+	<!-- Campo -> Tipo do enigma -->         
 	<label for="tipo">Tipo:</label>
 	<div class="nes-select">
 		<select name="tipo" id="tipo">
@@ -30,7 +31,7 @@
 			foreach ($ds_tipos as $key => $valor) {
 			?>
 			<option value="<?= $ds_tipos[$key]['id_tipos']?>">
-				<?= $ds_tipos[$key]['ds_tipo'] ?>
+				<?= utf8_encode($ds_tipos[$key]['ds_tipo'])?>
 			</option>
 			<?php
 			}
