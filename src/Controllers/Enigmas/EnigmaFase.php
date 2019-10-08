@@ -159,7 +159,7 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
         $id = $_POST['id'];
         $resposta = strtoupper(trim($_POST['resposta']));
         $this->enigma = $this->banco->select("SELECT * FROM enigmas WHERE id_enigmas = ?",[$id],false);
-        if($resposta == $this->strtoupper(trim(enigma['resposta']))){
+        if($resposta == strtoupper(trim($this->enigma['resposta']))){
             return true;
         }else{
             return false;
