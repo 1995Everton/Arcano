@@ -1,21 +1,39 @@
+<style>
+    .caixa{
+        width: 25%;
+        height: 15%;
+        padding: 20px;
+        background-color: #1c2025d1;
+        color: white;
+        border-radius: 10px;
+        margin-top:120px;
+        margin-left: 37.5%;
+        z-index: 100;
+        text-align: center;
+    }
+
+
+</style>
+
 <form action="index.php?pagina=persistenciausuario" method="POST">
-  <div class="form-row">
-    <div class="form-group col-md-6">
+  <div class="caixa">
+    <div class="form-group ">
+        <h2>Cadastro</h2>
         <input type="text" class="form-control" name="usuario" placeholder="Usuario" required>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group ">
         <input type="text" class="form-control" name="email" placeholder="Email" required>
     </div>
     <div class="w-100"></div>
-    <div class="form-group col-md-6">
+    <div class="form-group ">
         
         <input type="password" class="form-control" id="senha" name="senha" pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$" placeholder="Senha" required> <!---->
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group ">
         <input type="password" class="form-control" name="confsenha" pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$" placeholder="Confirmar Senha" required> 
     </div>
     <div class="w-100"></div>
-    <div class="form-group col-md-6">
+    <div class="col-md-12 justify-content-center d-flex align-itens-center">
     
         <button type="submit" class="btn btn-primary">Cadastrar</button>
         
