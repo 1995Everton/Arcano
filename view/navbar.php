@@ -1,3 +1,15 @@
+<style>
+     ul ul{
+        position: absolute;
+        visibility: hidden;
+        list-style: none;
+        padding: 3px;
+    }
+     ul li:hover ul{
+        visibility: visible !important;
+         z-index: 7;
+    }
+</style>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
         <img src="https://getbootstrap.com.br/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -5,10 +17,22 @@
     </a>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="index.php?pagina=home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.php?pagina=enigma-home">Enigmas</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.php?pagina=ranking">Ranking</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.php?pagina=perfil">Perfil</a> </li>
+            <?php if($_SESSION['tipo_usuario'] == 1){?>
+                <li class="nav-item"><a class="nav-link" href="index.php?pagina=home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Configurações</a>
+                    <ul class="bg-light">
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=enigma-visu">Enigmas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=titulo-visu">Título</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=cadastro">Usuário</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=adm-cadastro">Adm</a></li>
+                    </ul>
+                </li>
+            <?php }else{ ?>
+                <li class="nav-item"><a class="nav-link" href="index.php?pagina=home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php?pagina=enigma-home">Enigmas</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php?pagina=ranking">Ranking</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php?pagina=perfil">Perfil</a> </li>
+            <?php } ?>
         </ul>
     </div>
     <div class="profile">
