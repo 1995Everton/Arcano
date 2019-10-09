@@ -3,9 +3,6 @@
 	$ds_categoria = $this->banco->select("SELECT * FROM categorias");
 	/* Pesquisa do tipo do enigma para cadastro */
 	$ds_tipos = $this->banco->select("SELECT * FROM tipos");
-	/* miscelania */
-	$data = date('Y-m-d');
-	echo "<h2 class='text-white'>". $data ."</h2>";
 ?>
 <form action="index.php?pagina=enigma-persistencia" enctype="multipart/form-data" method="POST" class="sky text-white">
 	<!-- Campo Dificuldade enigma -->
@@ -16,7 +13,7 @@
             foreach($ds_categoria as $key => $valor){
             ?>
 			<option value="<?= $ds_categoria[$key]['id_categoria_dica'];?>">
-				<?= utf8_encode($ds_categoria[$key]['ds_categoria']);?>
+				<?= $ds_categoria[$key]['ds_categoria'];?>
 			</option>
 			<?php
             }
@@ -31,7 +28,7 @@
 			foreach ($ds_tipos as $key => $valor) {
 			?>
 			<option value="<?= $ds_tipos[$key]['id_tipos']?>">
-				<?= utf8_encode($ds_tipos[$key]['ds_tipo'])?>
+				<?= $ds_tipos[$key]['ds_tipo']?>
 			</option>
 			<?php
 			}
