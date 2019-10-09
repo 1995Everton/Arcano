@@ -4,7 +4,7 @@ use arcano;
 /* Tabelas */
 
 create table categoria_usuarios (
-	id_categoria_usuarios 	INT AUTO_INCREMENT,
+	  id_categoria_usuarios 	INT AUTO_INCREMENT,
     ds_usuario 			  	VARCHAR(25),
     primary key (id_categoria_usuarios)
 );
@@ -15,8 +15,7 @@ create table usuarios (
     nome_usuario 			VARCHAR(50),
     senha 					VARCHAR(150),
     email					VARCHAR(150),
-    token 					VARCHAR(50),
-    tempo_token 			DATETIME,
+    url_foto      TEXT,
     primary key (id_usuarios)
 );
 
@@ -78,7 +77,19 @@ create table categorias (
     primary key (id_categoria_dica)
 );
 
+create table chat (
+	id_chat INT PRIMARY KEY AUTO_INCREMENT,
+	id_usuario_chat INT NOT NULL,
+    mensagem varchar(255),
+    dt_cadastro datetime
+);
+
 /* Chaves estrangeiras */
+
+alter table    chat
+add constraint id_usuario_chat
+foreign key   (id_usuario_chat)
+references 	   usuarios (id_usuarios);
 
 alter table    usuarios 
 add constraint categoria_usuarios_id  
@@ -148,17 +159,17 @@ values ("Mestre dos Magos"),
 	   ("A Enigmática");
 
 insert into usuarios
-(categoria_usuarios_id, nome_usuario, senha, email)
-values (1, "Alisson",   "8$oDwfZa.V19I", "alipospor@arcano.com"),
-	   (1, "Amanda",    "8$oDwfZa.V19I", "amandahess@arcano.com"),
-	   (1, "Everton",   "8$oDwfZa.V19I", "evertonCR@arcano.com"),
-	   (1, "Leandro",   "8$oDwfZa.V19I", "leandroS@arcano.com"),
-	   (2, "Jenivalda", "123",   "jenivalda_top@hotmail.com"),
-	   (2, "Roberval",  "123",   "robervalSP@gmail.com"),
-	   (2, "Joaninha",  "123",   "joaninha-vermelha@bol.com.br"),
-	   (2, "Carlos",    "123",   "Carlao@gmail.com"),
-	   (2, "Juliana",   "123",   "juju@gmail.com"),
-	   (2, "Jéssica",   "123",   "ja_acabou_jessica@hotmail.com");
+(categoria_usuarios_id, nome_usuario, senha, email,url_foto)
+values (1, "Alisson",   "8$oDwfZa.V19I", "alipospor@arcano.com","https://gravatar.com/avatar/8800139dba3a0db7ce28a213890fe68f?s=400&d=robohash&r=x"),
+	   (1, "Amanda",    "8$oDwfZa.V19I", "amandahess@arcano.com","https://gravatar.com/avatar/3e49080504f6d3b9bc509b4e75e4e15c?s=400&d=robohash&r=x"),
+	   (1, "Everton",   "8$oDwfZa.V19I", "evertonCR@arcano.com","https://gravatar.com/avatar/487f1157ec212e1eb69a68b848414b12?s=400&d=robohash&r=x"),
+	   (1, "Leandro",   "8$oDwfZa.V19I", "leandroS@arcano.com","https://gravatar.com/avatar/ee76194e7f156d4f46265eea3b996013?s=400&d=robohash&r=x"),
+	   (2, "Jenivalda", "123",   "jenivalda_top@hotmail.com","https://gravatar.com/avatar/41705e76a07976b1fc79bc15f1724dbb?s=400&d=robohash&r=x"),
+	   (2, "Roberval",  "123",   "robervalSP@gmail.com","https://gravatar.com/avatar/ba8cb136ffc43c27c4cfe78274b46e75?s=400&d=robohash&r=x"),
+	   (2, "Joaninha",  "123",   "joaninha-vermelha@bol.com.br","https://gravatar.com/avatar/8c64fbfa02d0a9f45ca4a903826e2e5e?s=400&d=robohash&r=x"),
+	   (2, "Carlos",    "123",   "Carlao@gmail.com","https://gravatar.com/avatar/a6b17822954cc096a7007727d47f6661?s=400&d=robohash&r=x"),
+	   (2, "Juliana",   "123",   "juju@gmail.com","https://gravatar.com/avatar/05d2da81d7c42c8e51c915c525a412a5?s=400&d=robohash&r=x"),
+	   (2, "Jéssica",   "123",   "ja_acabou_jessica@hotmail.com","https://gravatar.com/avatar/2b30f52745f0b29ce21e44816ac854f8?s=400&d=robohash&r=x");
 
 insert into usuarios_titulo
 (usuarios_id, titulo_id)

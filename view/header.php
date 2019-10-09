@@ -5,6 +5,7 @@
         <title>Arcanos</title>
          <!-- Plugins CSS-->
         <link rel="stylesheet" href="css/lib/bootstrap.css">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css'>
         <link rel="stylesheet" href="css/lib/fontawesome/css/all.min.css">
         <link rel="stylesheet" href="css/lib/nes.css">
         <link rel="stylesheet" href="css/lib/animate.css">
@@ -16,18 +17,24 @@
         <link rel="stylesheet" href="css/background.css">
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/table.css">
+        <link rel="stylesheet" href="css/chats.css">
         <!-- Plugins JavaScript-->
         <script src='js/lib/jquery-3.4.1.js'></script>
         <script src='js/lib/jquery.tablesorter.js'></script>
         <script src='js/lib/bootstrap.js'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
         <!--JavaScript Projeto-->
         <script src="js/background.js"></script>
+        <script src="js/chat.js"></script>
     </head>
 
     <body>
         <?php if(isset($_SESSION['id_usuarios'])):
                 include __DIR__."./navbar.php";
-        endif; ?>
+                include __DIR__."./chat.php";?>
+            <script>var ID_USUARIO_GLOBAL = <?=$_SESSION['id_usuarios'];?></script>
+       <?php endif; ?>
         <?php if(isset($_SESSION['toast-mensagem'])): ?>
             <div class="toast bg-<?= $_SESSION['toast-color'];?>" data-delay="4000">
                 <div class="toast-header">
