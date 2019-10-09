@@ -25,9 +25,17 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
                 $this->toast('Erro no campo Enigma', 'ERRO', 'danger');
                 header("Location: index.php?pagina=enigma-cadastro");
             } elseif ((!isset($resposta)) || (empty($resposta))) {
-                $this->toast('Todo enigma precisa de uma resposta!', 'ERRO', 'danger');
+                if ($tipo == 1) {
+                    $this->toast('Todo enigma precisa de uma resposta!', 'ERRO', 'danger');
+                    header("Location: index.php?pagina=enigma-cadastro");
+                }
+
+            } elseif (!isset($_FILES['arquivo']['tmp_name']) || empty($_FILES['arquivo']['tmp_name'])) {
+                $this->toast('Selecione um arquivo!', 'ERRO', 'danger');
                 header("Location: index.php?pagina=enigma-cadastro");
             }
+
+            /* MORE QUESTIONS, se o tipo do enigma for img campo de arquivo 'e requirido como img. se for do tipo texto o campo 'enigma' 'e*/
             echo "<pre>";
             var_dump($_POST);
             echo "</pre>";
@@ -73,7 +81,7 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
             /* https://www.php.net/manual/pt_BR/features.file-upload.post-method.php */
             /* https://www.youtube.com/watch?v=qmNbZmBOaGM */
         } else {
-            echo "Falha no fenvio do formulário";
+            echo "Falha no envio do formulário";
         }
     }
 }
