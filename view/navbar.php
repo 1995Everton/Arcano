@@ -23,8 +23,8 @@
                     <ul class="bg-light">
                         <li class="nav-item"><a class="nav-link" href="index.php?pagina=enigma-visu">Enigmas</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php?pagina=titulo-visu">Título</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=cadastro">Usuário</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=adm-cadastro">Adm</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=usuario-visu">Usuário</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=adm-visu">Adm</a></li>
                     </ul>
                 </li>
             <?php }else{ ?>

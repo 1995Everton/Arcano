@@ -184,11 +184,11 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
     public function fraseAleatoria()
     {
         $frase = [
-            'Vamos ver se você e bom, jovem mestre!',
+            'Vamos ver se você é bom, jovem mestre!',
             'Melhor rezar, pois não vou lhe ajudar!',
-            'Está sentido o cheiro de queimado!? : )',
+            'Está sentindo o cheiro de queimado!? : )',
             'Vai demorar muito, tenho um encontro hoje!',
-            'Por que não desiste de uma vez, bricadeira : )',
+            'Por que não desiste de uma vez, brincadeira : )',
             'Sei que logo você vai acertar!'
         ];
         return $frase[array_rand($frase,1)];

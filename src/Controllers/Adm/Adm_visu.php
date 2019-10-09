@@ -12,11 +12,12 @@ namespace Arcanos\Enigmas\Controllers\Adm;
 use Arcanos\Enigmas\Controllers\Banco;
 use Arcanos\Enigmas\Controllers\RequestHandlerInterface;
 
-class Adm extends Banco implements RequestHandlerInterface
+class Adm_visu extends Banco implements RequestHandlerInterface
 {
     public function handle()
     {
-        $this->view('adm\Adm.php',[]);
+
+        $this->view('adm\Adm_visu.php',[]);
     }
 
 }
