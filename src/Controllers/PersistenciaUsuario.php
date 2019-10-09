@@ -64,7 +64,7 @@ class PersistenciaUsuario extends Banco implements RequestHandlerInterface
                 ]
             );
             $this->toast('Cadastro realizado com susseso','','success');
-            header("Location: index.php?pagina=login");
+            header("Location: index.php?pagina=home");
         }     
             
             
