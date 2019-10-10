@@ -1,8 +1,10 @@
 const mysql = require('mysql');
+const dotenv = require('dotenv');
+dotenv.config()
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'arcano'
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
 });
 module.exports = db;

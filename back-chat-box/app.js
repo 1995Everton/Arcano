@@ -1,6 +1,5 @@
 const server = require('./bin/express')
-
-server.listen(3000,()=>{
-  console.log('Server Rodando na porta: 3000');
-  
+var port = parseInt((process.env.PORT || '3000'), 10)
+server.listen(port,()=>{
+  console.log('Server Rodando na porta'+port);
 })
