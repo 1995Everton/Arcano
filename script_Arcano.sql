@@ -77,19 +77,7 @@ create table categorias (
     primary key (id_categoria_dica)
 );
 
-create table chat (
-	id_chat INT PRIMARY KEY AUTO_INCREMENT,
-	id_usuario_chat INT NOT NULL,
-    mensagem varchar(255),
-    dt_cadastro datetime
-);
-
 /* Chaves estrangeiras */
-
-alter table    chat
-add constraint id_usuario_chat
-foreign key   (id_usuario_chat)
-references 	   usuarios (id_usuarios);
 
 alter table    usuarios 
 add constraint categoria_usuarios_id  

@@ -1,10 +1,22 @@
-const mysql = require('mysql');
-const dotenv = require('dotenv');
-dotenv.config()
-const db = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
-});
-module.exports = db;
+var mongoose = require('mongoose');
+module.exports = uri => {
+    mongoose.connect(uri);
+    mongoose.set('debug', true);
+
+    mongoose.connection.on('connected', () => {
+        console.log('Mongoose! Conectado em ' + uri)
+    });
+    mongoose.connection.on('disconnected', () => {
+        console.log('Mongoose! Desconectado em ' + uri)
+    });
+    mongoose.connection.on('error', (erro) => {
+        console.log('Mongoose! Erro na conexão ' + erro)
+    });
+
+    process.on('SIGINT', () => {
+        mongoose.connection.close(() => {
+            console.log('Mongoose! Desconectado pelo termino da aplicação');
+            process.exit(0)
+        });
+    });
+}

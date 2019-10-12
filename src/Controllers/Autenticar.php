@@ -24,8 +24,8 @@ class Autenticar extends Banco implements RequestHandlerInterface
             if($usuario && $this->compararHash($senha,$usuario['senha'])){
                 $_SESSION['nome_usuario'] = $usuario['nome_usuario'];
                 $_SESSION['id_usuarios'] = $usuario['id_usuarios'];
+                $_SESSION['url_foto'] = $usuario['url_foto'];
                 $_SESSION['tipo_usuario'] = $usuario['categoria_usuarios_id'];
-
                 $this->toast('Logado com Sucesso!','Bem Vindo!','success');
                 header('Location: index.php?pagina=home');
             }else{
