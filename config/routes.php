@@ -37,7 +37,6 @@ class Routes
             'enigma-visu' => Enigma_visu::class,
             'titulo-visu' => Titulo_visu::class,
             'usuario-visu' => Usuario_visu::class
-
         ];
     }
 }

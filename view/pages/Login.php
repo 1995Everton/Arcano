@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-    <div id="login" class="d-flex flex-column">
+    <div id="login" class="d-flex flex-column justify-content-center align-items-center">
         <div class="eye">
             <div class="shut"></div>
             <div class="ball">
@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="mouth"></div>
-        <form action="index.php?pagina=autenticar" method="post" class="mx-5">
+        <form action="index.php?pagina=autenticar" method="post" class="mx-3 mt-5">
             <div class="nes-field">
                 <label class="text-white">E-Mail</label>
                 <input type="text" class="nes-input is-dark" name="email">
@@ -19,6 +19,7 @@
             <div class="mt-3">
                 <button type="submit" class="nes-btn is-primary">Logar</button>
             </div>
+            <a href="index.php?pagina=cadastro" class="mt-2">Não possui Cadastro?</a>
         </form>
     </div>
 </div>
