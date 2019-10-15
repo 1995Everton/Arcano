@@ -66,6 +66,9 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
                 echo "Sem arquivo!";
             }
             /* Inserção de dados no banco de dados */
+            function cadastraEnigma(){
+                
+            }
             /* $this->banco->insert(
                 'enigmas',
                 [
