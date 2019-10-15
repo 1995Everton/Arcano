@@ -1,0 +1,105 @@
+@keyframes blink {
+    0% {
+        left: -150px;
+        top: -150px;
+    }
+    50% {
+        left: -66px;
+        top: 20px;
+    }
+}
+#login {
+    position: relative;
+    background-color: #1c2025d1;
+    padding: 10px;
+    margin-top: 20px;
+    width: 26vw;
+    height: 85vh;
+    text-align: center;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.55);
+}
+.mouth {
+    width: 160px;
+    height: 130px;
+    background: transparent;
+    border-radius: 65%;
+    position: absolute;
+    left: 95px;
+    top: 120px;
+    border-bottom: 5px solid white;
+}
+.eye {
+    z-index: 0;
+    margin-left: 90px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 65% 0;
+    transform: rotate(45deg);
+    overflow: hidden;
+}
+.eye > .ball {
+    transition: all 0.3s ease-out;
+    width: 80px;
+    height: 80px;
+    border: 6px solid grey;
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+.eye.up > .ball {
+    top: 5%;
+    left: 5%;
+}
+.eye.up > .ball > .shine {
+    margin-top: 40px;
+    margin-left: 10px;
+}
+.eye.down > .ball {
+    top: 35%;
+    left: 35%;
+}
+.eye.down > .ball > .shine {
+    margin-top: 25px;
+    margin-left: 0px;
+}
+.eye.blink > .shut {
+    animation-fill-mode: forwards;
+    animation: blink 0.4s 1 ease-in;
+    transition: all 0.3s ease-out;
+}
+.shut {
+    background-color: #ff4337;
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    left: -100px;
+    top: -150px;
+    transform: rotate(-45deg);
+    z-index: 9;
+}
+.shine {
+    transition: all 0.3s ease-out;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    content: "";
+    display: block;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.shine:after {
+    width: 15px;
+    height: 15px;
+    content: "";
+    display: block;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+    z-index: 3;
+    transform: translateX(7px) translateY(-18px);
+}
