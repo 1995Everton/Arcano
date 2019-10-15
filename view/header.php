@@ -5,7 +5,7 @@
         <title>Arcanos</title>
          <!-- Plugins CSS-->
         <link rel="stylesheet" href="css/lib/bootstrap.css">
-        <link rel='stylesheet' href='css/lib/bootstrap-material-design.css'>
+        <!-- <link rel='stylesheet' href='css/lib/bootstrap-material-design.css'> -->
         <link rel="stylesheet" href="css/lib/fontawesome/css/all.min.css">
         <link rel="stylesheet" href="css/lib/nes.css">
         <link rel="stylesheet" href="css/lib/animate.css">
@@ -13,25 +13,25 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/dropdown.css">
         <link rel="stylesheet" href="css/enigma.css">
-        <link rel="stylesheet" href="css/login2.css">
+        <link rel="stylesheet" href="css/login.css">
         <link rel="stylesheet" href="css/background.css">
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/table.css">
-        <link rel="stylesheet" href="css/chat3.css">
+        <!-- <link rel="stylesheet" href="css/chat3.css"> -->
         <!-- Plugins JavaScript-->
         <script src='js/lib/jquery-3.4.1.js'></script>
         <script src='js/lib/jquery.tablesorter.js'></script>
         <script src='js/lib/bootstrap.js'></script>
-        <script src="js/lib/socket.io.js"></script>
+        <!-- <script src="js/lib/socket.io.js"></script> -->
         <!--JavaScript Projeto-->
         <script src="js/background.js"></script>
-        <script src="js/chat3.js"></script>
+        <!-- <script src="js/chat3.js"></script> -->
     </head>
 
     <body>
         <?php if(isset($_SESSION['id_usuarios'])):
                 include __DIR__."./navbar.php";
-                include __DIR__ . "./chat.php";?>
+                // include __DIR__ . "./chat.php";?>
             <script>
                 var USUARIO_GLOBAL = {
                     id_usuarios: <?=$_SESSION['id_usuarios'];?>,
