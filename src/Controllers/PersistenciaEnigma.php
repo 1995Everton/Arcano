@@ -11,7 +11,7 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
         if ((isset($_POST)) && (!empty($_POST))) {
             $dificuldade = $_POST['dificuldade'];
             $tipo = $_POST['tipo'];
-            $enigma = $_POST['enigma'];
+            $enigma = ;
             $resposta = $_POST['resposta'];
 
             /* Validacao do campo dificuldade */
@@ -35,6 +35,9 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
                 header("Location: index.php?pagina=enigma-cadastro");
             }
 
+            function validarFot(){
+                
+            }
             /* MORE QUESTIONS, se o tipo do enigma for img campo de arquivo 'e requirido como img. se for do tipo texto o campo 'enigma' 'e*/
             echo "<pre>";
             var_dump($_POST);
@@ -48,14 +51,14 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
             echo "</pre>";
 
 
-            if (!empty($_FILES['arquivo'])) {
+           /*  if (!empty($_FILES['arquivo'])) {
                 $arquivo_temporario = $_FILES['arquivo']['tmp_name'];
                 $arquivo = date_timestamp_get(date_create()) . basename($_FILES['arquivo']['name']);
                 $diretorio = '../public/img/uploaded_arqs/';
             
-
+ */
             //$arquivo = $diretorio . basename($_FILES['arquivo']['name']);//que vai pro Banco
-                echo $diretorio . $arquivo;
+          /*       echo $diretorio . $arquivo;
 
                 if (move_uploaded_file($arquivo_temporario, $diretorio . "/" . $arquivo)) {
                     echo "Arquivo válido e enviado com sucesso.\n";
@@ -64,12 +67,18 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
                 }
             } else {
                 echo "Sem arquivo!";
-            }
-            /* Inserção de dados no banco de dados */
-            function cadastraEnigma(){
-                
-            }
-            /* $this->banco->insert(
+            } */
+            /* https://www.php.net/manual/pt_BR/function.move-uploaded-file.php */
+            /* https://www.php.net/manual/pt_BR/features.file-upload.post-method.php */
+            /* https://www.youtube.com/watch?v=qmNbZmBOaGM */
+        } else {
+            $this->toast('Erro no envio do formulário!', 'ERRO', 'danger');
+            header("Location: index.php?pagina=enigma-cadastro");
+        }
+
+        /* Inserção de dados no banco de dados */
+        function cadastraEnigma(){
+            $this->banco->insert(
                 'enigmas',
                 [
                     'dificuldade_enigma_id' => $_POST['dificuldade'],
@@ -78,13 +87,7 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
                     'data' => date('Y-m-d'),
                     'resposta' => utf8_encode($_POST['resposta'])
                 ]
-            ); */
-
-            /* https://www.php.net/manual/pt_BR/function.move-uploaded-file.php */
-            /* https://www.php.net/manual/pt_BR/features.file-upload.post-method.php */
-            /* https://www.youtube.com/watch?v=qmNbZmBOaGM */
-        } else {
-            echo "Falha no envio do formulário";
+            );
         }
     }
 }
