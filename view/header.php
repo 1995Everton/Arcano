@@ -5,7 +5,7 @@
         <title>Arcanos</title>
          <!-- Plugins CSS-->
         <link rel="stylesheet" href="css/lib/bootstrap.css">
-        <link rel='stylesheet' href='css/lib/bootstrap-material-design.css'>
+        <link rel='stylesheet' href='css/lib/bootstrap-material-design.min.css'>
         <link rel="stylesheet" href="css/lib/fontawesome/css/all.min.css">
         <link rel="stylesheet" href="css/lib/nes.css">
         <link rel="stylesheet" href="css/lib/animate.css">
