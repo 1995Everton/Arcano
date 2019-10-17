@@ -24,15 +24,12 @@
     background: transparent;
     border-radius: 65%;
     position: absolute;
-    left: 95px;
-    top: 120px;
+    left: 97px;
+    top: 70px;
     border-bottom: 5px solid white;
 }
 .eye {
     z-index: 0;
-    margin-left: 90px;
-    margin-top: 70px;
-    margin-bottom: 50px;
     width: 150px;
     height: 150px;
     background: white;
