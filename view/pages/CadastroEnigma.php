@@ -5,7 +5,7 @@
             <div class="row justify-content-center align-items-center" style="height: 100%">
                 <div class="col-12">
                     <!-- Campo -> Enigma -->
-                    <div class="nes-field" id="contaner-enigma">
+                    <div class="nes-field" id="container-enigma">
                         <label for="enigma" class="text-white text-left">Enigma</label>
                         <textarea type="text" name="enigma" id="enigma" class="nes-textarea" style="resize: none"></textarea>
                     </div>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-12">
                     <!-- Arquivo -->
-                    <div class="nes-field">
+                    <div class="nes-field" id='container-arquivo'>
                         <label for="arquivo" class="text-white text-left">Arquivo</label>
                         <input type="file" name="arquivo" id="arquivo" class="nes-input">
                     </div>
@@ -57,3 +57,19 @@
         </form>
     </div>
 </div>
+
+<script>
+/* Foi o melhor que eu consegui fazer (y), pelo menos para terminar as validaçoes vai dar certo sdkjasdj*/
+var el = document.getElementById('container-enigma');
+var lol = document.getElementById('container-arquivo');
+
+document.getElementById( 'tipo' , 'file' ).addEventListener( 'change', function(){
+    if(this.value === '1') {
+        el.style.visibility = 'visible';
+        lol.style.visibility = 'hidden';
+    } else {
+        el.style.visibility = 'hidden';
+        lol.style.visibility = 'visible';
+    }
+});
+</script>
