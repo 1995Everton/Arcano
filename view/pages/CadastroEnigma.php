@@ -5,7 +5,7 @@
             <div class="row justify-content-center align-items-center" style="height: 100%">
                 <div class="col-12">
                     <!-- Campo -> Enigma -->
-                    <div class="nes-field">
+                    <div class="nes-field" id="contaner-enigma">
                         <label for="enigma" class="text-white text-left">Enigma</label>
                         <textarea type="text" name="enigma" id="enigma" class="nes-textarea" style="resize: none"></textarea>
                     </div>
@@ -22,11 +22,11 @@
                     <label for="dificuldade" class="text-white text-left">Dificuldade</label>
                     <div class="nes-select">
                         <select name="dificuldade" id="dificuldade">
-                            <?php foreach($ds_categoria as $valor):?>
-                                <option value="<?= $valor['id_categoria_dica'];?>">
-                                    <?= $valor['ds_categoria'];?>
+                            <?php foreach ($ds_categoria as $valor) : ?>
+                                <option value="<?= $valor['id_categoria_dica']; ?>">
+                                    <?= $valor['ds_categoria']; ?>
                                 </option>
-                            <?php endforeach;?>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
@@ -35,11 +35,11 @@
                     <label for="tipo" class="text-white">Tipo</label>
                     <div class="nes-select">
                         <select name="tipo" id="tipo">
-                            <?php foreach ($ds_tipos as $valor): ?>
-                                <option value="<?= $valor['id_tipos']?>">
-                                    <?= $valor['ds_tipo']?>
+                            <?php foreach ($ds_tipos as $valor) : ?>
+                                <option value="<?= $valor['id_tipos'] ?>">
+                                    <?= $valor['ds_tipo'] ?>
                                 </option>
-                            <?php endforeach;?>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
