@@ -1,8 +1,10 @@
 <?php
 
 
-namespace Arcanos\Enigmas\Controllers;
+namespace Arcanos\Enigmas\Controllers\Adm;
 
+use Arcanos\Enigmas\Controllers\Banco;
+use Arcanos\Enigmas\Controllers\RequestHandlerInterface;
 
 class CadastroEnigma extends Banco implements RequestHandlerInterface
 {
@@ -12,7 +14,7 @@ class CadastroEnigma extends Banco implements RequestHandlerInterface
         $ds_categoria = $this->banco->select("SELECT * FROM categorias");
         /* Pesquisa do tipo do enigma para cadastro */
         $ds_tipos = $this->banco->select("SELECT * FROM tipos");
-        $this->view('CadastroEnigma.php',[
+        $this->view('adm/CadastroEnigma.php',[
             'ds_categoria' => $ds_categoria,
             'ds_tipos' => $ds_tipos
         ]);

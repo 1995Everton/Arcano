@@ -19,12 +19,12 @@
         <ul class="navbar-nav mr-auto">
             <?php if($_SESSION['tipo_usuario'] == 1){?>
                 <li class="nav-item"><a class="nav-link" href="index.php?pagina=home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Configurações</a>
+                <li class="nav-item"><a class="nav-link" href="#">Cadastros</a>
                     <ul class="bg-light">
-                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=enigma-visu">Enigmas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=titulo-visu">Título</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=usuario-visu">Usuário</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=adm-visu">Adm</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=cadastro-enigma">Enigmas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=cadastro-titulo">Título</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=cadastro-usuario">Usuário</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=cadastro-dica">Dicas</a></li>
                     </ul>
                 </li>
             <?php }else{ ?>

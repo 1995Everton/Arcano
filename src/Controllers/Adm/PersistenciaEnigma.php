@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Arcanos\Enigmas\Controllers;
+namespace Arcanos\Enigmas\Controllers\Adm;
 
 
 class PersistenciaEnigma extends Banco implements RequestHandlerInterface
