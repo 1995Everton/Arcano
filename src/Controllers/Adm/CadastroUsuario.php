@@ -16,7 +16,10 @@ class CadastroUsuario extends Banco implements RequestHandlerInterface
 {
     public function handle()
     {
-        $this->view('adm\CadastroUsuario.php',[]);
+        $usuarios = $this->banco->select("SELECT id_usuarios , nome_usuario , email , url_foto FROM usuarios",[],true);
+        $this->view('adm\CadastroUsuario.php',[
+            'usuarios' => $usuarios
+        ]);
     }
 
 }
