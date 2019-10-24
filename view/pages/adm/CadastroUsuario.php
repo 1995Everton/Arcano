@@ -22,9 +22,8 @@
                             <form method="POST" action="index.php?pagina=enigma-persistencia&acao=editar&id=<?= $usuario['id_usuarios']?>">
                                 <button type="submit" class="nes-btn is-primary">EDITAR</button>
                             </form>
-                            <form method="POST" action="index.php?pagina=enigma-persistencia&acao=deletar&id=<?= $usuario['id_usuarios']?>">
-                                <button type="submit" class="nes-btn is-error">DELETAR</button>
-                            </form>
+                            <?= $modal('Deletar','Deletar Usuarios','Tem certeza que deseja continuar?',"id=".$value);?>
+
                         </div>
                     </td>
 
