@@ -7,42 +7,36 @@
  */
 
 namespace Arcanos\Enigmas\Helpers;
-
-class renderModal
+trait renderModal
 {
-
-    public function getModal()
-    {
-        return array(new Modal(),"modal");
+    public function getCallbackModal(){
+        return array('Arcanos\Enigmas\Helpers\Modal','modal');
     }
-
 }
-
 
 class Modal
 {
-
-    public function modal ($titulo_botao, $titulo_modal, $sub_titulo, $params){
-        echo '
-			<button type="button" class="nes-btn is-primary" data-toggle="modal" data-target="#modalExemplo">
+    public static function modal ($key,$titulo_botao, $titulo_modal, $sub_titulo, $params,$color_button = "is-error"){
+        return '
+			<button type="button" class="nes-btn '.$color_button.'" data-toggle="modal" data-target="#modalNumero'.$key.'" data-backdrop="false">
 			'.$titulo_botao.'
 			</button>
-			<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">'.$titulo_modal.'</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-					<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">'.$sub_titulo.'</div>
-				<div class="modal-footer">
-					<button type="button" class="nes-btn is-primary" data-dismiss="modal">CANCELAR</button>
-					<a href="index.php?'.$params.'" class="nes-btn is-danger">DELETAR</a>
-				</div>
-				</div>
-			</div>
+			<div class="modal fade" id="modalNumero'.$key.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-dark">'.$titulo_modal.'</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-dark text-justify">'.$sub_titulo.'</div>
+                        <div class="modal-footer d-flex justify-content-around">
+                            <button type="button" class="nes-btn" data-dismiss="modal">CANCELAR</button>
+                            <a href="index.php?'.$params.'" class="nes-btn is-error">DELETAR</a>
+                        </div>
+                    </div>
+                </div>
 			</div>';
     }
 }

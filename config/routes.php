@@ -6,6 +6,7 @@ use Arcanos\Enigmas\Controllers\Adm\CadastroTitulo;
 use Arcanos\Enigmas\Controllers\Adm\CadastroUsuario;
 use Arcanos\Enigmas\Controllers\Adm\PersistenciaEnigma;
 use Arcanos\Enigmas\Controllers\Adm\PersistenciaTitulo;
+use Arcanos\Enigmas\Controllers\Adm\PersistenciaUsuario;
 use Arcanos\Enigmas\Controllers\Enigmas\EnigmaFase;
 use Arcanos\Enigmas\Controllers\Enigmas\EnigmaHome;
 use Arcanos\Enigmas\Controllers\Autenticar;
@@ -13,7 +14,7 @@ use Arcanos\Enigmas\Controllers\Login;
 use Arcanos\Enigmas\Controllers\Cadastro;
 use Arcanos\Enigmas\Controllers\Home;
 use Arcanos\Enigmas\Controllers\Perfil;
-use Arcanos\Enigmas\Controllers\PersistenciaUsuario;
+use Arcanos\Enigmas\Controllers\NovoUsuario;
 use Arcanos\Enigmas\Controllers\Ranking;
 
 
@@ -26,7 +27,7 @@ class Routes
             'cadastro' => Cadastro::class,
             'home' => Home::class,
             'autenticar' => Autenticar::class,
-            'persistenciausuario' => PersistenciaUsuario::class,
+            'novo-usuario' => NovoUsuario::class,
             'enigma-home' => EnigmaHome::class,
             'enigma-fase' => EnigmaFase::class,
             'perfil' => Perfil::class,
@@ -36,6 +37,7 @@ class Routes
             'cadastro-titulo' => CadastroTitulo::class,
             'cadastro-dica' => CadastroDicas::class,
             'enigma-persistencia' => PersistenciaEnigma::class,
+            'usuario-persistencia' => PersistenciaUsuario::class,
             'persistenciatitulo' => PersistenciaTitulo::class,
         ];
     }

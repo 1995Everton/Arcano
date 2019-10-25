@@ -9,7 +9,9 @@
         <link rel="stylesheet" href="css/lib/fontawesome/css/all.min.css">
         <link rel="stylesheet" href="css/lib/nes.css">
         <link rel="stylesheet" href="css/lib/animate.css">
+        <link rel="stylesheet" href="css/lib/simplebar.css">
          <!-- Css Projeto-->
+        <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/dropdown.css">
         <link rel="stylesheet" href="css/enigma.css">
@@ -23,6 +25,7 @@
         <script src='js/lib/jquery.tablesorter.js'></script>
         <script src='js/lib/bootstrap.js'></script>
         <script src="js/lib/socket.io.js"></script>
+        <script src="js/lib/simplebar.min.js"></script>
         <!--JavaScript Projeto-->
         <script src="js/background.js"></script>
         <script src="js/chat.js"></script>

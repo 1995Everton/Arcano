@@ -19,7 +19,7 @@
 
 </style>
 
-<form action="index.php?pagina=persistenciausuario" method="POST" >
+<form action="index.php?pagina=novo-usuario" method="POST" >
   <div class="caixa">
     <div class="nes-field ">
         <h2>Cadastro</h2>

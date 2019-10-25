@@ -11,20 +11,20 @@ namespace Arcanos\Enigmas\Controllers\Adm;
 
 use Arcanos\Enigmas\Controllers\Banco;
 use Arcanos\Enigmas\Controllers\RequestHandlerInterface;
-use Arcanos\Enigmas\Helpers\renderModal;
 
 class CadastroUsuario extends Banco implements RequestHandlerInterface
 {
 
     public function handle()
     {
-        $Modal = new renderModal();
-        $modal = $Modal->getModal();
+
+        $callbackModal = $this->getCallbackModal();
         $usuarios = $this->banco->select("SELECT id_usuarios , nome_usuario , email , url_foto FROM usuarios",[],true);
         $this->view('adm\CadastroUsuario.php',[
             'usuarios' => $usuarios,
-            'modal' => $modal
+            'modal' => $callbackModal
         ]);
+
     }
 
 }
