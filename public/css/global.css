@@ -1,0 +1,10 @@
+.scrollbar {
+    height: 80vh;
+    color: white;
+}
+.modal{
+    top: 12% !important;
+}
+.modal-content{
+    border: 3px solid black;
+}
