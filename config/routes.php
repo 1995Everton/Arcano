@@ -4,6 +4,7 @@ use Arcanos\Enigmas\Controllers\Adm\CadastroDicas;
 use Arcanos\Enigmas\Controllers\Adm\CadastroEnigma;
 use Arcanos\Enigmas\Controllers\Adm\CadastroTitulo;
 use Arcanos\Enigmas\Controllers\Adm\CadastroUsuario;
+use Arcanos\Enigmas\Controllers\Adm\FormUsuario;
 use Arcanos\Enigmas\Controllers\Adm\PersistenciaEnigma;
 use Arcanos\Enigmas\Controllers\Adm\PersistenciaTitulo;
 use Arcanos\Enigmas\Controllers\Adm\PersistenciaUsuario;
@@ -38,6 +39,7 @@ class Routes
             'cadastro-dica' => CadastroDicas::class,
             'enigma-persistencia' => PersistenciaEnigma::class,
             'usuario-persistencia' => PersistenciaUsuario::class,
+            'form-usuario' => FormUsuario::class,
             'persistenciatitulo' => PersistenciaTitulo::class,
         ];
     }
