@@ -1,7 +1,7 @@
 <div class="container my-3" style="height: 80%">
     <div class="nes-container with-title is-centered" style="height: 100%">
         <p class="bg-transparent text-white" style="font-size: 30px">Cadastro de Enigmas</p>
-        <form action="index.php?pagina=enigma-persistencia" enctype="multipart/form-data" method="POST" style="height: 88%">
+        <form action="index.php?pagina=persistencia-enigma" enctype="multipart/form-data" method="POST" style="height: 88%">
             <div class="row justify-content-center align-items-center" style="height: 100%">
                 <div class="col-12">
                     <!-- Campo -> Enigma -->
@@ -51,6 +51,9 @@
                     </div>
                 </div>
                 <div class="col-3">
+                    <a href="index.php?pagina=tabela-enigma" class="nes-btn btn-block">Voltar</a>
+                </div>
+                <div class="col-3">
                     <button type="submit" class="nes-btn is-success btn-block">Cadastrar</button>
                 </div>
             </div>
@@ -59,17 +62,17 @@
 </div>
 
 <script>
-/* Foi o melhor que eu consegui fazer (y), pelo menos para terminar as validaçoes vai dar certo sdkjasdj*/
-var el = document.getElementById('container-enigma');
-var lol = document.getElementById('container-arquivo');
+    /* Foi o melhor que eu consegui fazer (y), pelo menos para terminar as validaçoes vai dar certo sdkjasdj*/
+    var el = document.getElementById('container-enigma');
+    var lol = document.getElementById('container-arquivo');
 
-document.getElementById( 'tipo' , 'file' ).addEventListener( 'change', function(){
-    if(this.value === '1') {
-        el.style.visibility = 'visible';
-        lol.style.visibility = 'hidden';
-    } else {
-        el.style.visibility = 'hidden';
-        lol.style.visibility = 'visible';
-    }
-});
+    document.getElementById( 'tipo' , 'file' ).addEventListener( 'change', function(){
+        if(this.value === '1') {
+            el.style.visibility = 'visible';
+            lol.style.visibility = 'hidden';
+        } else {
+            el.style.visibility = 'hidden';
+            lol.style.visibility = 'visible';
+        }
+    });
 </script>

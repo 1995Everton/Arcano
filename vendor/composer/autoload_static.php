@@ -21,7 +21,8 @@ class ComposerStaticInit466e07a215c4c1171bf7e2972bb1f24e
     );
 
     public static $classMap = array (
-        'Routes' => __DIR__ . '/../..' . '/config/Routes.php',
+        'InterceptorRequest' => __DIR__ . '/../..' . '/config/InterceptorRequest.php',
+        'Routes' => __DIR__ . '/../..' . '/config/routes.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

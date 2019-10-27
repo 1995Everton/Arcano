@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Routes' => $baseDir . '/config/Routes.php',
+    'InterceptorRequest' => $baseDir . '/config/InterceptorRequest.php',
+    'Routes' => $baseDir . '/config/routes.php',
 );

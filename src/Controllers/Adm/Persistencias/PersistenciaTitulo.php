@@ -1,6 +1,6 @@
 <?php
 
-namespace Arcanos\Enigmas\Controllers\Adm;
+namespace Arcanos\Enigmas\Controllers\Adm\Persistencias;
 
 
 use Arcanos\Enigmas\Controllers\Banco;

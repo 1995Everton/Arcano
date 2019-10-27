@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Arcanos\Enigmas\Controllers\Adm;
+namespace Arcanos\Enigmas\Controllers\Adm\Forms;
 
 
 use Arcanos\Enigmas\Controllers\Banco;

@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Arcanos\Enigmas\Controllers\Adm;
+namespace Arcanos\Enigmas\Controllers\Adm\Persistencias;
 
 
 use Arcanos\Enigmas\Controllers\Banco;
 use Arcanos\Enigmas\Controllers\RequestHandlerInterface;
 
-class PersistenciaUsuario extends Banco implements RequestHandlerInterface
+class PersistenciaDicas extends Banco implements  RequestHandlerInterface
 {
 
     public function handle()
@@ -23,7 +23,7 @@ class PersistenciaUsuario extends Banco implements RequestHandlerInterface
                 $this->deletar();
                 break;
             default:
-                header('Location: index.php?pagina=cadastro-usuario');
+                header('Location: index.php?pagina=form-dicas');
                 break;
         }
     }

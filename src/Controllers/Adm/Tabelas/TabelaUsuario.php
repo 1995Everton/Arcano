@@ -6,23 +6,22 @@
  * Time: 20:48
  */
 
-namespace Arcanos\Enigmas\Controllers\Adm;
+namespace Arcanos\Enigmas\Controllers\Adm\Tabelas;
 
 
 use Arcanos\Enigmas\Controllers\Banco;
 use Arcanos\Enigmas\Controllers\RequestHandlerInterface;
 
-class CadastroUsuario extends Banco implements RequestHandlerInterface
+class TabelaUsuario extends Banco implements RequestHandlerInterface
 {
 
     public function handle()
     {
 
-        $callbackModal = $this->getCallbackModal();
         $usuarios = $this->banco->select("SELECT id_usuarios , nome_usuario , email , url_foto FROM usuarios",[],true);
-        $this->view('adm\CadastroUsuario.php',[
+        $this->view('adm\TabelaUsuario.php',[
             'usuarios' => $usuarios,
-            'modal' => $callbackModal
+            'modal' => $this->getCallbackModal()
         ]);
 
     }

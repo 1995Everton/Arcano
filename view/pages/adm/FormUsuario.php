@@ -1,7 +1,7 @@
 <div class="container my-3" style="height: 80%">
     <div class="nes-container with-title is-centered" style="height: 100%">
         <p class="bg-transparent text-white" style="font-size: 30px"><?= $titulo; ?></p>
-        <form action="index.php?pagina=usuario-persistencia<?= $url_post; ?>" method="POST" style="height: 88%">
+        <form action="index.php?pagina=persistencia-usuario<?= $url_post; ?>" method="POST" style="height: 88%">
             <div class="row justify-content-center align-items-center" style="height: 100%">
                 <div class="col-6">
                     <div class="nes-field">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-3">
-                    <a href="index.php?pagina=cadastro-usuario" class="nes-btn btn-block">Voltar</a>
+                    <a href="index.php?pagina=tabela-usuario" class="nes-btn btn-block">Voltar</a>
                 </div>
                 <div class="col-3">
                     <button type="submit" class="nes-btn is-success btn-block"><?= $titulo_button ?></button>

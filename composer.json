@@ -16,6 +16,6 @@
         "psr-4": {
             "Arcanos\\Enigmas\\" : "src/"
         },
-        "classmap": ["./config/Routes.php"]
+        "classmap": ["config/"]
     }
 }

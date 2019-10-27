@@ -21,10 +21,10 @@
                 <li class="nav-item"><a class="nav-link" href="index.php?pagina=home">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Cadastros</a>
                     <ul class="bg-light">
-                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=cadastro-enigma">Enigmas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=cadastro-titulo">Título</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=cadastro-usuario">Usuário</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=cadastro-dica">Dicas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=tabela-enigma">Enigmas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=tabela-titulo">Título</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=tabela-usuario">Usuário</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?pagina=tabela-dica">Dicas</a></li>
                     </ul>
                 </li>
             <?php }else{ ?>
