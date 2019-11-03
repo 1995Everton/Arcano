@@ -62,17 +62,19 @@
 </div>
 
 <script>
-    /* Foi o melhor que eu consegui fazer (y), pelo menos para terminar as validaçoes vai dar certo sdkjasdj*/
-    var el = document.getElementById('container-enigma');
-    var lol = document.getElementById('container-arquivo');
+    $(document).ready(function() {
+        $('#container-arquivo').hide();
 
-    document.getElementById( 'tipo' , 'file' ).addEventListener( 'change', function(){
-        if(this.value === '1') {
-            el.style.visibility = 'visible';
-            lol.style.visibility = 'hidden';
-        } else {
-            el.style.visibility = 'hidden';
-            lol.style.visibility = 'visible';
-        }
+        $('#tipo').change(function() {
+            //sempre que  o valor do campo TIPO mudar ele vai fazer os brignetsky
+            let valorDoInferno = $('#tipo').val()
+            if (valorDoInferno == 1) {
+                $('#container-enigma').show();
+                $('#container-arquivo').hide();
+            } else {
+                $('#container-enigma').hide();
+                $('#container-arquivo').show();
+            }
+        });
     });
 </script>

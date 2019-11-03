@@ -12,13 +12,11 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
     public function handle()
     {
         if ((isset($_POST)) && (!empty($_POST))) {
-            $dificuldade = $_POST['dificuldade'];//Armazena o valor do campo Dificuldade
-            $tipo = $_POST['tipo'];//Armazena o valor do campo TIPO
-            
-            $enigma = (isset($_POST['enigma'])) ? $_POST['enigma'] : validaArquivo(); //$_FILES['arquivo']['error'];//Armazena o valor do campo arquivo
-
-            $resposta = $_POST['resposta'];//Armazena o valor do campo de Resposta
-            $erro; //Var para validaçao de erros
+            $dificuldade = $_POST['dificuldade']; //Armazena o valor do campo Dificuldade
+            $tipo = $_POST['tipo']; //Armazena o valor do campo TIPO
+            $enigma = $_POST['enigma']; //$_FILES['arquivo']['error'];//Armazena o valor do campo arquivo
+            $resposta = $_POST['resposta']; //Armazena o valor do campo de Resposta
+            $erro = null; //Var para validaçao de erros
 
             /* Validacao dos campos do formulário */
             if (!isset($dificuldade) || (empty($dificuldade))) {
@@ -29,17 +27,16 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
                 $erro = 'Verifique o preenchimento do campo enigma';
             } elseif ((!isset($resposta)) || (empty($resposta))) {
                 $erro = 'Verifique o campo Resposta';
-            } /* elseif () {
-                $erro = 'Sem arquivo selecionado';
-            } */
-
-            function validaArquivo()
-            {
-                $ark = $_FILES['arquivo']['error'];
-
-                return $ark;
             }
-
+            if ($tipo == 1) {
+                if (!isset($enigma) || (empty($enigma))) {
+                    $erro = 'Preencha corretamente o campo Enigma!';
+                }
+            } else {
+                if(){
+                    
+                }
+            }
 
             /* Validaçao se cadastra no banco ou Retorna mensagem de erro; */
             if (isset($erro)) {
@@ -62,13 +59,13 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
             echo "</pre>";
 
 
-           /*  if (!empty($_FILES['arquivo'])) {
+            /*  if (!empty($_FILES['arquivo'])) {
                 $arquivo_temporario = $_FILES['arquivo']['tmp_name'];
                 $arquivo = date_timestamp_get(date_create()) . basename($_FILES['arquivo']['name']);
                 $diretorio = '../public/img/uploaded_arqs/';           
              */
             //$arquivo = $diretorio . basename($_FILES['arquivo']['name']);//que vai pro Banco
-          /*       echo $diretorio . $arquivo;
+            /*       echo $diretorio . $arquivo;
 
                 if (move_uploaded_file($arquivo_temporario, $diretorio . "/" . $arquivo)) {
                     echo "Arquivo válido e enviado com sucesso.\n";
@@ -85,8 +82,6 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
             $this->toast('Erro no envio do formulário!', 'ERRO', 'danger');
             header("Location: index.php?pagina=enigma-cadastro");
         }
-
-
     }
 
     /* Inserção de dados no banco de dados */
