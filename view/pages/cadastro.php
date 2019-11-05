@@ -58,9 +58,9 @@ senha.addEventListener("input", function (event) {
   if (!senha.validity.customError) {
     senha.setCustomValidity("A senha deve conter pelo menos uma letra e um numero!");
   } else {
-    //$('.toast').toast('show')
+    
     senha.setCustomValidity("");
   }
 });
-//terminar de configurar a mensagem
+
 </script>
