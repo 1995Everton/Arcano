@@ -1,5 +1,5 @@
 <div class="container mt-4">
-    <div class="nes-container is-rounded">
+    <div class="nes-container is-rounded" style="background-color: #1c2025d1;">
         <div class="row mb-5 pt-4">
             <div class="col-6 d-flex justify-content-around text-white align-items-center">
                 <span class="nes-text is-primary text-white h4">Usuários</span>

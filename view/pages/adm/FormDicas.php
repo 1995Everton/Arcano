@@ -1,5 +1,5 @@
 <div class="container my-3" style="height: 80%">
-    <div class="nes-container with-title is-centered" style="height: 100%">
+    <div class="nes-container with-title is-centered" style="height: 100%;">
         <p class="bg-transparent text-white" style="font-size: 30px"><?= $config['titulo']; ?></p>
         <form action="index.php?pagina=persistencia-dicas&acao=<?= $config['acao']; ?>" method="POST" style="height: 88%">
             <div class="row justify-content-center align-items-center" style="height: 100%">
