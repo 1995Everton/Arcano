@@ -8,7 +8,7 @@
             </div>
             <div class="col-2"></div>
             <div class="col-4">
-                <input  class="search nes-input" type="search" placeholder="Search" data-column="all">
+                <input style="font-size:12px" class="search nes-input" type="search" placeholder="Search" data-column="all">
             </div>
         </div>
         <div class="scrollbar" data-simplebar>
