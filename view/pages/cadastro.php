@@ -43,6 +43,7 @@
         <div class="col-md-12 justify-content-center d-flex align-itens-center">
 
         <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <a href="index.php?pagina=login" class="btn btn-primary" >Voltar</a>
 
         </div>
     </div>
