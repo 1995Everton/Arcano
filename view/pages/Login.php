@@ -17,9 +17,9 @@
                 <input type="password" class="nes-input is-dark" name="senha">
             </div>
             <div class="mt-3">
-                <button type="submit" class="nes-btn is-primary">Logar</button>
+                <button type="submit" class="nes-btn is-primary">Logar</button> 
             </div>
-            <a href="index.php?pagina=cadastro" class="mt-2">Não possui Cadastro?</a>
+            <a href="index.php?pagina=cadastro" class="mt-2" style="font-size:20px">Não possui Cadastro?</a>
         </form>
     </div>
 </div>
