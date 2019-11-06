@@ -22,6 +22,7 @@
                     <label for="dificuldade" class="text-white text-left">Dificuldade</label>
                     <div class="nes-select">
                         <select name="dificuldade" id="dificuldade">
+                            <option value=""></option>
                             <?php foreach ($ds_categoria as $valor) : ?>
                                 <option value="<?= $valor['id_categoria_dica']; ?>">
                                     <?= $valor['ds_categoria']; ?>
@@ -35,6 +36,7 @@
                     <label for="tipo" class="text-white">Tipo</label>
                     <div class="nes-select">
                         <select name="tipo" id="tipo">
+                            <option value=""></option>
                             <?php foreach ($ds_tipos as $valor) : ?>
                                 <option value="<?= $valor['id_tipos'] ?>">
                                     <?= $valor['ds_tipo'] ?>
@@ -63,12 +65,10 @@
 
 <script>
     $(document).ready(function() {
-        $('#container-arquivo').hide();
 
         $('#tipo').change(function() {
             //sempre que  o valor do campo TIPO mudar ele vai fazer os brignetsky
-            let valorDoInferno = $('#tipo').val()
-            if (valorDoInferno == 1) {
+            if ($('#tipo').val() == 1) {
                 $('#container-enigma').show();
                 $('#container-arquivo').hide();
             } else {

@@ -34,28 +34,11 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
                 //validação arquivo
                 $erro = 'Se enigma for do tipo: Imagem, Audio ou Video é necessario anexar uma arquivo!';
             }
-            /*if (!empty($_FILES['arquivo']['name'])) {
-                $arquivo_temporario = $_FILES['arquivo']['tmp_name'];
-                $arquivo = date_timestamp_get(date_create()) . basename($_FILES['arquivo']['name']);
-                $diretorio = '../public/img/uploaded_arqs/';
-
-                $arquivo = $diretorio . basename($_FILES['arquivo']['name']); //que vai pro Banco
-                echo "__DIR__ " . $diretorio . $arquivo;
-
-                if (move_uploaded_file($arquivo_temporario, $diretorio . "/" . $arquivo)) {
-                    echo "Arquivo válido e enviado com sucesso.\n";
-                } else {
-                    $erro = 'Erro no envio do arquivo!';
-                }
-            } else {
-                $erro = 'Se enigma for do tipo: Imagem, Audio ou Video é necessario anexar uma arquivo!';
-            }*/
-
             echo $erro;
 
             /* Validaçao se cadastra no banco ou Retorna mensagem de erro; */
             if (!isset($erro)) {
-                $this->cadastraEnigma(/* ARRUMAR OS PARAMETROS PARA INSERIR NO BANCO */);
+                $this->cadastraEnigma($dificuldade, $tipo, $retVal = (!empty($enigma)) ? $enigma : $this->uploadImage($imagem), $resposta);
             } else {
                 $this->toast($erro, 'ERRO', 'danger');
                 //header("Location: index.php?pagina=enigma-cadastro");
@@ -79,30 +62,33 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
             /* https://www.youtube.com/watch?v=qmNbZmBOaGM */
         } else {
             $this->toast('Erro no envio do formulário!', 'ERRO', 'danger');
-            header("Location: index.php?pagina=enigma-cadastro");
+            //header("Location: index.php?pagina=enigma-cadastro");
         }
     }
 
-    /* Inserção de dados no banco de dados */
-    public function cadastraEnigma()
+    public function uploadImage($imagem)
     {
 
-        //$this->uploadImage();
-        echo 'Aprovado e inserido no banco';
-        /* $this->banco->insert(
-            'enigmas',
-            [
-                'dificuldade_enigma_id' => $this->handle($dificuldade),
-                'enigmas_tipos_id' => s,
-                'enigma' => $enigma = (isset($imagem)) ? $imagem : $enigma),
-                'data' => date('Y-m-d'),
-                'resposta' => utf8_encode($_POST['resposta'])
-            ]
-        ); */
-    }
+        if (!empty($imagem)) {
+            $arquivo_temporario = $imagem;
+            $arquivo = date_timestamp_get(date_create()) . basename($imagem);
+            $diretorio = '../public/img/uploaded_arqs/';
 
-    function uploadImage($img)
-    {
+            $arquivo = $diretorio . basename($imagem); //que vai pro Banco
+            echo "__DIR__ " . $diretorio . $arquivo;
+
+            if (move_uploaded_file($arquivo_temporario, $diretorio . "/" . $arquivo)) {
+                echo "Arquivo válido e enviado com sucesso.\n";
+                return $diretorio;
+            } else {
+                $erro = 'Erro no envio do arquivo!';
+            }
+        } else {
+            $erro = 'Se enigma for do tipo: Imagem, Audio ou Video é necessario anexar uma arquivo!';
+        }
+
+        return $erro;
+        /*
         $filename = $img;
         $client_id = "e35548a1a0c0fab"; //Meu id de cleinte da imglur
         $handle = fopen($filename, "r");
@@ -128,5 +114,24 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
             echo "<h2>There's a Problem</h2>";
             echo $pms['data']['error']['message'];
         }
+        */
+    }
+
+    /* Inserção de dados no banco de dados */
+    public function cadastraEnigma($dificuldade, $tipo, $enigma, $resposta)
+    {
+
+        //$this->uploadImage();
+        echo 'Aprovado e inserido no banco';
+        /* $this->banco->insert(
+            'enigmas',
+            [
+                'dificuldade_enigma_id' => $this->handle($dificuldade),
+                'enigmas_tipos_id' => s,
+                'enigma' => $enigma = (isset($imagem)) ? $imagem : $enigma),
+                'data' => date('Y-m-d'),
+                'resposta' => utf8_encode($_POST['resposta'])
+            ]
+        ); */
     }
 }
