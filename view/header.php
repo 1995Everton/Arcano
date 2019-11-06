@@ -6,7 +6,7 @@
          <!-- Plugins CSS-->
         <link rel="stylesheet" href="css/lib/bootstrap.css">
         <link rel='stylesheet' href='css/lib/bootstrap-material-design.min.css'>
-        <link rel="stylesheet" href="css/lib/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="css/lib/nes.css">
         <link rel="stylesheet" href="css/lib/animate.css">
         <link rel="stylesheet" href="css/lib/simplebar.css">

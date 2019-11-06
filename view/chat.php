@@ -1,6 +1,6 @@
 <div id="chat-circle" class="btn btn-raised">
     <div id="chat-overlay"></div>
-    <i class="fad fa-comments-alt fa-3x""></i>
+    <i class="fas fa-comments fa-3x""></i>
 </div>
 <div class="chat-box">
     <div class="chat-box-header">
