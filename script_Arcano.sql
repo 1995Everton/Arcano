@@ -82,52 +82,72 @@ create table categorias (
 alter table    usuarios 
 add constraint categoria_usuarios_id  
 foreign key   (categoria_usuarios_id) 
-references 	   categoria_usuarios (id_categoria_usuarios);
+references 	   categoria_usuarios (id_categoria_usuarios)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
 
 alter table    usuarios_titulo 
 add constraint usuarios_id 
 foreign key   (usuarios_id) 
-references 	   usuarios (id_usuarios);
+references 	   usuarios (id_usuarios)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
 
 alter table    usuarios_titulo 
 add constraint titulo_id   
 foreign key   (titulo_id)   
-references     titulo (id_titulo);
+references     titulo (id_titulo)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
 
 alter table    pontuacao 
 add constraint usuarios_pontuacao_id 
 foreign key   (usuarios_pontuacao_id) 
-references     usuarios (id_usuarios);
+references     usuarios (id_usuarios)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
 
 alter table    pontuacao 
 add constraint enigmas_pontuacao_id 
 foreign key   (enigmas_pontuacao_id) 
-references     enigmas (id_enigmas);
+references     enigmas (id_enigmas)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
 
 alter table    enigmas 
 add constraint dificuldade_enigma_id 
 foreign key   (dificuldade_enigma_id) 
-references     dificuldade_enigmas (id_dificuldade_enigma);
+references     dificuldade_enigmas (id_dificuldade_enigma)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
 
 alter table    enigmas 
 add constraint enigmas_tipos_id 
 foreign key   (enigmas_tipos_id) 
-references     tipos (id_tipos);
+references     tipos (id_tipos)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
 
 alter table    dicas 
 add constraint categoria_dicas_id 
 foreign key   (categoria_dicas_id)
-references     categorias (id_categoria_dica);
+references     categorias (id_categoria_dica)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
 
 alter table    dicas 
 add constraint dicas_enigmas_id 
 foreign key   (dicas_enigmas_id) 
-references     enigmas (id_enigmas);
+references     enigmas (id_enigmas)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
 
 alter table    dicas 
 add constraint dicas_tipos_id 
 foreign key   (dicas_tipos_id) 
-references     tipos (id_tipos);
+references     tipos (id_tipos)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
 
 /* Inserindo dados nas tabelas */
 

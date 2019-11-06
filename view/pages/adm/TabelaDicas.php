@@ -23,14 +23,14 @@
                 </thead>
                 <tbody>
                 <?php foreach ($dicas as $key =>$dica):?>
-                    <tr>
+                    <tr class="cell-<?= $dica['id_dicas']?>">
                         <td data-label="ID"><?= $dica['id_dicas']?></td>
                         <td data-label="Dica"><?= $dica['dica'];?></td>
                         <td data-label="Enigma"><?= $dica['enigma'];?></td>
                         <td style="max-width: 50%">
                             <div class="d-flex justify-content-around align-items-center">
                                 <a href="index.php?pagina=form-dicas&id=<?= $dica['id_dicas']?>" class="nes-btn is-primary">EDITAR</a>
-                                <?= $modal($key,'Deletar','Deletar Dica','Tem certeza que deseja continuar?',"pagina=persistencia-dicas&acao=deletar&id=$dica[id_dicas]");?>
+                                <?= $modal($dica['id_dicas'],'Deletar','Deletar Dica','Tem certeza que deseja continuar?');?>
                             </div>
                         </td>
                     </tr>
@@ -45,6 +45,20 @@
 <script>
     $(function() {
         var $table = $('table').tablesorter({});
+        $('.deletar').click(function () {
+            let id = $(this).val();
+            axios.get(`http://localhost/index.php?pagina=persistencia-dicas&acao=deletar&id=${id}`)
+                .then( success =>{
+                    let { status ,  data : { message , id } } = success.data
+                    if(status == 202){
+                        $(".cell-"+id).remove();
+                        toast("Aviso",message)
+                    }else{
+                        toast("Aviso",message)
+                    }
+                })
+                .catch(err => console.log(err))
+        })
     });
 
 </script>

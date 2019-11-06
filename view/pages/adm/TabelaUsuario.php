@@ -23,7 +23,7 @@
                 </thead>
                 <tbody>
                 <?php foreach ($usuarios as $key =>$usuario):?>
-                    <tr>
+                    <tr class="cell-<?= $usuario['id_usuarios']?>">
                         <td data-label="ID"><?= $usuario['id_usuarios']?></td>
                         <td data-label="Nome"><?= $usuario['nome_usuario'];?></td>
                         <td data-label="Foto">
@@ -32,7 +32,7 @@
                         <td style="max-width: 50%">
                             <div class="d-flex justify-content-around align-items-center">
                                 <a href="index.php?pagina=form-usuario&id=<?= $usuario['id_usuarios']?>" class="nes-btn is-primary">EDITAR</a>
-                                <?= $modal($key,'Deletar','Deletar Usuário','Tem certeza que deseja continuar?',"pagina=persistencia-usuario&acao=deletar&id=$usuario[id_usuarios]");?>
+                                <?= $modal($usuario['id_usuarios'],'Deletar','Deletar Usuário','Tem certeza que deseja continuar?');?>
                             </div>
                         </td>
                     </tr>
@@ -47,6 +47,20 @@
 <script>
     $(function() {
         var $table = $('table').tablesorter({});
+        $('.deletar').click(function () {
+            let id = $(this).val();
+            axios.get(`http://localhost/index.php?pagina=persistencia-usuario&acao=deletar&id=${id}`)
+                .then( success =>{
+                    let { status ,  data : { message , id } } = success.data
+                    if(status == 202){
+                        $(".cell-"+id).remove();
+                        toast("Aviso",message)
+                    }else{
+                        toast("Aviso",message)
+                    }
+                })
+                .catch(err => console.log(err))
+        })
     });
 
 </script>

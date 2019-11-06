@@ -28,12 +28,15 @@
         <script src='js/lib/bootstrap.js'></script>
         <script src="js/lib/socket.io.js"></script>
         <script src="js/lib/simplebar.min.js"></script>
+        <script src="js/lib/axios.min.js"></script>
         <!--JavaScript Projeto-->
         <script src="js/background.js"></script>
         <script src="js/chat.js"></script>
+        <script src="js/global.js"></script>
     </head>
 
     <body>
+    <div id="toast"></div>
         <?php if(isset($_SESSION['id_usuarios'])):
                 include __DIR__."./navbar.php";
                 include __DIR__ . "./chat.php";?>

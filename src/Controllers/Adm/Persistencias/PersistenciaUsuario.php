@@ -37,6 +37,7 @@ class PersistenciaUsuario extends Banco implements RequestHandlerInterface
     }
     public function deletar()
     {
-        echo 'deletar';
+        $query =  $this->banco->delete("usuarios",['id_usuarios' => $_GET['id']]);
+        $this->deleteStatus($query);
     }
 }

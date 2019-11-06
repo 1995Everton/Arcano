@@ -25,7 +25,7 @@
                 </thead>
                 <tbody>
                 <?php foreach ($enigmas as $key =>$enigma):?>
-                    <tr>
+                    <tr class="cell-<?= $enigma['id_enigmas']?>">
                         <td data-label="ID"><?= $enigma['id_enigmas']?></td>
                         <td data-label="Enigma"><?= $enigma['enigma']?></td>
                         <td data-label="Resposta"><?= $enigma['resposta'];?></td>
@@ -34,7 +34,7 @@
                         <td style="max-width: 50%">
                             <div class="d-flex justify-content-around align-items-center">
                                 <a href="index.php?pagina=form-enigma&id=<?= $enigma['id_enigmas']?>" class="nes-btn is-primary">EDITAR</a>
-                                <?= $modal($key,'Deletar','Deletar Enigma','Tem certeza que deseja continuar?',"pagina=persistencia-enigma&acao=deletar&id=$enigma[id_enigmas]");?>
+                                <?= $modal($enigma['id_enigmas'],'Deletar','Deletar Enigma','Tem certeza que deseja continuar?');?>
                             </div>
                         </td>
                     </tr>
@@ -48,6 +48,20 @@
 <script>
     $(function() {
         var $table = $('table').tablesorter({});
+        $('.deletar').click(function () {
+            let id_usuario = $(this).val();
+            axios.get(`http://localhost/index.php?pagina=persistencia-enigma&acao=deletar&id=${id}`)
+                .then( success =>{
+                    let { status ,  data : { message , id } } = success.data
+                    if(status == 202){
+                        $(".cell-"+id).remove();
+                        toast("Aviso",message)
+                    }else{
+                        toast("Aviso",message)
+                    }
+                })
+                .catch(err => console.log(err))
+        })
     });
 
 </script>

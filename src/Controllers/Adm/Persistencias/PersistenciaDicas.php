@@ -37,6 +37,7 @@ class PersistenciaDicas extends Banco implements  RequestHandlerInterface
     }
     public function deletar()
     {
-        echo 'deletar';
+        $query =  $this->banco->delete("dicas",['id_dicas' => $_GET['id']]);
+        $this->deleteStatus($query);
     }
 }
