@@ -11,4 +11,8 @@ interface PersistenceInterface
     public function novo();
     public function editar();
     public function deletar();
+    public function getRegras();
+    public function getTraducao();
+    public function urlConfigError();
+
 }

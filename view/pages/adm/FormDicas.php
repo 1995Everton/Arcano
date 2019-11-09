@@ -18,7 +18,7 @@
                 <div class="col-4 mt-2">
                     <div class="nes-field">
                         <label class="text-white text-left">Dica</label>
-                        <input type="text" name="dica" value="<?= $config['dica']['dica'] ?>" class="nes-input">
+                        <input type="text" name="Dica" value="<?= $config['dica']['dica'] ?>" class="nes-input">
                     </div>
                 </div>
                 <div class="col-4 text-left">

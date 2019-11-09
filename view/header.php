@@ -47,7 +47,7 @@
             </script>
        <?php endif; ?>
         <?php if(isset($_SESSION['toast-mensagem'])): ?>
-            <div class="toast bg-<?= $_SESSION['toast-color'];?>" data-delay="4000">
+            <div class="toast bg-<?= $_SESSION['toast-color'];?>" data-delay="<?= $_SESSION['toast-delay'];?>">
                 <div class="toast-header">
                     <strong class="mr-auto"><?= $_SESSION['toast-header'];?></strong>
                     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -61,6 +61,7 @@
             unset($_SESSION['toast-mensagem']);
             unset($_SESSION['toast-header']);
             unset($_SESSION['toast-color']);
+            unset($_SESSION['toast-delay']);
         endif; ?>
         <?php include __DIR__."/background.php"?>
 

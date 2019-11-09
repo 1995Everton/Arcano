@@ -6,6 +6,8 @@ namespace Arcanos\Enigmas\Controllers\Adm\Persistencias;
 
 use Arcanos\Enigmas\Controllers\Banco;
 use Arcanos\Enigmas\Controllers\RequestHandlerInterface;
+use Respect\Validation\Exceptions\ValidationException;
+use Respect\Validation\Validator as v;
 
 class PersistenciaUsuario extends Banco implements RequestHandlerInterface,PersistenceInterface
 {
@@ -32,30 +34,32 @@ class PersistenciaUsuario extends Banco implements RequestHandlerInterface,Persi
     }
     public function validarPost()
     {
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $senha_repita = $_POST['senha_repita'];
-        $tipo_usuario = $_POST['tipo_usuario'];
-        $url_foto = $_POST['url_foto'];
-        return [
-            'nome_usuario' => $nome,
-            'email' => $email,
-            'senha' => $this->criptografar($senha),
-            'categoria_usuarios_id' => $tipo_usuario,
-            'url_foto' => $url_foto
-        ];
+        try {
+            $this->getRegras()->assert($_POST);
+            return [
+                'nome_usuario' => $_POST['Nome'],
+                'email' => $_POST['email'],
+                'senha' => $this->criptografar($_POST['Senha']),
+                'categoria_usuarios_id' => $_POST['tipo_usuario'],
+                'url_foto' => $_POST['Foto']
+            ];
+        } catch (ValidationException $e) {
+            $errors = array_filter($e->findMessages($this->getTraducao()));
+            $this->allToast($errors);
+            header($this->urlConfigError());
+            exit();
+        }
     }
     public function novo()
     {
         $this->banco->insert($this->TABELA,$this->validarPost());
-        $this->toast("Usuarios Criado Com Sucesso!","Aviso","success");
+        $this->toast("Usuario Criado Com Sucesso!","Aviso","success");
         header($this->SUCCESS_REDIRECT);
     }
     public function editar()
     {
         $this->banco->update($this->TABELA,$this->validarPost(),$this->getID());
-        $this->toast("Usuarios Atualizado Com Sucesso!","Aviso","success");
+        $this->toast("Usuario Atualizado Com Sucesso!","Aviso","success");
         header($this->SUCCESS_REDIRECT);
     }
     public function deletar()
@@ -67,5 +71,31 @@ class PersistenciaUsuario extends Banco implements RequestHandlerInterface,Persi
     public function getID()
     {
         return ['id_usuarios' => $_GET['id']];
+    }
+    public function getRegras()
+    {
+        return v::key('Nome', v::stringType()->notEmpty()->length(3, 32))
+            ->key('email', v::email()->notEmpty())
+            ->key('Senha',  v::stringType()->notEmpty()->length(3, 32)->equals($_POST['senha_repita']))
+            ->key('Foto', v::notEmpty()->url());
+    }
+    public function getTraducao()
+    {
+        return [
+            'notEmpty' => 'O Campo {{name}} nao pode estar em branco',
+            'length' => 'O Campo {{name}} deve conter entre 3 a 32 caracteres',
+            'equals'=> 'As Senhas devem ser iguais',
+            'url' => 'O Campo {{name}} deve ser uma url valida',
+            'email' => 'Você deve informar um E-Mail Valido'
+        ];
+    }
+
+    public function urlConfigError()
+    {
+        if(isset($_GET['id'])){
+            return $this->ERROR_REDIRECT."&id=".$_GET['id'];
+        }else{
+            return $this->ERROR_REDIRECT;
+        }
     }
 }

@@ -6,7 +6,7 @@
                 <div class="col-6">
                     <div class="nes-field">
                         <label class="text-white text-left">Nome</label>
-                        <input type="text" name="nome" value="<?= $usuario['nome_usuario']; ?>" class="nes-input">
+                        <input type="text" name="Nome" value="<?= $usuario['nome_usuario']; ?>" class="nes-input">
                     </div>
                 </div>
                 <div class="col-6">
@@ -18,7 +18,7 @@
                 <div class="col-4 mt-2">
                     <div class="nes-field">
                         <label  class="text-white text-left">Senha</label>
-                        <input type="text" name="senha"  class="nes-input">
+                        <input type="text" name="Senha"  class="nes-input">
                     </div>
                 </div>
                 <div class="col-4 mt-2">
@@ -42,7 +42,7 @@
                 <div class="col-12">
                     <div class="nes-field">
                         <label class="text-white text-left">Foto Url</label>
-                        <input type="text" name="url_foto" value="<?= $usuario['url_foto']; ?>" class="nes-input">
+                        <input type="text" name="Foto" value="<?= $usuario['url_foto']; ?>" class="nes-input">
                     </div>
                 </div>
                 <div class="col-3">

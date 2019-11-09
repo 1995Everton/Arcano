@@ -6,6 +6,8 @@ namespace Arcanos\Enigmas\Controllers\Adm\Persistencias;
 
 use Arcanos\Enigmas\Controllers\Banco;
 use Arcanos\Enigmas\Controllers\RequestHandlerInterface;
+use Respect\Validation\Exceptions\ValidationException;
+use Respect\Validation\Validator as v;
 
 class PersistenciaDicas extends Banco implements  RequestHandlerInterface,PersistenceInterface
 {
@@ -33,16 +35,21 @@ class PersistenciaDicas extends Banco implements  RequestHandlerInterface,Persis
     }
     public function validarPost()
     {
-        $dicas_enigmas_id = $_POST['dicas_enigmas_id'];
-        $dica = $_POST['dica'];
-        $dicas_tipos_id = $_POST['dicas_tipos_id'];
-        $categoria_dicas_id = $_POST['categoria_dicas_id'];
-        return [
-            'dicas_enigmas_id' => $dicas_enigmas_id,
-            'dica' => $dica,
-            'dicas_tipos_id' => $dicas_tipos_id,
-            'categoria_dicas_id' => $categoria_dicas_id,
-        ];
+        try {
+            $this->getRegras()->assert($_POST);
+            return [
+                'dicas_enigmas_id' => $_POST['dicas_enigmas_id'],
+                'dica' => $_POST['Dica'],
+                'dicas_tipos_id' => $_POST['dicas_tipos_id'],
+                'categoria_dicas_id' => $_POST['categoria_dicas_id']
+            ];
+        } catch (ValidationException $e) {
+            $errors = array_filter($e->findMessages($this->getTraducao()));
+            $this->allToast($errors);
+            header($this->urlConfigError());
+            exit();
+        }
+
     }
     public function novo()
     {
@@ -65,5 +72,31 @@ class PersistenciaDicas extends Banco implements  RequestHandlerInterface,Persis
     public function getID()
     {
         return ['id_dicas' => $_GET['id']];
+    }
+    public function getRegras()
+    {
+        return v::key('Dica', v::stringType()->notEmpty()->noWhitespace()->length(3, 32))
+            ->key('dicas_enigmas_id',v::numeric()->notEmpty())
+            ->key('dicas_tipos_id',v::numeric()->notEmpty())
+            ->key('categoria_dicas_id',v::numeric()->notEmpty());
+    }
+
+    public function getTraducao()
+    {
+       return [
+           'notEmpty' => 'O Campo {{name}} nao pode estar em branco',
+           'length' => 'O Campo {{name}} deve conter entre 3 a 32 caracteres',
+           'noWhitespace' => 'O Campo {{name}}não pode ter espações em branco',
+           'numeric' => 'O Campo {{name}} deve ser um tipo numerico'
+       ];
+    }
+
+    public function urlConfigError()
+    {
+        if(isset($_GET['id'])){
+            return $this->ERROR_REDIRECT."&id=".$_GET['id'];
+        }else{
+            return $this->ERROR_REDIRECT;
+        }
     }
 }
