@@ -19,6 +19,7 @@ use Arcanos\Enigmas\Controllers\Autenticar;
 use Arcanos\Enigmas\Controllers\Login;
 use Arcanos\Enigmas\Controllers\Cadastro;
 use Arcanos\Enigmas\Controllers\Home;
+use Arcanos\Enigmas\Controllers\NotAuthorized;
 use Arcanos\Enigmas\Controllers\NotFound;
 use Arcanos\Enigmas\Controllers\Perfil;
 use Arcanos\Enigmas\Controllers\NovoUsuario;
@@ -30,16 +31,20 @@ class Routes
     public static function getRoutes()
     {
         return array(
+            /*Visitante*/
             'login' => Login::class,
             'cadastro' => Cadastro::class,
             'home' => Home::class,
             'autenticar' => Autenticar::class,
             'novo-usuario' => NovoUsuario::class,
+            'not-found' => NotFound::class,
+            'not-authorized' => NotAuthorized::class,
+            /*USUÁRIO*/
             'enigma-home' => EnigmaHome::class,
             'enigma-fase' => EnigmaFase::class,
             'perfil' => Perfil::class,
             'ranking' => Ranking::class,
-            'not-found' => NotFound::class,
+            /*ADM*/
             'tabela-enigma' => TabelaEnigma::class,
             'tabela-usuario' => TabelaUsuario::class,
             'tabela-titulo' => TabelaTitulo::class,

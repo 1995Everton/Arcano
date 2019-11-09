@@ -86,7 +86,7 @@ class PersistenciaDicas extends Banco implements  RequestHandlerInterface,Persis
        return [
            'notEmpty' => 'O Campo {{name}} nao pode estar em branco',
            'length' => 'O Campo {{name}} deve conter entre 3 a 32 caracteres',
-           'noWhitespace' => 'O Campo {{name}}não pode ter espações em branco',
+           'noWhitespace' => 'O Campo {{name}} não pode ter espaços em branco',
            'numeric' => 'O Campo {{name}} deve ser um tipo numerico'
        ];
     }

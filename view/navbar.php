@@ -17,7 +17,7 @@
     </a>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
-            <?php if($_SESSION['tipo_usuario'] == 1){?>
+            <?php if($_SESSION['tipo_usuario'] == 'Administrador'){?>
                 <li class="nav-item"><a class="nav-link" href="index.php?pagina=home">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Cadastros</a>
                     <ul class="bg-light">
@@ -37,29 +37,18 @@
     </div>
     <div class="profile">
         <div class="photo">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/764024/profile/profile-512.jpg"/>
+            <img src="<?= $_SESSION['url_foto']?>"/>
         </div>
         <div class="content">
             <div class="text">
-                <span><?php echo $_SESSION['nome_usuario']?></span>
+                <span><?= $_SESSION['nome_usuario']?></span>
             </div>
-            <div class="btn btn-profile"><span></span></div>
-        </div>
-        <div class="box">
-            <i class="fad fa-user-circle"></i>
-            <i class="fad fa-cog"></i>
-            <i class="fad fa-sign-out"></i>
+            <div class="btn logout"><i class="fas fa-sign-out-alt"></i></div>
         </div>
     </div>
 </nav>
 <script>
-    (function() {
-        $('.btn-profile').click(function() {
-            $(this).toggleClass('active');
-            return $('.box').toggleClass('open');
-        });
-    }).call(this);
-    $('.fa-sign-out').click(function () {
+    $('.logout').click(function () {
         window.location.href = 'index.php?pagina=autenticar&acao=logout';
     })
 </script>
