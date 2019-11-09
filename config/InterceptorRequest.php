@@ -25,7 +25,8 @@ class InterceptorRequest
             'enigma-fase',
             'perfil',
             'ranking',
-            'home'
+            'home',
+            'autenticar'
         ],
        'Visitante' => [
             'login',
