@@ -22,7 +22,7 @@
                     <label for="dificuldade" class="text-white text-left">Dificuldade</label>
                     <div class="nes-select">
                         <select name="dificuldade" id="dificuldade">
-                            <option value=""></option>
+                           <!--  <option value=""></option> -->
                             <?php foreach ($ds_categoria as $valor) : ?>
                                 <option value="<?= $valor['id_categoria_dica']; ?>">
                                     <?= $valor['ds_categoria']; ?>
@@ -36,7 +36,7 @@
                     <label for="tipo" class="text-white">Tipo</label>
                     <div class="nes-select">
                         <select name="tipo" id="tipo">
-                            <option value=""></option>
+                            <!-- <option value=""></option> -->
                             <?php foreach ($ds_tipos as $valor) : ?>
                                 <option value="<?= $valor['id_tipos'] ?>">
                                     <?= $valor['ds_tipo'] ?>
