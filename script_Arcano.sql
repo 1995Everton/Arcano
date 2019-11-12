@@ -205,14 +205,18 @@ value ("Texto"),
 
 insert into enigmas
 (dificuldade_enigma_id, enigmas_tipos_id, enigma, data, resposta)
-values (1,1, "Alimente-me e eu vivo, ainda me dê uma bebida e eu morro.",  "2019-06-01", "O fogo"),
+values (1,1, "Alimente-me e eu vivo, ainda me dê uma bebida e eu morro.",  "2019-06-01", "Fogo"),
 	   (1,2, "Por que o marido da viúva não pode se casar com a cunhada?", "2019-06-02", "Porque ele está morto"),
-	   (2,1, "O que se molha quando se seca?",    "2019-06-03", "Toalha"),
-	   (2,2, "O que é o que é, se compra para comer, mas não se come?",    "2019-06-03", "O prato"),
-	   (3,1, "Está duas vezes em um minuto, três vezes em um momento e e só uma vez em cem anos?","2019-06-04", "A letra M"),
-	   (3,2, "O que tem um olho, mas não pode ver?", 					   "2019-06-04", "Uma agulha"),
-	   (4,1, "Não é um ser vivo mas tem cinco dedos?", 						   "2019-06-04", "Luvas"),
-	   (4,2, "O que sempre vem, mas nunca chega?", 						   "2019-06-04", "O amanhã");
+	   (2,1, "O que se molha quando se seca?",    						   "2019-06-03", "Toalha"),
+	   (2,2, "O que é o que é, se compra para comer, mas não se come?",    "2019-06-03", "Prato"),
+	   (3,1, "Está duas vezes em um minuto, três vezes em um momento e e só uma vez em cem anos?","2019-06-04", "Letra M"),
+	   (3,2, "O que tem um olho, mas não pode ver?", 					   "2019-06-04", "Agulha"),
+	   (4,1, "Não é um ser vivo mas tem cinco dedos?", 					   "2019-06-04", "Luvas"),
+	   (4,2, "O que sempre vem, mas nunca chega?", 						   "2019-06-04", "Amanhã"),
+       (1,1, "Em que mês as pessoas dormem menos?",						   "2019-11-12", "Fevereiro"),
+       (1,1, "O que é feito de água, mas se colocado dentro da mesma, irá morrer?", "2019-11-12", "Gelo"),
+       (3,1, "Quem o faz, não o precisa. Quem o compra, não o usa. Quem o usa não pode o ver nem o sentir. O que é?", "2019-11-12", "Caixão");
+       
 
 
 insert into pontuacao
