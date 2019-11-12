@@ -24,6 +24,7 @@ use Arcanos\Enigmas\Controllers\NotFound;
 use Arcanos\Enigmas\Controllers\Perfil;
 use Arcanos\Enigmas\Controllers\NovoUsuario;
 use Arcanos\Enigmas\Controllers\Ranking;
+use Arcanos\Enigmas\Controllers\Tutorial;
 
 
 class Routes
@@ -44,6 +45,7 @@ class Routes
             'enigma-fase' => EnigmaFase::class,
             'perfil' => Perfil::class,
             'ranking' => Ranking::class,
+            'tutorial' => Tutorial::class,
             /*ADM*/
             'tabela-enigma' => TabelaEnigma::class,
             'tabela-usuario' => TabelaUsuario::class,
