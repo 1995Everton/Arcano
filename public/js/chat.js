@@ -10,9 +10,11 @@ $(function() {
     })
     $("#chat-submit").click(function(e) {
         e.preventDefault();
+        var msg = $("#chat-input").val()
+        if(msg.length < 3) return;
         var mensagem = {
             ...USUARIO_GLOBAL,
-            mensagem : $("#chat-input").val()
+            mensagem : msg.match(/.{1,15}/g).join(" ")
         }
         socket.emit('mensagem-cadastro',mensagem)
         createMsg(mensagem)
