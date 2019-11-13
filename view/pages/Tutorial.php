@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
     <style>
-        body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        width: 100vw;
-        background-color: #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        
         
         .wrapper {
             text-align: center;
+            background-color: #1c2025d1; 
+            width: 50%;
+            height: 65%;
+            margin-top:7%;
+            margin-left: 23%;
+            /*z-index: 17;*/
             
             .typewriter {
             font-size: 24px;
@@ -51,17 +47,17 @@
     <br>
     <br>
     
-    <span 
+    <!--<span 
         class="typewriter end" 
         data-text="Animated typewriter."
         data-time="100"
         data-color="white"
         data-background="pink"
         data-text-decoration="underline">
-    </span>
+    </span>-->
     </div>
 </body>
-</html>
+
 <script>
     (function($) {
     $(function() {

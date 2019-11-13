@@ -18,7 +18,8 @@ class InterceptorRequest
             'form-titulo',
             'form-dicas',
             'home',
-            'autenticar'
+            'autenticar',
+            'tutorial'
         ],
         'Usuário' => [
             'enigma-home',
@@ -26,7 +27,8 @@ class InterceptorRequest
             'perfil',
             'ranking',
             'home',
-            'autenticar'
+            'autenticar',
+            'tutorial'
         ],
        'Visitante' => [
             'login',

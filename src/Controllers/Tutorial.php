@@ -4,7 +4,7 @@
 namespace Arcanos\Enigmas\Controllers;
 
 
-class Login extends Banco implements RequestHandlerInterface
+class Tutorial extends Banco implements RequestHandlerInterface
 {
 
     public function handle()
