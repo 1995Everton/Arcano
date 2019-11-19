@@ -1,7 +1,15 @@
+
+
 <div class="container my-3" style="height: 80%">
     <div class="nes-container with-title is-centered" style="height: 100%">
         <p class="bg-transparent text-white" style="font-size: 30px">Cadastro de Enigmas</p>
-        <form action="index.php?pagina=persistencia-enigma" enctype="multipart/form-data" method="POST" style="height: 88%">
+        <form action="<?php
+                        if (!isset($id)) {
+                            echo 'index.php?pagina=persistencia-enigma&acao=criar';
+                        } else {
+                            echo 'index.php?pagina=persistencia-enigma&acao=atualizar&id=' . $id;
+                        }
+                        ?>" enctype="multipart/form-data" method="POST" style="height: 88%">
             <div class="row justify-content-center align-items-center" style="height: 100%">
                 <div class="col-12">
                     <!-- Campo -> Enigma -->
@@ -14,7 +22,7 @@
                     <!-- Resposta -->
                     <div class="nes-field">
                         <label for="resposta" class="text-white text-left">Resposta</label>
-                        <input type="text" name="resposta" id="resposta" class="nes-input">
+                        <input type="text" name="resposta" id="resposta" class="nes-input" value="<? var_dump($attEnigma); ?>">
                     </div>
                 </div>
                 <div class="col-4 text-left">
@@ -22,7 +30,7 @@
                     <label for="dificuldade" class="text-white text-left">Dificuldade</label>
                     <div class="nes-select">
                         <select name="dificuldade" id="dificuldade">
-                           <!--  <option value=""></option> -->
+                            <!--  <option value=""></option> -->
                             <?php foreach ($ds_categoria as $valor) : ?>
                                 <option value="<?= $valor['id_categoria_dica']; ?>">
                                     <?= $valor['ds_categoria']; ?>
