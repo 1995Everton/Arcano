@@ -37,7 +37,8 @@
     <div class="wrapper">
     <span 
         class="typewriter end" 
-        data-text="ola seus corno querrem aprender ajogar essa merda ?"
+        data-text="teste testando o teste testado do teste que testou o teste com um teste
+                                                                testando o teste do teste com um testes que foi testado ?"
         data-time="100"
         data-color="#fff"
         data-background=""
