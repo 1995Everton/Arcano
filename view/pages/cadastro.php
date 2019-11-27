@@ -49,15 +49,12 @@
 <script>
 
 var senha = document.getElementById("senha");
-var confsenha = document.getElementById("confsenha");
+//var confsenha = document.getElementById("confsenha");
 
 senha.addEventListener("input", function (event) {
-  if (senha.validity.patternMismatch) {
+  if (senha.validity.customError) {
     senha.setCustomValidity("A senha deve conter pelo menos uma letra, um numero e 8 caracteres!");
-  } else if(senha.value != confsenha.value){
-    
-    senha.setCustomValidity("Senhas não batem");
-  }
+  } 
 });
 
 </script>
