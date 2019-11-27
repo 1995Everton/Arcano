@@ -33,7 +33,7 @@
                             <td data-label="Tipo"><?= $enigma['ds_tipo']; ?></td>
                             <td style="max-width: 50%">
                                 <div class="d-flex justify-content-around align-items-center">
-                                    <a href="index.php?pagina=form-enigma&acao=atualizar&id=<?= $enigma['id_enigmas'] ?>" class="nes-btn is-primary">EDITAR</a>
+                                    <a href="index.php?pagina=form-enigma&acao=editar&id=<?= $enigma['id_enigmas'] ?>" class="nes-btn is-primary">EDITAR</a>
                                     <?= $modal($enigma['id_enigmas'], 'Deletar', 'Deletar Enigma', 'Tem certeza que deseja continuar?'); ?>
                                 </div>
                             </td>
