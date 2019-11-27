@@ -42,7 +42,7 @@
     <div class="wrapper">
     <span 
         class="typewriter end" 
-        data-text=" Para você jogar nossos enigmas é facil, as respostas são na  maioria das vezes objetivas e contendo os acentos."
+        data-text=" Para você jogar nossos enigmas é fácil, as respostas são na  maioria das vezes objetivas e contendo os acentos."
         data-time="100"
         data-color="#fff"
         data-background=""
