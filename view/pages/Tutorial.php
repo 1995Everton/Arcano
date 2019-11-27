@@ -3,15 +3,19 @@
         
         
         .wrapper {
+            position: absolute !important;
             text-align: center;
             background-color: #1c2025d1; 
             width: 50%;
             height: 65%;
             margin-top:7%;
             margin-left: 23%;
-            /*z-index: 17;*/
+            z-index: 17 !important;
+
             
-            .typewriter {
+            
+        }
+        .typewriter {
             font-size: 24px;
             border-right: 1px solid;
             letter-spacing: 0.15em;
@@ -19,11 +23,11 @@
             line-height: 1.4;
             font-weight: 400;
             
-            &.end {
-                animation: EndOfTypewriter 1s steps(1) infinite;
-            }
-            }
+            
         }
+
+        &.end {
+            animation: EndOfTypewriter 1s steps(1) infinite;
         }
 
         @keyframes EndOfTypewriter {
@@ -34,10 +38,11 @@
     </style>
 </head>
 <body>
+    
     <div class="wrapper">
     <span 
         class="typewriter end" 
-        data-text=""
+        data-text=" Para você jogar nossos enigmas é facil, as respostas são na  maioria das vezes objetivas e contendo os acentos."
         data-time="100"
         data-color="#fff"
         data-background=""
@@ -47,14 +52,17 @@
     <br>
     <br>
     
-    <!--<span 
+    <span 
         class="typewriter end" 
-        data-text="Animated typewriter."
+        data-text="                                                            
+             
+                    
+                    Em alguns casos as respostas podem ser mais complexas, necessitando uma frase como resposta."
         data-time="100"
         data-color="white"
-        data-background="pink"
-        data-text-decoration="underline">
-    </span>-->
+        data-background=""
+        data-text-decoration="unset">
+    </span>
     </div>
 </body>
 
