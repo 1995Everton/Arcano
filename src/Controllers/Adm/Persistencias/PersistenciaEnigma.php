@@ -29,6 +29,10 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
 
     public function validarPost()
     {
+        $erro = null;
+        $URL = NULL;
+
+        var_dump($_POST);
         /* Validacao dos campos do formulário */
         if (!isset($_POST['dificuldade']) || (empty($_POST['dificuldade']))) {
             $erro = 'Verifique o campo de Dificuldade';;
@@ -57,20 +61,14 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
             $erro = 'Se enigma for do tipo: Imagem, Audio ou Video é necessario anexar uma arquivo!';
         }
 
-        /* Validaçao se cadastra no banco ou Retorna mensagem de erro; */
-        if (!isset($erro)) {
-            // if (!empty($_POST['enigma'])) {
-            // } else {
-            //     $this->novoEnigma($URL);
-            // }
-            $this->toast($erro, 'ERRO', 'danger');
-            header("Location: index.php?pagina=form-enigma");
-        } else {
-            $this->toast($erro, 'ERRO', 'danger');
-            header("Location: index.php?pagina=form-enigma");
-        }
 
-        return true;
+        if (!isset($erro)) {
+            echo 'final bom';
+        } else {
+            echo 'final ruim';
+            $this->toast($erro, 'ERRO', 'danger');
+            //header("Location: index.php?pagina=form-enigma");
+        }
     }
 
     public function novoEnigma()
@@ -116,18 +114,5 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
                 'id_enigmas' => $_GET['id']
             ]
         );
-    }
-
-    public function arquivo()
-    {
-        $arquivo_temporario = $_FILES['arquivo']['tmp_name'];
-        $nome_arquivo = date_timestamp_get(date_create()) . basename($_FILES['arquivo']['name']);
-        $diretorio = '../public/img/uploaded_arqs/';
-
-        if (move_uploaded_file($arquivo_temporario, $diretorio . $nome_arquivo)) {
-            return "http://" . $_SERVER['SERVER_NAME'] . "/" . "Arcano" . "/public/img/uploaded_arqs/" . $nome_arquivo; //url que vai para o banco
-        } else {
-            return $erro = 'Erro no envio do arquivo!';
-        }
     }
 }

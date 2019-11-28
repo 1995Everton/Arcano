@@ -218,4 +218,8 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
     {
         $_SESSION['dicas_concluidas'][] = $dica['id_dicas'];
     }
+
+    public function incrementaTitulo(){
+        
+    }
 }

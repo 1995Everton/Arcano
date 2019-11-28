@@ -158,13 +158,13 @@ values ("Administrador"),
        
 insert into titulo
 (ds_titulo)
-values ("Mestre dos Magos"),
-	   ("Rei da noite"),
-	   ("Mrs. Maga"),
-	   ("Dos Elfos"),
-	   ("O Iluminado"),
-	   ("Guardião do Mundo"),
-	   ("A Enigmática");
+values ("Senhor do Destino"), /* Acertar cinco questões em sequencia. */
+	   ("Grão-Mestre"), /* Acertar dez questões em sequencia. */
+	   ("Lorde Demoníaco"),/* Acertar apenas questões impares. */
+	   ("A Luz da Esperança"),/* Acertar apenas questões pares. */
+	   ("Aprendiz de mago"),/* Errar cinco questões seguidas. */
+	   ("Cobaia Goblínica"),/* Errar 10 questões seguidas. */
+	   ("Mago do tempo");/* Acertar todas as questões em menor tempo. */
 
 insert into usuarios
 (categoria_usuarios_id, nome_usuario, senha, email,url_foto)

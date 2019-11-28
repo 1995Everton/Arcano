@@ -1,5 +1,3 @@
-
-
 <div class="container my-3" style="height: 80%">
     <div class="nes-container with-title is-centered" style="height: 100%">
         <p class="bg-transparent text-white" style="font-size: 30px">Cadastro de Enigmas</p>
@@ -7,7 +5,7 @@
                         if (!isset($id)) {
                             echo 'index.php?pagina=persistencia-enigma&acao=criar';
                         } else {
-                            echo 'index.php?pagina=persistencia-enigma&acao=atualizar&id=' . $id;
+                            echo 'index.php?pagina=persistencia-enigma&acao=editar&id=' . $id;
                         }
                         ?>" enctype="multipart/form-data" method="POST" style="height: 88%">
             <div class="row justify-content-center align-items-center" style="height: 100%">
@@ -15,14 +13,18 @@
                     <!-- Campo -> Enigma -->
                     <div class="nes-field" id="container-enigma">
                         <label for="enigma" class="text-white text-left">Enigma</label>
-                        <textarea type="text" name="enigma" id="enigma" class="nes-textarea" style="resize: none"></textarea>
+                        <textarea type="text" name="enigma" id="enigma" class="nes-textarea" style="resize: none"><?php if ((isset($_GET['acao'])) && ($_GET['acao'] = 'editar')) {
+                                                                                                                        echo $ds_enigma[0]['enigma'];
+                                                                                                                    } ?></textarea>
                     </div>
                 </div>
                 <div class="col-4 mt-2">
                     <!-- Resposta -->
                     <div class="nes-field">
                         <label for="resposta" class="text-white text-left">Resposta</label>
-                        <input type="text" name="resposta" id="resposta" class="nes-input" value="<? var_dump($attEnigma); ?>">
+                        <input type="text" name="resposta" id="resposta" class="nes-input" value="<?php if ((isset($_GET['acao'])) && ($_GET['acao'] = 'editar')) {
+                                                                                                        echo $ds_enigma[0]['resposta'];
+                                                                                                    } ?>">
                     </div>
                 </div>
                 <div class="col-4 text-left">
@@ -32,8 +34,11 @@
                         <select name="dificuldade" id="dificuldade">
                             <!--  <option value=""></option> -->
                             <?php foreach ($ds_categoria as $valor) : ?>
-                                <option value="<?= $valor['id_categoria_dica']; ?>">
-                                    <?= $valor['ds_categoria']; ?>
+                                <option value="<?= $valor['id_categoria_dica']; ?>" <?php
+                                                                                        if ((isset($_GET['acao'])) && ($_GET['acao'] = 'editar') &&  $valor['id_categoria_dica'] == $ds_enigma[0]['dificuldade_enigma_id']) {
+                                                                                            echo "selected";
+                                                                                        }
+                                                                                        ?>> <?= $valor['ds_categoria']; ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
@@ -46,8 +51,11 @@
                         <select name="tipo" id="tipo">
                             <!-- <option value=""></option> -->
                             <?php foreach ($ds_tipos as $valor) : ?>
-                                <option value="<?= $valor['id_tipos'] ?>">
-                                    <?= $valor['ds_tipo'] ?>
+                                <option value="<?= $valor['id_tipos'] ?>" <?php
+                                                                                if ((isset($_GET['acao'])) && ($_GET['acao'] = 'editar') &&  $valor['id_tipos'] == $ds_enigma[0]['enigmas_tipos_id']) {
+                                                                                    echo "selected";
+                                                                                }
+                                                                                ?>> <?= $valor['ds_tipo'] ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
