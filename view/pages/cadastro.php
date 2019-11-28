@@ -31,11 +31,11 @@
     <div class="w-100"></div>
     <div class="nes-field ">
         <label class="text-white">Senha</label>
-        <input type="password" class="nes-input is-dark" id="senha" name="senha" pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{8,}$" placeholder="" required> <!---->
+        <input type="password" class="nes-input is-dark" id="senha" name="senha" pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{8,}$" placeholder="" required oninvalid="setCustomValidity('A senha deve conter pelo menos uma letra, um numero e 8 caracteres!')" onchange="try{setCustomValidity('')}catch(e){}"> <!---->
     </div>
     <div class="nes-field ">
         <label class="text-white">Confirmar Senha</label>
-        <input type="password" class="nes-input is-dark" id="confsenha" name="confsenha" pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{8,}$" placeholder="" required>
+        <input type="password" class="nes-input is-dark" id="confsenha" name="confsenha" pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{8,}$" placeholder="" required oninvalid="setCustomValidity('A senha deve conter pelo menos uma letra, um numero e 8 caracteres!')" onchange="try{setCustomValidity('')}catch(e){}">
     </div>
     <div class="cad_button">
         <div class="col-md-12 justify-content-center d-flex align-itens-center">
@@ -46,15 +46,17 @@
   </div>
 </form>
 
-<script>
+<!--<script>
 
 var senha = document.getElementById("senha");
-//var confsenha = document.getElementById("confsenha");
+var confsenha = document.getElementById("confsenha");
 
 senha.addEventListener("input", function (event) {
-  if (senha.validity.customError) {
+  if (senha.validity.patternMismatch) {
     senha.setCustomValidity("A senha deve conter pelo menos uma letra, um numero e 8 caracteres!");
-  } 
+   } else if(senha.value != confsenha.value){
+    	    
+    senha.setCustomValidity("Senhas não batem");
 });
 
-</script>
+</script>_--> 
