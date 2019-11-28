@@ -4,6 +4,19 @@
     height: 402px;
     left: 50%;
     margin-left: -540px;
+    margin-top: 30px;
+}
+
+.botaoLogin{
+    position: absolute;
+    top: 60%;
+    left: 23%;
+}
+
+.botaoCadastro{
+    position: absolute;
+    top: 60%;
+    left: 64%;
 }
 
 @keyframes rotate {

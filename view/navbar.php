@@ -32,6 +32,7 @@
                 <li class="nav-item"><a class="nav-link" href="index.php?pagina=enigma-home">Enigmas</a></li>
                 <li class="nav-item"><a class="nav-link" href="index.php?pagina=ranking">Ranking</a></li>
                 <li class="nav-item"><a class="nav-link" href="index.php?pagina=perfil">Perfil</a> </li>
+                <li class="nav-item"><a class="nav-link" href="index.php?pagina=tutorial">Tutorial</a> </li>
             <?php } ?>
         </ul>
     </div>

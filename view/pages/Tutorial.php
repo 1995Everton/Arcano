@@ -1,62 +1,48 @@
-
-    <style>
-        
-        
-        .wrapper {
-            text-align: center;
-            background-color: #1c2025d1; 
-            width: 50%;
-            height: 65%;
-            margin-top:7%;
-            margin-left: 23%;
-            /*z-index: 17;*/
-            
-            .typewriter {
-            font-size: 24px;
-            border-right: 1px solid;
-            letter-spacing: 0.15em;
-            font-family: monospace;
-            line-height: 1.4;
-            font-weight: 400;
-            
-            &.end {
-                animation: EndOfTypewriter 1s steps(1) infinite;
-            }
-            }
-        }
-        }
-
-        @keyframes EndOfTypewriter {
-        50% {
-            border-color: transparent;
-        }
-        }
-    </style>
-</head>
-<body>
-    <div class="wrapper">
+<div class="wrapper">
     <span 
         class="typewriter end" 
-        data-text=""
+        data-text=" Para você jogar nossos enigmas é fácil, as respostas são na  maioria das vezes objetivas e contendo os acentos."
         data-time="100"
         data-color="#fff"
         data-background=""
         data-text-decoration="unset">
     </span>
-    
+
     <br>
     <br>
-    
-    <!--<span 
+
+    <span 
         class="typewriter end" 
-        data-text="Animated typewriter."
+        data-text="                                                            
+                
+                    
+                    Em alguns casos as respostas podem ser mais complexas, necessitando uma frase como resposta."
         data-time="100"
         data-color="white"
-        data-background="pink"
-        data-text-decoration="underline">
-    </span>-->
-    </div>
-</body>
+        data-background=""
+        data-text-decoration="unset">
+    </span>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <span
+        class="typewriter end" 
+        data-text="                                                             
+                
+                    
+                                                                            
+                
+        
+        !!!!!!!BOM JOGO!!!!!!!"
+        data-time="100"
+        data-color="#fff"
+        data-background=""
+        data-text-decoration="unset">
+    </span>
+</div>
+
 
 <script>
     (function($) {

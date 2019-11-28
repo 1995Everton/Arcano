@@ -1,0 +1,33 @@
+.wrapper {
+    position: absolute !important;
+    text-align: center;
+    background-color: #1c2025d1; 
+    width: 50%;
+    height: 65%;
+    margin-top:7%;
+    margin-left: 23%;
+    z-index: 17 !important;
+
+    
+    
+}
+.typewriter {
+    font-size: 24px;
+    border-right: 1px solid;
+    letter-spacing: 0.15em;
+    font-family: monospace;
+    line-height: 1.4;
+    font-weight: 400;
+    
+    
+}
+
+.end {
+    animation: EndOfTypewriter 1s steps(1) infinite;
+}
+
+@keyframes EndOfTypewriter {
+50% {
+    border-color: transparent;
+}
+}

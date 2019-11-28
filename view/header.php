@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/table.css">
         <link rel="stylesheet" href="css/chat.css">
+        <link rel="stylesheet" href="css/tutorial.css">
         <!-- Plugins JavaScript-->
         <script src='js/lib/jquery-3.4.1.js'></script>
         <script src='js/lib/jquery.tablesorter.js'></script>
