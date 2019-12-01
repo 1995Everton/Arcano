@@ -67,12 +67,13 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
 
     public function deletar()
     {
-        $this->banco->delete(
+        $query = $this->banco->delete(
             'enigmas',
             [
                 'id_enigmas' => $_GET['id']
             ]
         );
+        $this->deleteStatus($query);
     }
 
 

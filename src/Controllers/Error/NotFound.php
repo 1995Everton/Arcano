@@ -1,9 +1,10 @@
 <?php
 
 
-namespace Arcanos\Enigmas\Controllers;
+namespace Arcanos\Enigmas\Controllers\Error;
 
 
+use Arcanos\Enigmas\Controllers\RequestHandlerInterface;
 use Arcanos\Enigmas\Helpers\renderHTML;
 
 class NotFound implements RequestHandlerInterface

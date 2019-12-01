@@ -1,8 +1,11 @@
 <?php
 
 
-namespace Arcanos\Enigmas\Controllers;
+namespace Arcanos\Enigmas\Controllers\User;
 
+
+use Arcanos\Enigmas\Controllers\Banco;
+use Arcanos\Enigmas\Controllers\RequestHandlerInterface;
 
 class Ranking extends Banco implements RequestHandlerInterface
 {

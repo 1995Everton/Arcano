@@ -15,16 +15,16 @@ use Arcanos\Enigmas\Controllers\Adm\Tabelas\TabelaTitulo;
 use Arcanos\Enigmas\Controllers\Adm\Tabelas\TabelaUsuario;
 use Arcanos\Enigmas\Controllers\Enigmas\EnigmaFase;
 use Arcanos\Enigmas\Controllers\Enigmas\EnigmaHome;
-use Arcanos\Enigmas\Controllers\Autenticar;
-use Arcanos\Enigmas\Controllers\Login;
-use Arcanos\Enigmas\Controllers\Cadastro;
-use Arcanos\Enigmas\Controllers\Home;
-use Arcanos\Enigmas\Controllers\NotAuthorized;
-use Arcanos\Enigmas\Controllers\NotFound;
-use Arcanos\Enigmas\Controllers\Perfil;
-use Arcanos\Enigmas\Controllers\NovoUsuario;
-use Arcanos\Enigmas\Controllers\Ranking;
-use Arcanos\Enigmas\Controllers\Tutorial;
+use Arcanos\Enigmas\Controllers\Error\NotAuthorized;
+use Arcanos\Enigmas\Controllers\Error\NotFound;
+use Arcanos\Enigmas\Controllers\User\Autenticar;
+use Arcanos\Enigmas\Controllers\User\Cadastro;
+use Arcanos\Enigmas\Controllers\User\Home;
+use Arcanos\Enigmas\Controllers\User\Login;
+use Arcanos\Enigmas\Controllers\User\NovoUsuario;
+use Arcanos\Enigmas\Controllers\User\Perfil;
+use Arcanos\Enigmas\Controllers\User\Ranking;
+use Arcanos\Enigmas\Controllers\User\Tutorial;
 
 
 class Routes

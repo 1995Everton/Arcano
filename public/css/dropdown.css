@@ -5,7 +5,7 @@
   border-radius: 5px;
   background-color: #fafafa;
   box-shadow: 0 0 3px #babbbc;
-  animation: show-profile 0.5s forwards ease-in-out;
+  /*animation: show-profile 0.5s forwards ease-in-out;*/
   z-index: 10;
 }
 @keyframes show-profile {
@@ -25,7 +25,7 @@
   background-color: #fafafa;
   margin-left: -35px;
   box-shadow: 0 0 3px #babbbc;
-  animation: rotate-photo 0.5s forwards ease-in-out;
+  /*animation: rotate-photo 0.5s forwards ease-in-out;*/
 }
 @keyframes rotate-photo {
   100% {
@@ -65,17 +65,17 @@
   white-space: nowrap;
 }
 .profile .content .btn {
-    background-color: #abc;
+    background-color: #e9f3e6;
     width: 30px;
     height: 30px;
     position: absolute;
     right: 20px;
     top: 10px;
-  border-radius: 50%;
-  z-index: 1;
-  cursor: pointer;
-  transition-duration: 0.3s;
-  animation: pop-btn 0.3s both ease-in-out 0.5s;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
 @keyframes pop-btn {
   0% {
@@ -99,7 +99,7 @@
   top: 50%;
   left: 20%;
   transform: translateY(-50%);
-  animation: to-hamburger 0.3s forwards ease-in-out;
+  /*animation: to-hamburger 0.3s forwards ease-in-out;*/
 }
 .profile .content .btn span::before, .profile .content .btn span::after {
   content: "";

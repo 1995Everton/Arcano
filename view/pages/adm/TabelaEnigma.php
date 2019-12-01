@@ -8,7 +8,7 @@
             </div>
             <div class="col-2"></div>
             <div class="col-4">
-                <input style="font-size:12px" class="search nes-input" type="search" placeholder="Search" data-column="all">
+
             </div>
         </div>
         <div class="scrollbar" data-simplebar>
@@ -50,7 +50,7 @@
         var $table = $('table').tablesorter({});
         $('.deletar').click(function() {
             let id_usuario = $(this).val();
-            axios.get(`index.php?pagina=persistencia-enigma&acao=deletar&id=${id_usuario}`)
+            axios.get(`/index.php?pagina=persistencia-enigma&acao=deletar&id=${id_usuario}`)
                 .then(success => {
                     let {
                         status,
