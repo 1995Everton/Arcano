@@ -38,6 +38,8 @@ class PersistenciaTitulo extends Banco implements RequestHandlerInterface,Persis
             $this->getRegras()->assert($_POST);
             return [
                 'ds_titulo' => $_POST['Titulo'],
+                'id_regra_titulo' => $_POST['id_regra_titulo'],
+                'quantidade' => $_POST['Quantidade']
             ];
         } catch (ValidationException $e) {
             $errors = array_filter($e->findMessages($this->getTraducao()));
@@ -71,7 +73,8 @@ class PersistenciaTitulo extends Banco implements RequestHandlerInterface,Persis
     }
     public function getRegras()
     {
-        return v::key('Titulo', v::notEmpty()->length(3, 32));
+        return v::key('Titulo', v::notEmpty()->length(3, 32))
+            ->key('Quantidade', v::numeric()->notEmpty()  );
     }
 
     public function getTraducao()
@@ -79,6 +82,7 @@ class PersistenciaTitulo extends Banco implements RequestHandlerInterface,Persis
         return [
             'notEmpty' => 'O Campo {{name}} nao pode estar em branco',
             'length' => 'O Campo {{name}} deve conter entre 3 a 32 caracteres',
+            'numeric' =>  'O Campo {{name}} deve ser uma numero'
         ];
     }
 

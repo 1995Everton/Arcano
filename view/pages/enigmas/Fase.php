@@ -28,7 +28,7 @@
         <form action="index.php?pagina=enigma-fase" method="post">
             <div class="row justify-content-between align-items-center">
                 <div class="nes-field col-9">
-                    <input name="resposta"vtype="text" class="nes-input" placeholder="Responta-me...">
+                    <input name="resposta"vtype="text" class="nes-input" placeholder="Responda-me...">
                     <input name="id" value="<?=$enigma['id_enigmas'];?>" style="display: none">
                 </div>
                 <div class="col-3">

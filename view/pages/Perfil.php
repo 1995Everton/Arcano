@@ -1,6 +1,3 @@
-<?php
-
-?>
 <style>
     .perfil div{
         margin: 5px 0;
@@ -35,20 +32,20 @@
                 <label class="text-white">Titulos Obtidos</label>
                 <select required id="default_select">
                     <?php foreach($titulo as $key => $value): ?>
-                        <option value="<?= $key?>" ><?= $value;?></option>
+                        <option value="<?= $key?>" ><?= $value['ds_titulo']?></option>
                     <?php endforeach;?>
                 </select>
             </div>
             <div class="col-5 mt-3">
                 <span class="nes-text text-white mr-2">Total Pontuação</span>
                 <a href="#" class="nes-badge w-50">
-                    <span class="is-success"><?= $total_pontos['pontos']?></span>
+                    <span class="is-success"><?= $total_pontos?></span>
                 </a>
             </div>
             <div class="col-5  mt-3">
                 <span class="nes-text text-white mr-2">Nº Tentativas</span>
                 <a href="#" class="nes-badge w-50">
-                    <span class="is-success"><?= $tentativas['tentativas']?></span>
+                    <span class="is-success"><?= $tentativas?></span>
                 </a>
             </div>
         </div>

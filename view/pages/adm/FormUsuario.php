@@ -1,3 +1,8 @@
+<style>
+    .nes-container{
+        background-color: #1c2025d1;
+    }
+</style>
 <div class="container my-3" style="height: 80%">
     <div class="nes-container with-title is-centered" style="height: 100%">
         <p class="bg-transparent text-white" style="font-size: 30px"><?= $titulo; ?></p>

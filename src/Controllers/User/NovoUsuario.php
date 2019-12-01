@@ -37,7 +37,8 @@ class NovoUsuario extends Banco implements RequestHandlerInterface
                     'categoria_usuarios_id' => 2,
                     'nome_usuario' => $usuario,
                     'senha' => $this->criptografar($senha),
-                    'email' => $email
+                    'email' => $email,
+                    'url_foto' => 'https://gravatar.com/avatar/487f1157ec212e1eb69a68b848414b12?s=400&d=robohash&r=x'
                 ]
             );
             $this->toast('Cadastro realizado com susseso, logue para ativar sua conta','','success');

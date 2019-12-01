@@ -6,6 +6,7 @@ namespace Arcanos\Enigmas\Controllers\Enigmas;
 
 use Arcanos\Enigmas\Controllers\Banco;
 use Arcanos\Enigmas\Controllers\RequestHandlerInterface;
+use Arcanos\Enigmas\Models\Usuario;
 
 class EnigmaFase extends Banco implements RequestHandlerInterface
 {
@@ -48,6 +49,7 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
         }else{
             $this->toast('Erro ao salvar Pontuação!','Sinto Muito','danger');
         }
+        $this->checkTitle();
     }
 
     public function gameOver()
@@ -219,7 +221,66 @@ class EnigmaFase extends Banco implements RequestHandlerInterface
         $_SESSION['dicas_concluidas'][] = $dica['id_dicas'];
     }
 
-    public function incrementaTitulo(){
-        
+   private function checkTitle(){
+        $titulos = $this->banco->select("SELECT * FROM titulo",[],true);
+        $tentativas = Usuario::getAttempts();
+        $total_pontos = Usuario::getPoints();
+        $user_first = Usuario::getUserFirst();
+        $novos = [];
+        foreach ($titulos as $key => $titulo) {
+            switch ($titulo['id_regra_titulo']) {
+                case 1:
+                    if ($total_pontos >= $titulo['quantidade']) {
+                        if (!$this->isAlready($titulo['id_titulo'])) {
+                            $novos[] = [
+                                'nome' => $titulo['ds_titulo'],
+                                'titulo_id' => $titulo['id_titulo']
+                            ];
+                        }
+                    }
+                    break;
+                case 2:
+                    if ($tentativas >= $titulo['quantidade']) {
+                        if (!$this->isAlready($titulo['id_titulo'])) {
+                            $novos[] = [
+                                'nome' => $titulo['ds_titulo'],
+                                'titulo_id' => $titulo['id_titulo']
+                            ];
+                        }
+                    }
+                    break;
+            }
+        }
+        if($_SESSION['fase'] == 9){
+            if($this->isAlready(1)){
+                $novos[] = [
+                    'nome' => 'Senhor do Destino',
+                    'titulo_id' => 1
+                ];
+            }
+        }
+        if($user_first){
+            if($this->isAlready(7)){
+                $novos[] = [
+                    'nome' => 'Mago do tempo',
+                    'titulo_id' => 7
+                ];
+            }
+        }
+        foreach ($novos as $key => $titulo){
+            $this->banco->insert("usuarios_titulo",[
+                'usuarios_id' => $_SESSION['id_usuarios'],
+                'titulo_id'=> $titulo['titulo_id'],
+            ]);
+            $this->toast("Você Recebeu o Titulo $titulo[nome]","Parabéns","success");
+        }
+    }
+    private function isAlready($id)
+    {
+        $titulos = Usuario::getTitle();
+        foreach ($titulos as $key => $titulo){
+            if($titulo['id_titulo'] == $id) return true;
+        }
+        return false;
     }
 }

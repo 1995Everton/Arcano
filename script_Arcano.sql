@@ -27,7 +27,15 @@ create table usuarios_titulo (
 create table titulo (
 	id_titulo 		INT AUTO_INCREMENT,
     ds_titulo 		VARCHAR(50),
+    id_regra_titulo INT,
+    quantidade      INT DEFAULT 0,
     primary key (id_titulo)
+);
+
+create table regra_titulo(
+    id_regra        INT AUTO_INCREMENT,
+    ds_regra        VARCHAR(200),
+     primary key (id_regra)
 );
 
 create table pontuacao (
@@ -100,6 +108,13 @@ references     titulo (id_titulo)
 ON DELETE CASCADE
 ON UPDATE CASCADE;
 
+alter table    titulo
+add constraint id_regra_titulo
+foreign key   (id_regra_titulo)
+references    regra_titulo (id_regra)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+
 alter table    pontuacao 
 add constraint usuarios_pontuacao_id 
 foreign key   (usuarios_pontuacao_id) 
@@ -155,29 +170,34 @@ insert into categoria_usuarios
 (ds_usuario)
 values ("Administrador"),
 	   ("Usuário");
-       
+
+insert into regra_titulo
+(ds_regra)
+values ("Pontos"),
+        ("Tentativas"),
+       ("Customizado");
 insert into titulo
-(ds_titulo)
-values ("Senhor do Destino"), /* Acertar cinco questões em sequencia. */
-	   ("Grão-Mestre"), /* Acertar dez questões em sequencia. */
-	   ("Lorde Demoníaco"),/* Acertar apenas questões impares. */
-	   ("A Luz da Esperança"),/* Acertar apenas questões pares. */
-	   ("Aprendiz de mago"),/* Errar cinco questões seguidas. */
-	   ("Cobaia Goblínica"),/* Errar 10 questões seguidas. */
-	   ("Mago do tempo");/* Acertar todas as questões em menor tempo. */
+(ds_titulo,id_regra_titulo,quantidade)
+values ("Senhor do Destino",3,0), /* Passar por todos os desafios */
+	   ("Grão-Mestre",1,200), /* Acumular um total de 200 pontos */
+	   ("Lorde Demoníaco",1,300),/* Acumular um total de 300 pontos  */
+	   ("A Luz da Esperança",1,500),/* Acumular um total de 500 pontos. */
+	   ("Aprendiz de mago",2,5),/* Ter jogados 5 vezes  */
+	   ("Cobaia Goblínica",2,10),/* Ter jogados 10 vezes  */
+	   ("Mago do tempo",3,0);/* Ser uma top 1 ao menos um vez no ranking */
 
 insert into usuarios
 (categoria_usuarios_id, nome_usuario, senha, email,url_foto)
-values (1, "Alisson",   "8$oDwfZa.V19I", "alipospor@arcano.com","https://gravatar.com/avatar/8800139dba3a0db7ce28a213890fe68f?s=400&d=robohash&r=x"),
-	   (1, "Amanda",    "8$oDwfZa.V19I", "amandahess@arcano.com","https://gravatar.com/avatar/3e49080504f6d3b9bc509b4e75e4e15c?s=400&d=robohash&r=x"),
-	   (1, "Everton",   "8$oDwfZa.V19I", "evertonCR@arcano.com","https://gravatar.com/avatar/487f1157ec212e1eb69a68b848414b12?s=400&d=robohash&r=x"),
-	   (1, "Leandro",   "8$oDwfZa.V19I", "leandroS@arcano.com","https://gravatar.com/avatar/ee76194e7f156d4f46265eea3b996013?s=400&d=robohash&r=x"),
-	   (2, "Jenivalda", "123",   "jenivalda_top@hotmail.com","https://gravatar.com/avatar/41705e76a07976b1fc79bc15f1724dbb?s=400&d=robohash&r=x"),
-	   (2, "Roberval",  "123",   "robervalSP@gmail.com","https://gravatar.com/avatar/ba8cb136ffc43c27c4cfe78274b46e75?s=400&d=robohash&r=x"),
-	   (2, "Joaninha",  "123",   "joaninha-vermelha@bol.com.br","https://gravatar.com/avatar/8c64fbfa02d0a9f45ca4a903826e2e5e?s=400&d=robohash&r=x"),
-	   (2, "Carlos",    "123",   "Carlao@gmail.com","https://gravatar.com/avatar/a6b17822954cc096a7007727d47f6661?s=400&d=robohash&r=x"),
-	   (2, "Juliana",   "123",   "juju@gmail.com","https://gravatar.com/avatar/05d2da81d7c42c8e51c915c525a412a5?s=400&d=robohash&r=x"),
-	   (2, "Jéssica",   "123",   "ja_acabou_jessica@hotmail.com","https://gravatar.com/avatar/2b30f52745f0b29ce21e44816ac854f8?s=400&d=robohash&r=x");
+values (1, "Alisson",   "8$XRBQ0I.8N4o", "alipospor@arcano.com","https://gravatar.com/avatar/8800139dba3a0db7ce28a213890fe68f?s=400&d=robohash&r=x"),
+	   (1, "Amanda",    "8$XRBQ0I.8N4o", "amandahess@arcano.com","https://gravatar.com/avatar/3e49080504f6d3b9bc509b4e75e4e15c?s=400&d=robohash&r=x"),
+	   (1, "Everton",   "8$XRBQ0I.8N4o", "evertonCR@arcano.com","https://gravatar.com/avatar/487f1157ec212e1eb69a68b848414b12?s=400&d=robohash&r=x"),
+	   (1, "Leandro",   "8$XRBQ0I.8N4o", "leandroS@arcano.com","https://gravatar.com/avatar/ee76194e7f156d4f46265eea3b996013?s=400&d=robohash&r=x"),
+	   (2, "Jenivalda", "8$XRBQ0I.8N4o",   "jenivalda_top@hotmail.com","https://gravatar.com/avatar/41705e76a07976b1fc79bc15f1724dbb?s=400&d=robohash&r=x"),
+	   (2, "Roberval",  "8$XRBQ0I.8N4o",   "robervalSP@gmail.com","https://gravatar.com/avatar/ba8cb136ffc43c27c4cfe78274b46e75?s=400&d=robohash&r=x"),
+	   (2, "Joaninha",  "8$XRBQ0I.8N4o",   "joaninha-vermelha@bol.com.br","https://gravatar.com/avatar/8c64fbfa02d0a9f45ca4a903826e2e5e?s=400&d=robohash&r=x"),
+	   (2, "Carlos",    "8$XRBQ0I.8N4o",   "Carlao@gmail.com","https://gravatar.com/avatar/a6b17822954cc096a7007727d47f6661?s=400&d=robohash&r=x"),
+	   (2, "Juliana",   "8$XRBQ0I.8N4o",   "juju@gmail.com","https://gravatar.com/avatar/05d2da81d7c42c8e51c915c525a412a5?s=400&d=robohash&r=x"),
+	   (2, "Jéssica",   "8$XRBQ0I.8N4o",   "ja_acabou_jessica@hotmail.com","https://gravatar.com/avatar/2b30f52745f0b29ce21e44816ac854f8?s=400&d=robohash&r=x");
 
 insert into usuarios_titulo
 (usuarios_id, titulo_id)

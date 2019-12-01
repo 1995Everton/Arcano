@@ -1,3 +1,8 @@
+<style>
+    .nes-container{
+        background-color: #1c2025d1;
+    }
+</style>
 <div class="container my-3" style="height: 80%">
     <div class="nes-container with-title is-centered" style="height: 100%">
         <p class="bg-transparent text-white" style="font-size: 30px">Cadastro de Enigmas</p>
@@ -9,13 +14,20 @@
                         }
                         ?>" enctype="multipart/form-data" method="POST" style="height: 88%">
             <div class="row justify-content-center align-items-center" style="height: 100%">
-                <div class="col-12">
+                <div class="col-12" id="container-enigma">
                     <!-- Campo -> Enigma -->
-                    <div class="nes-field" id="container-enigma">
+                    <div class="nes-field" >
                         <label for="enigma" class="text-white text-left">Enigma</label>
                         <textarea type="text" name="enigma" id="enigma" class="nes-textarea" style="resize: none"><?php if ((isset($_GET['acao'])) && ($_GET['acao'] = 'editar')) {
                                                                                                                         echo $ds_enigma[0]['enigma'];
                                                                                                                     } ?></textarea>
+                    </div>
+                </div>
+                <div class="col-12" id='container-arquivo'>
+                    <!-- Arquivo -->
+                    <div class="nes-field">
+                        <label for="arquivo" class="text-white text-left">Arquivo</label>
+                        <input type="file" name="arquivo" id="arquivo" class="nes-input">
                     </div>
                 </div>
                 <div class="col-4 mt-2">
@@ -61,13 +73,6 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-12">
-                    <!-- Arquivo -->
-                    <div class="nes-field" id='container-arquivo'>
-                        <label for="arquivo" class="text-white text-left">Arquivo</label>
-                        <input type="file" name="arquivo" id="arquivo" class="nes-input">
-                    </div>
-                </div>
                 <div class="col-3">
                     <a href="index.php?pagina=tabela-enigma" class="nes-btn btn-block">Voltar</a>
                 </div>
@@ -84,6 +89,9 @@
 
         $('#tipo').change(function() {
             //sempre que  o valor do campo TIPO mudar ele vai fazer os brignetsky
+            chengeResponse();
+        });
+        function chengeResponse() {
             if ($('#tipo').val() == 1) {
                 $('#container-enigma').show();
                 $('#container-arquivo').hide();
@@ -91,6 +99,7 @@
                 $('#container-enigma').hide();
                 $('#container-arquivo').show();
             }
-        });
+        }
+        chengeResponse()
     });
 </script>

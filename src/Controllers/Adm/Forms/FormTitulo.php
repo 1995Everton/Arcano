@@ -13,12 +13,15 @@ class FormTitulo extends Banco implements RequestHandlerInterface
     public function handle()
     {
         $config = [
+            'regras' => $this->banco->select("SELECT * FROM regra_titulo"),
             'titulo' => 'Cadastrar Titulo',
             'titulo_button' => 'Cadastrar',
             'acao' => 'novo',
             'titulos' => [
                 'id_titulo' => 0,
-                'ds_titulo' => ''
+                'ds_titulo' => '',
+                'id_regra_titulo' => 0,
+                'quantidade' => 1
             ]
         ];
         if(isset($_GET['id'])):
