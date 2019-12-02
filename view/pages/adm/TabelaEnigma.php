@@ -50,7 +50,7 @@
         var $table = $('table').tablesorter({});
         $('.deletar').click(function() {
             let id_usuario = $(this).val();
-            axios.get(`/index.php?pagina=persistencia-enigma&acao=deletar&id=${id_usuario}`)
+            axios.get(`index.php?pagina=persistencia-enigma&acao=deletar&id=${id_usuario}`)
                 .then(success => {
                     let {
                         status,

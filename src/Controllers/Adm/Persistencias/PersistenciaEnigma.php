@@ -9,6 +9,7 @@ use Arcanos\Enigmas\Controllers\RequestHandlerInterface;
 
 class PersistenciaEnigma extends Banco implements RequestHandlerInterface
 {
+
     public function handle()
     {
         switch ($_GET['acao']) {
@@ -29,7 +30,6 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
 
     public function novoEnigma()
     {
-        $enigma = null;
 
         if ($this->validarPost() == true) {
             $this->banco->insert(
@@ -42,12 +42,14 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
                     'resposta' => $_POST['resposta']
                 ]
             );
+
+            header("Location: index.php?pagina=tabela-enigma");
         }
     }
 
     public function editar()
     {
-        $enigma = null;
+
         if ($this->validarPost() == true) {
             $this->banco->update(
                 'enigmas',
@@ -62,6 +64,7 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
                     'id_enigmas' => $_GET['id']
                 ]
             );
+            header("Location: index.php?pagina=tabela-enigma");
         }
     }
 
@@ -85,29 +88,23 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
         /* Validacao dos campos do formulário */
         if (!isset($_POST['dificuldade']) || (empty($_POST['dificuldade']))) {
             $erro = 'Verifique o campo de Dificuldade';
-            echo 'Verifique o campo de Dificuldade';
         } elseif ((!isset($_POST['tipo'])) || (empty($_POST['tipo']))) {
             $erro = 'Verifique o campo Tipo';
-            echo 'Verifique o campo Tipo';
         } elseif ((!isset($_POST['resposta'])) || (empty($_POST['resposta']))) {
             $erro = 'Verifique o campo Resposta';
-            echo  'Verifique o campo Resposta';
         } elseif ($_POST['tipo'] == 1) {
             if (!isset($_POST['enigma']) || (empty($_POST['enigma']))) {
                 $erro = 'Preencha corretamente o campo Enigma!';
-                echo 'Preencha corretamente o campo Enigma!';
             }
         } elseif (($_POST['tipo'] != 1) && (!isset($_FILES['arquivo']['name']))) {
             $erro = 'Se enigma for do tipo: Imagem, Audio ou Video é necessario anexar uma arquivo!';
-            echo 'Se enigma for do tipo: Imagem, Audio ou Video é necessario anexar uma arquivo!';
         }
 
         if (!isset($erro)) {
-            echo 'final bom';
+            return true;
         } else {
-            echo 'final ruim';
             $this->toast($erro, 'ERRO', 'danger');
-            //header("Location: index.php?pagina=form-enigma");
+            header("Location: index.php?pagina=form-enigma");
         }
     }
 
@@ -127,11 +124,11 @@ class PersistenciaEnigma extends Banco implements RequestHandlerInterface
                 return $URL;
             } else {
                 $this->toast('Falha no upload do arquivo', 'ERRO', 'danger');
-                //header("Location: index.php?pagina=form-enigma");
+                header("Location: index.php?pagina=form-enigma");
             }
         } else {
             $this->toast('Falha no upload do arquivo', 'ERRO', 'danger');
-            //header("Location: index.php?pagina=form-enigma");
+            header("Location: index.php?pagina=form-enigma");
         }
     }
 }
