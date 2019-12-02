@@ -1,6 +1,6 @@
 <div class="wrapper">
     <span 
-        class="typewriter end" 
+        class="nes-text typewriter end"
         data-text=" Para você jogar nossos enigmas é fácil, as respostas são na  maioria das vezes objetivas e contendo os acentos."
         data-time="100"
         data-color="#fff"
@@ -12,7 +12,7 @@
     <br>
 
     <span 
-        class="typewriter end" 
+        class="nes-text typewriter end"
         data-text="                                                            
                 
                     
@@ -28,7 +28,7 @@
     <br>
     <br>
     <span
-        class="typewriter end" 
+        class=" nes-text typewriter end"
         data-text="                                                             
                 
                     
