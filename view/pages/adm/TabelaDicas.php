@@ -47,7 +47,7 @@
         var $table = $('table').tablesorter({});
         $('.deletar').click(function () {
             let id = $(this).val();
-            axios.get(`/index.php?pagina=persistencia-dicas&acao=deletar&id=${id}`)
+            axios.get(`index.php?pagina=persistencia-dicas&acao=deletar&id=${id}`)
                 .then( success =>{
                     let { status ,  data : { message , id } } = success.data
                     if(status == 202){
