@@ -7,18 +7,14 @@
     margin-top:7%;
     margin-left: 23%;
     z-index: 17 !important;
-
-    
-    
 }
 .typewriter {
+    font-family: "Press Start 2P" !important;
     font-size: 20px;
     border-right: 1px solid;
     letter-spacing: 0.15em;
     line-height: 1.4;
     font-weight: 400;
-    
-    
 }
 
 .end {

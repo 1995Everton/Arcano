@@ -28,7 +28,7 @@
     <br>
     <br>
     <span
-        class=" nes-text typewriter end"
+        class="nes-text typewriter end"
         data-text="                                                             
                 
                     
