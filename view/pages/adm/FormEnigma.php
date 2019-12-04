@@ -7,10 +7,10 @@
     <div class="nes-container with-title is-centered" style="height: 100%">
         <p class="bg-transparent text-white" style="font-size: 30px">Cadastro de Enigmas</p>
         <form action="<?php
-                        if (!isset($id)) {
+                        if (!isset($_GET['id'])) {
                             echo 'index.php?pagina=persistencia-enigma&acao=criar';
                         } else {
-                            echo 'index.php?pagina=persistencia-enigma&acao=editar&id=' . $id;
+                            echo 'index.php?pagina=persistencia-enigma&acao=editar&id=' . $_GET['id'];
                         }
                         ?>" enctype="multipart/form-data" method="POST" style="height: 88%">
             <div class="row justify-content-center align-items-center" style="height: 100%">
